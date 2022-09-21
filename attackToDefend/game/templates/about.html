@@ -1,0 +1,86 @@
+{% load static %}
+<html >
+<body id="bg" class="back" >
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<table>
+    <tr>
+      <td >
+          <div class="div1"></div> 
+      </td>
+      <td>
+          <div class="about"   id="about1">
+             <img src="{% static 'images/about16.png' %}" class="pic" > 
+              <br><br><br><br>
+
+             <input type="submit" value="Next" class=" button button2" onclick="next1()">
+           </div>
+       </td>
+     <td>
+        <div class="div1"></div> 
+     </td>
+   </tr>
+</table>
+
+
+<div class="invisibleDiv" id="about1Backup">
+    <img src="{% static 'images/about16.png' %}" class="pic">
+    <br>
+    <input type="submit" value="Next" class=" button button2" onclick="next1()">
+    </div>
+<div class="invisibleDiv" id="about2">
+    <img src="{% static 'images/about26.png' %}" class="pic">
+    <br>
+    <br>
+    <input type="submit" value="Back" class=" button button2" onclick="back1()">
+    <input type="submit" value="Next" class=" button button2" onclick="next2()">
+
+</div>
+<div class="invisibleDiv" id="about2Backup">
+    <img src="{% static 'images/about26.png' %}" class="pic">
+    <br>
+    <br>
+    <input type="submit" value="Back" class=" button button2" onclick="back1()">
+    <input type="submit" value="Next" class=" button button2" onclick="next2()">
+
+</div>
+<div class="invisibleDiv" id="about3">
+    <img src="{% static 'images/about36.png' %}" class="pic"><br><br>
+    <input type="submit" value="Back" class=" button button2" onclick="back2()">
+    <form action="{% url 'main' %}" method="post" >{%csrf_token%}
+        <input type="submit" value="Back to Main" class=" button button2" >  
+    </form>
+   
+    
+
+</div>
+
+</body>
+
+</html>
+<script>
+function next1(){
+
+  document.getElementById("about1").innerHTML = document.getElementById("about2").innerHTML ;
+
+
+}
+function back1(){
+
+document.getElementById("about1").innerHTML = document.getElementById("about1Backup").innerHTML ;
+
+
+}
+function next2(){
+
+document.getElementById("about1").innerHTML = document.getElementById("about3").innerHTML ;
+
+
+}
+function back2(){
+
+document.getElementById("about1").innerHTML = document.getElementById("about2Backup").innerHTML ;
+
+
+}
+</script>
