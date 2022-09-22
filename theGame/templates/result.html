@@ -1,3 +1,32 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@MACSLama 
+MACSLama
+/
+hopefully
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+hopefully/theGame/templates/result.html
+@MACSLama
+MACSLama first
+Latest commit 41fac2c 2 days ago
+ History
+ 1 contributor
+116 lines (98 sloc)  3.87 KB
+
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 <body>
@@ -24,6 +53,12 @@
             <td>
                 <form action="{% url 'blue1' %}" method="post" >{%csrf_token%}
                     <input type="submit" value="Re-play?" class=" button button2" >  
+                </form>
+                <form action="{% url 'team' %}" method="post" >{%csrf_token%}
+                    <input type="submit" value="New Mession!" class=" button button2" >  
+                    <form action="{% url 'end' %}" method="post" >{%csrf_token%}
+                        <input type="submit" value="Quit!" class=" button button2" >  
+                    </form>
                 </form>
             </td>
         </tr>
@@ -54,6 +89,12 @@
                 <form action="{% url 'blue1' %}" method="post" >{%csrf_token%}
                     <input type="submit" value="Re-play?" class=" button button2" >  
                 </form>
+                <form action="{% url 'team' %}" method="post" >{%csrf_token%}
+                    <input type="submit" value="New Mession!" class=" button button2" >  
+                </form>
+                <form action="{% url 'end' %}" method="post" >{%csrf_token%}
+                    <input type="submit" value="Quit!" class=" button button2" >  
+                </form>
             </td>
         </tr>
     </table>
@@ -80,6 +121,12 @@
             <form action="{% url 'blue1' %}" method="post" >{%csrf_token%}
                 <input type="submit" value="Re-play?" class=" button button2" >  
             </form>
+            <form action="{% url 'team' %}" method="post" >{%csrf_token%}
+                <input type="submit" value="New Mession!" class=" button button2" >  
+            </form>
+            <form action="{% url 'end' %}" method="post" >{%csrf_token%}
+                <input type="submit" value="Quit!" class=" button button2" >  
+            </form>
         </td>
      
     </tr>
@@ -96,3 +143,17 @@
     document.getElementById("win").play();
 }
 </script>
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
