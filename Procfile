@@ -1,1 +1,1 @@
-web: gunicorn attackToDefend.wsgi
+web: gunicorn myGame.wsgi
