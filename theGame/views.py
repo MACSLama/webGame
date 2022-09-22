@@ -23,6 +23,10 @@ def taskChoiceBlue(request):
 
     return render(request , 'taskChoiceBlue.html')
 
+def end(request):
+    
+    return render(request , 'thanks.html')
+
 def blue1 (request):
     
     return render (request , 'blue1.html')
