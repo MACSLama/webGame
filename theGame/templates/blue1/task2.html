@@ -118,7 +118,7 @@
           <td><div class="invisibleDiv"></div> </td>
           <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
-              <form action="{% url 'task3' %}" method="post" name="trueForm">{%csrf_token%}
+              <form action="{% url 'task31' %}" method="post" name="trueForm">{%csrf_token%}
                 <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                 <input class="invisibleDiv"  value="2"  name="scoreAdd" >
                 <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
@@ -144,7 +144,7 @@
               </td>
             <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
             <td>
-                <form action="{% url 'task3' %}"  method="post" name="falseForm">{%csrf_token%}
+                <form action="{% url 'task31' %}"  method="post" name="falseForm">{%csrf_token%}
                     <input class="invisibleDiv"  value="{{score}}" name="score">
                     <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="2" id="deductCost"  name="helpdeduct" >
@@ -163,7 +163,7 @@
               <td><div class="invisibleDiv"></div> </td>
               <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
-                  <form action="{% url 'task3' %}" method="post" name="trueForm">{%csrf_token%}
+                  <form action="{% url 'task31' %}" method="post" name="trueForm">{%csrf_token%}
                     <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                     <input class="invisibleDiv"  value="1"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="0" id="deductCost"  name="helpdeduct" >
@@ -187,7 +187,7 @@
                   </div></td>
                 <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
                 <td>
-                    <form action="{% url 'task3' %}"  method="post" name="falseForm">{%csrf_token%}
+                    <form action="{% url 'task31' %}"  method="post" name="falseForm">{%csrf_token%}
                         <input class="invisibleDiv"  value="{{score}}" name="score">
                         <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                         <input class="invisibleDiv"  value="0" id="deductCost"  name="helpdeduct" >
