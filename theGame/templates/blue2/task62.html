@@ -113,12 +113,12 @@
     <tr width="100%">
           <td><div class="choiceboxshow"> You are correct, Good job!!<br>Limiting privileges for users allows only authorized administrators to interact with service changes and service configurations.<br>
             If any unauthorized user had these privileges, the auditing tools will detect it and pan it.<br></div>
-            <form action="https://attack.mitre.org/techniques/T0853/" target="_blank"> 
+            <form action="https://attack.mitre.org/techniques/T0855/" target="_blank"> 
                                         <input type="submit" value="Find more!" class=" button button2"> </form> </td>
           <td><div class="invisibleDiv"></div> </td>
           <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
-              <form action="{% url 'task32' %}" method="post" name="trueForm">{%csrf_token%}
+              <form action="{% url 'task72' %}" method="post" name="trueForm">{%csrf_token%}
                 <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                 <input class="invisibleDiv"  value="2"  name="scoreAdd" >
                 <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
@@ -137,14 +137,14 @@
       <tr width="50%">
             <td><div class="choiceboxshow" >That was not the right decision. <br> If adversaries are trying to increase their privileges, 
                 this means that they already have access to the system, and limiting Hardware Installation will not help at this stage.<br> The link below can give you more information.</div>  
-                <br><form action="https://attack.mitre.org/techniques/T0853/" target="_blank"> 
+                <br><form action="https://attack.mitre.org/techniques/T0855/" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form> 
 
              
               </td>
             <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
             <td>
-                <form action="{% url 'task32' %}"  method="post" name="falseForm">{%csrf_token%}
+                <form action="{% url 'task72' %}"  method="post" name="falseForm">{%csrf_token%}
                     <input class="invisibleDiv"  value="{{score}}" name="score">
                     <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="2" id="deductCost"  name="helpdeduct" >
@@ -163,7 +163,7 @@
               <td><div class="invisibleDiv"></div> </td>
               <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
-                  <form action="{% url 'task32' %}" method="post" name="trueForm">{%csrf_token%}
+                  <form action="{% url 'task72' %}" method="post" name="trueForm">{%csrf_token%}
                     <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                     <input class="invisibleDiv"  value="1"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="0" id="deductCost"  name="helpdeduct" >
@@ -187,7 +187,7 @@
                   </div></td>
                 <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
                 <td>
-                    <form action="{% url 'task32' %}"  method="post" name="falseForm">{%csrf_token%}
+                    <form action="{% url 'task72' %}"  method="post" name="falseForm">{%csrf_token%}
                         <input class="invisibleDiv"  value="{{score}}" name="score">
                         <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                         <input class="invisibleDiv"  value="0" id="deductCost"  name="helpdeduct" >
@@ -237,7 +237,7 @@ function feedbackFalsenotConf(){
 
 }
 function deduct(){
-    window.open("https://attack.mitre.org/techniques/T0853/");
+    window.open("https://attack.mitre.org/techniques/T0855/");
     
 
 }

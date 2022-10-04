@@ -16,7 +16,8 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path
-from theGame.views import main , team, tutorial,end, taskChoiceBlue,taskChoiceRed,blue1, task12,task11, task21,task31,task41,task51,task61, task71,result, about , scoring, task22
+from theGame.views import main , team, tutorial,end, taskChoiceBlue,taskChoiceRed,blue1, task11, task21,task31,task41,task51,task61, task71,result, about , scoring
+from theGame.views import task12, task22, task32,task42,task52,task62,task72
 from django.conf.urls.static import static
 
 
@@ -41,6 +42,11 @@ urlpatterns = [
     path('result/', result, name="result"),
     path('task12/', task12, name="task12"),
     path('task22/', task22, name="task22"),
+    path('task32/', task32, name="task32"),
+    path('task42/', task42, name="task42"),
+    path('task52/', task52, name="task52"),
+    path('task62/', task62, name="task62"),
+    path('task72/', task72, name="task72"),
     path('end/', end, name="end"),
 ]
     

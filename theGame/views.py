@@ -162,3 +162,62 @@ def task22 (request):
 
      return render (request , 'blue2/task22.html', {'score': score, 'truecounter':truecounter})
 
+def task32 (request):
+     theScore=request.POST.get('score', 0)
+     theScorAdd = request.POST.get('scoreAdd', 0)
+     deduction =  request.POST.get('helpdeduct', 0)
+     counter =  request.POST.get('trueCount', 0)
+     counteradd = request.POST.get('counterAdd', 0)
+    
+     score= int(theScore) + int(theScorAdd) - int(deduction)
+     truecounter = int(counter)+ int(counteradd)
+    
+     return render (request , 'blue2/task32.html', {'score': score, 'truecounter':truecounter})
+
+def task42 (request):
+     theScore=request.POST.get('score', 0)
+     theScorAdd = request.POST.get('scoreAdd', 0)
+     deduction =  request.POST.get('helpdeduct', 0)
+     counter =  request.POST.get('trueCount', 0)
+     counteradd = request.POST.get('counterAdd', 0)
+    
+     score= int(theScore) + int(theScorAdd) - int(deduction)
+     truecounter = int(counter)+ int(counteradd)
+    
+     return render (request , 'blue2/task42.html', {'score': score, 'truecounter':truecounter})
+
+def task52 (request):
+     theScore=request.POST.get('score', 0)
+     theScorAdd = request.POST.get('scoreAdd', 0)
+     deduction =  request.POST.get('helpdeduct', 0)
+     counter =  request.POST.get('trueCount', 0)
+     counteradd = request.POST.get('counterAdd', 0)
+    
+     score= int(theScore) + int(theScorAdd) - int(deduction)
+     truecounter = int(counter)+ int(counteradd)
+    
+     return render (request , 'blue2/task52.html', {'score': score, 'truecounter':truecounter})
+
+def task62 (request):
+     theScore=request.POST.get('score', 0)
+     theScorAdd = request.POST.get('scoreAdd', 0)
+     deduction =  request.POST.get('helpdeduct', 0)
+     counter =  request.POST.get('trueCount', 0)
+     counteradd = request.POST.get('counterAdd', 0)
+    
+     score= int(theScore) + int(theScorAdd) - int(deduction)
+     truecounter = int(counter)+ int(counteradd)
+    
+     return render (request , 'blue2/task62.html', {'score': score, 'truecounter':truecounter})
+
+def task72 (request):
+     theScore=request.POST.get('score', 0)
+     theScorAdd = request.POST.get('scoreAdd', 0)
+     deduction =  request.POST.get('helpdeduct', 0)
+     counter =  request.POST.get('trueCount', 0)
+     counteradd = request.POST.get('counterAdd', 0)
+    
+     score= int(theScore) + int(theScorAdd) - int(deduction)
+     truecounter = int(counter)+ int(counteradd)
+    
+     return render (request , 'blue2/task72.html', {'score': score, 'truecounter':truecounter})
