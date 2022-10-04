@@ -33,7 +33,7 @@ def blue1 (request):
 
 def blue2 (request):
     
-    return render (request , 'blue2.html')
+    return render (request , 'blue2/blue2.html')
 
 def task1 (request):
     
