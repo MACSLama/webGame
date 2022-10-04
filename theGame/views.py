@@ -29,7 +29,7 @@ def end(request):
 
 def blue1 (request):
     
-    return render (request , 'blue1.html')
+    return render (request , 'blue1/blue1.html')
 
 def blue2 (request):
     
@@ -37,7 +37,7 @@ def blue2 (request):
 
 def task1 (request):
     
-    return render (request , 'task1.html')
+    return render (request , 'blue1/task1.html')
 
 
 def task2 (request):
@@ -50,7 +50,7 @@ def task2 (request):
      truecounter = int(counter)+ int(counteradd)
      
 
-     return render (request , 'task2.html', {'score': score, 'truecounter':truecounter})
+     return render (request , 'blue1/task2.html', {'score': score, 'truecounter':truecounter})
 
 
 def task3 (request):
@@ -65,7 +65,7 @@ def task3 (request):
     score= int(theScore) + int(theScorAdd) - int(deduction)
     truecounter = int(counter)+ int(counteradd)
     
-    return render (request , 'task3.html',  {'score': score, 'truecounter':truecounter})
+    return render (request , 'blue1/task3.html',  {'score': score, 'truecounter':truecounter})
 
 
 def task4 (request):
@@ -81,7 +81,7 @@ def task4 (request):
     truecounter = int(counter)+ int(counteradd)
     
     
-    return render (request , 'task4.html', {'score': score, 'truecounter':truecounter})
+    return render (request , 'blue1/task4.html', {'score': score, 'truecounter':truecounter})
 
 def task5 (request):
     theScore=request.POST.get('score', 0)
@@ -95,7 +95,7 @@ def task5 (request):
     
     
     
-    return render (request , 'task5.html', {'score': score, 'truecounter':truecounter})
+    return render (request , 'blue1/task5.html', {'score': score, 'truecounter':truecounter})
 
 def task6 (request):
 
@@ -110,7 +110,7 @@ def task6 (request):
     
     
     
-    return render (request , 'task6.html', {'score': score, 'truecounter':truecounter})
+    return render (request , 'blue1/task6.html', {'score': score, 'truecounter':truecounter})
 
 def task7 (request):
     
@@ -125,7 +125,7 @@ def task7 (request):
     
     
     
-    return render (request , 'task7.html', {'score': score, 'truecounter':truecounter})
+    return render (request , 'blue1/task7.html', {'score': score, 'truecounter':truecounter})
 
 def result (request):
          
