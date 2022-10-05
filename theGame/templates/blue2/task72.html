@@ -126,7 +126,7 @@
             <input type="submit" value="Find more!" class=" button button2"> </form> </td>
           <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
-              <form action="{% url 'result' %}" method="post" name="trueForm1">{%csrf_token%}
+              <form action="{% url 'resultblue2' %}" method="post" name="trueForm1">{%csrf_token%}
                 <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                 <input class="invisibleDiv"  value="2"  name="scoreAdd" >
                 <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -147,7 +147,7 @@
                 <input type="submit" value="Find more!" class=" button button2"> </form> </td>
           <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
-              <form action="{% url 'result' %}" method="post" name="trueForm2">{%csrf_token%}
+              <form action="{% url 'resultblue2' %}" method="post" name="trueForm2">{%csrf_token%}
                 <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                 <input class="invisibleDiv"  value="2"  name="scoreAdd" >
                 <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -171,7 +171,7 @@
               </div></td>
             <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
             <td>
-                <form action="{% url 'result' %}" method="post" name="falseForm1">{%csrf_token%}
+                <form action="{% url 'resultblue2' %}" method="post" name="falseForm1">{%csrf_token%}
                     <input class="invisibleDiv"  value="{{score}}" name="score">
                     <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="2"  name="helpdeduct" >
@@ -193,7 +193,7 @@
                 </div></td>
               <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
               <td>
-                  <form action="{% url 'result' %}" method="post" name="falseForm2">{%csrf_token%}
+                  <form action="{% url 'resultblue2' %}" method="post" name="falseForm2">{%csrf_token%}
                       <input class="invisibleDiv"  value="{{score}}" name="score">
                       <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                       <input class="invisibleDiv"  value="2"  name="helpdeduct" >
@@ -212,7 +212,7 @@
                 But of course we have to take other measurements, like   </td>
               <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
-                  <form action="{% url 'result' %}" method="post" name="trueForm1">{%csrf_token%}
+                  <form action="{% url 'resultblue2' %}" method="post" name="trueForm1">{%csrf_token%}
                     <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                     <input class="invisibleDiv"  value="1"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -231,7 +231,7 @@
                 such as zip and rar that may be used to conceal malicious files. We can also train the user to be more aware of these attempts.</td>
               <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
-                  <form action="{% url 'result' %}" method="post" name="trueForm2">{%csrf_token%}
+                  <form action="{% url 'resultblue2' %}" method="post" name="trueForm2">{%csrf_token%}
                     <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                     <input class="invisibleDiv"  value="1"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -252,7 +252,7 @@
                   </div></td>
                 <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
                 <td>
-                    <form action="{% url 'result' %}" method="post" name="falseForm1">{%csrf_token%}
+                    <form action="{% url 'resultblue2' %}" method="post" name="falseForm1">{%csrf_token%}
                         <input class="invisibleDiv"  value="{{score}}" name="score">
                         <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                         <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -271,7 +271,7 @@
                     </div></td>
                   <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
                   <td>
-                      <form action="{% url 'result' %}" method="post" name="falseForm2">{%csrf_token%}
+                      <form action="{% url 'resultblue2' %}" method="post" name="falseForm2">{%csrf_token%}
                           <input class="invisibleDiv"  value="{{score}}" name="score">
                           <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                           <input class="invisibleDiv"  value="0"  name="helpdeduct" >

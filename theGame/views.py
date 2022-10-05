@@ -132,7 +132,7 @@ def task71 (request):
     
     return render (request , 'blue1/task7.html', {'score': score, 'truecounter':truecounter})
 
-def result (request):
+def resultblue1 (request):
          
     theScore=request.POST.get('score', 0)
     theScorAdd = request.POST.get('scoreAdd', 0)
@@ -142,7 +142,7 @@ def result (request):
     
     score= int(theScore) + int(theScorAdd) - int(deduction)
     truecounter = int(counter)+ int(counteradd)
-    return render (request , 'result.html', {'score': score, 'truecounter':truecounter})
+    return render (request , 'blue1/resultblue1.html', {'score': score, 'truecounter':truecounter})
 
 
 def task12 (request):
@@ -221,3 +221,15 @@ def task72 (request):
      truecounter = int(counter)+ int(counteradd)
     
      return render (request , 'blue2/task72.html', {'score': score, 'truecounter':truecounter})
+
+def resultblue2 (request):
+         
+    theScore=request.POST.get('score', 0)
+    theScorAdd = request.POST.get('scoreAdd', 0)
+    deduction =  request.POST.get('helpdeduct', 0)
+    counter =  request.POST.get('trueCount', 0)
+    counteradd = request.POST.get('counterAdd', 0)
+    
+    score= int(theScore) + int(theScorAdd) - int(deduction)
+    truecounter = int(counter)+ int(counteradd)
+    return render (request , 'blue2/resultblue2.html', {'score': score, 'truecounter':truecounter})
