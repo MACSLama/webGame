@@ -117,8 +117,7 @@
 
 <table id="true1Conf" class="invisibleDiv" width="100%" align="center">
     <tr width="100%">
-          <td><div class="choiceboxshow">Bravo, this limits access to remote services through centrally managed concentrators such 
-            as VPNs and other managed remote access systems.<br> </div>
+          <td><div class="choiceboxshow">Bravo. This makes the Devices authenticate all messages between master and outstation assets.<br> </div>
          <form action="https://attack.mitre.org/techniques/T0855/" target="_blank"> 
             <input type="submit" value="Find more!" class=" button button2"> </form></td>
           <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
@@ -137,7 +136,7 @@
   </table>
   <table id="true2Conf" class="invisibleDiv" width="100%" align="center">
     <tr width="100%">
-          <td><div class="choiceboxshow"> Great decision. This can help us disable or block remotely available services that may be unnecessary.</div> <form target="_blank" action="https://attack.mitre.org/techniques/T0855/"> 
+          <td><div class="choiceboxshow"> this very smart. Segment operational assets and their management devices based on their functional role within the process, enables more strict isolation to more critical control and operational information within the control environment.</div> <form target="_blank" action="https://attack.mitre.org/techniques/T0855/"> 
                 <input type="submit" value="Find more!" class=" button button2"> </form> </td>
           <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
@@ -156,7 +155,7 @@
   
   <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
       <tr width="50%">
-            <td><div class="choiceboxshow" >User training won't help in this case. The technique does not require any action from the user, so even well-trained users can be affected by this.  </div>
+            <td><div class="choiceboxshow" >We were wrong. In ICS environments command messages usually are observed in air-gapped zones in which SSL/TLS is inherently not expected.  </div>
                 <br><form action="https://attack.mitre.org/techniques/T0855/" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form>
 
@@ -178,7 +177,7 @@
     </table>
     <table id="false2Conf" class="invisibleDiv" width="100%" align="center">
         <tr width="50%">
-              <td><div class="choiceboxshow" >Watchdog Timers are used when the system becomes unresponsive, and that does not happen in this case. </div> 
+              <td><div class="choiceboxshow" >In ICS environments command messages usually are observed in air-gapped zones in which web content is inherently not expected. </div> 
                 <br><form action="https://attack.mitre.org/techniques/T0855/" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form>
                
@@ -199,8 +198,7 @@
       </table>
       <table id="true1notConf" class="invisibleDiv" width="100%" align="center">
         <tr width="100%">
-              <td><div class="choiceboxshow">Bravo, this limits access to remote services through centrally managed concentrators such 
-                as VPNs and other managed remote access systems. </td>
+              <td><div class="choiceboxshow">Bravo. This makes the Devices authenticate all messages between master and outstation assets. </td>
               <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
                   <form action="{% url 'task82' %}" method="post" >{%csrf_token%}
@@ -217,7 +215,7 @@
       </table>
       <table id="true2notConf" class="invisibleDiv" width="100%" align="center">
         <tr width="100%">
-              <td><div class="choiceboxshow">Great decision. This can help us disable or block remotely available services that may be unnecessary. </td>
+              <td><div class="choiceboxshow">this very smart. Segment operational assets and their management devices based on their functional role within the process, enables more strict isolation to more critical control and operational information within the control environment. </td>
               <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
                   <form action="{% url 'task82' %}" method="post" >{%csrf_token%}
@@ -235,7 +233,7 @@
       
       <table id="false1notConf" class="invisibleDiv" width="100%" align="center">
           <tr width="50%">
-                <td><div class="choiceboxshow" >User training won't help in this case. The technique does not require any action from the user, so even well-trained users can be affected by this.
+                <td><div class="choiceboxshow" >We were wrong. In ICS environments command messages usually are observed in air-gapped zones in which SSL/TLS is inherently not expected.
     
                  
                   </div></td>
@@ -255,7 +253,7 @@
         </table>
         <table id="false2notConf" class="invisibleDiv" width="100%" align="center">
             <tr width="50%">
-                  <td><div class="choiceboxshow" >Watchdog Timers are used when the system becomes unresponsive, and that does not happen in this case.   <br>
+                  <td><div class="choiceboxshow" >In ICS environments command messages usually are observed in air-gapped zones in which web content is inherently not expected.   <br>
                    
                     </div></td>
                   <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
