@@ -245,3 +245,40 @@ def resultblue2 (request):
     score= int(theScore) + int(theScorAdd) - int(deduction)
     truecounter = int(counter)+ int(counteradd)
     return render (request , 'blue2/resultblue2.html', {'score': score, 'truecounter':truecounter})
+
+
+def taskRed11 (request):
+    return render(request, 'red1/taskRed11.html')
+
+def taskRed12 (request):
+    return render(request, 'red1/taskRed12.html')
+
+def taskRed13 (request):
+    return render(request, 'red1/taskRed13.html')
+
+def taskRed14 (request):
+    return render(request, 'red1/taskRed14.html')
+
+def taskRed15 (request):
+    return render(request, 'red1/taskRed15.html')
+
+def resultRed1 (request):
+    return render(request, 'red1/resultRed1.html')
+
+def taskRed21 (request):
+    return render(request, 'red1/taskRed11.html')
+
+def taskRed22 (request):
+    return render(request, 'red1/taskRed12.html')
+
+def taskRed23 (request):
+    return render(request, 'red1/taskRed13.html')
+
+def taskRed24 (request):
+    return render(request, 'red1/taskRed14.html')
+
+def taskRed25 (request):
+    return render(request, 'red1/taskRed15.html')
+
+def resultRed2 (request):
+    return render(request, 'red1/resultRed1.html')

@@ -1,5 +1,38 @@
-<h1>under construction</h1>
+{% load static %}
 
-<form action="{% url 'team' %}" method="post" >{%csrf_token%}
-    <input type="submit" value="back" class=" button button2" >  
-</form>
+<body id="bg" class="tdStylebackred"></body>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<header class="header"> ATT&CK To Defend </header>
+<br> <br><br><br><br><br><br><br><br><br>
+<h2> Choose your mession here </h2>
+<table>
+
+  <tr>
+
+    <td>
+      <div class="backbox"> APT3  </div> 
+      <form action="{% url 'taskRed11' %}" method="post" >{%csrf_token%}
+       <input type="submit" value="Start"  class=" button button2">
+     </form> 
+   
+    </td>
+    <td>
+      <div class="backbox"> Sandworm </div>
+      <form action="{% url 'taskRed21' %}" method="post" >{%csrf_token%}
+        <input type="submit" value="Start" class=" button button2">
+       </form>
+     </td>
+    
+ </tr>
+ <tr rowspan="2">
+  <td>
+    <form action="{% url 'main' %}" method="post" >{%csrf_token%}
+      <input type="submit" value="Back to Main" class=" button button2">
+     </form>
+   </td>
+ </tr>
+
+
+
+</table>

@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path
 from theGame.views import main , team, tutorial,end, taskChoiceBlue,taskChoiceRed,blue1, task11, task21,task31,task41,task51,task61, task71,resultblue1, about , scoring
 from theGame.views import task12, task22, task32,task42,task52,task62,task72,task82,resultblue2
+from theGame.views import taskRed11,taskRed12,taskRed13,taskRed14,taskRed15,resultRed1
+from theGame.views import taskRed21,taskRed22,taskRed23,taskRed24,taskRed25,resultRed2
 from django.conf.urls.static import static
 
 
@@ -40,7 +42,6 @@ urlpatterns = [
     path('task61/', task61, name="task61"),
     path('task71/', task71, name="task71"),
     path('resultblue1/', resultblue1, name="resultblue1"),
-    path('resultblue2/', resultblue2, name="resultblue2"),
     path('task12/', task12, name="task12"),
     path('task22/', task22, name="task22"),
     path('task32/', task32, name="task32"),
@@ -49,6 +50,20 @@ urlpatterns = [
     path('task62/', task62, name="task62"),
     path('task72/', task72, name="task72"),
     path('task82/', task82, name="task82"),
+    path('resultblue2/', resultblue2, name="resultblue2"),
+    path('taskRed11/', taskRed11, name="taskRed11"),
+    path('taskRed12/', taskRed12, name="taskRed12"),
+    path('taskRed13/', taskRed13, name="taskRed13"),
+    path('taskRed14/', taskRed14, name="taskRed14"),
+    path('taskRed15/', taskRed15, name="taskRed15"),
+    path('resultRed1/', resultRed1, name="resultRed1"),
+    path('taskRed11/', taskRed21, name="taskRed21"),
+    path('taskRed22/', taskRed22, name="taskRed22"),
+    path('taskRed23/', taskRed23, name="taskRed23"),
+    path('taskRed24/', taskRed24, name="taskRed24"),
+    path('taskRed25/', taskRed25, name="taskRed25"),
+    path('resultRed2/', resultRed2, name="resultRed2"),
+
     path('end/', end, name="end"),
 ]
     

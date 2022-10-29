@@ -82,6 +82,18 @@
   min-width:auto;
   height:auto;
 }
+ .tdStylebackred{
+  background-image: url("/static/images/backRed.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: repeat;
+  background-size: cover;
+  width:auto;
+  min-width:auto;
+  height:auto;
+ }
 
 .button {
   background-color: #1f1425; /* Green */
