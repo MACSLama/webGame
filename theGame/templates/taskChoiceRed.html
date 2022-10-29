@@ -11,16 +11,16 @@
   <tr>
 
     <td>
-      <div class="backboxRed"> Stealth Mango malware.  </div> 
+      <div class="backboxRed"> Stealth Mango.  </div> 
       <form action="{% url 'taskRed11' %}" method="post" >{%csrf_token%}
-       <input type="submit" value="Start"  class=" button button2">
+       <input type="submit" value="Start"  class=" button buttonred">
      </form> 
    
     </td>
     <td>
       <div class="backboxRed"> Sandworm </div>
       <form action="{% url 'taskRed21' %}" method="post" >{%csrf_token%}
-        <input type="submit" value="Start" class=" button button2">
+        <input type="submit" value="Start" class=" button buttonred">
        </form>
      </td>
     
@@ -28,7 +28,7 @@
  <tr rowspan="2">
   <td>
     <form action="{% url 'main' %}" method="post" >{%csrf_token%}
-      <input type="submit" value="Back to Main" class=" button button2">
+      <input type="submit" value="Back to Main" class=" button buttonred">
      </form>
    </td>
  </tr>
