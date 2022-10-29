@@ -259,7 +259,7 @@ headrcss{
 
 .backboxRed {
   background-color: rgb(237, 240, 241);
-  color: white;
+  color: rgb(19, 18, 18);
   border: 2px solid black;
   width: 150px;
   height: 70px;
