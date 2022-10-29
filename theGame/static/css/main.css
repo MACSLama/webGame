@@ -256,3 +256,13 @@ headrcss{
   font-size: 30px;
   text-align: center;
 }
+
+.backboxRed {
+  background-color: rgb(237, 240, 241);
+  color: white;
+  border: 2px solid black;
+  width: 150px;
+  height: 70px;
+  font-size: 30px;
+  text-align: center;
+}
