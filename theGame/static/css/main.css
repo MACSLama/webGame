@@ -82,6 +82,18 @@
   min-width:auto;
   height:auto;
 }
+.tdStyleback2 {
+  background-image: url("/static/images/backGr2.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:auto;
+  min-width:auto;
+  height:auto;
+}
  .tdStylebackred{
   background-image: url("/static/images/backRed.png");
   -webkit-background-size: cover;
