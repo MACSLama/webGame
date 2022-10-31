@@ -247,6 +247,9 @@ def resultblue2 (request):
     return render (request , 'blue2/resultblue2.html', {'score': score, 'truecounter':truecounter})
 
 
+def introRed (request):
+    return render(request, 'introRed.html')
+
 def taskRed11 (request):
     return render(request, 'red1/taskRed11.html')
 
