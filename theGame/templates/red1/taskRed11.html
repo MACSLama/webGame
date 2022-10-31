@@ -39,13 +39,13 @@
     </tr>
     <tr>
         <td>
-            <div class="choiceBoxRed" id="option1" > Train the users, so they can be more aware of any stealing account attempt.</div>
+            <div class="choiceBoxRed" id="option1" > <br>Process Injection.<br></div>
         </td>
         <td>
-               <div class="choiceBoxRed" id="option2">  Make configuration changes related to the operating system that results in a more secured system.<div>
+               <div class="choiceBoxRed" id="option2"> <br> Drive-By Compromise.<br><div>
         </td>
         <td>
-            <div class="choiceBoxRed" id="option2">  Make configuration changes related to the operating system that results in a more secured system.<div>
+            <div class="choiceBoxRed" id="option2"> <br> Replication Through Removable Media.<br><div>
      </td>
         
         
@@ -58,13 +58,13 @@
 <table id="confView" class="invisibleDiv" width="100%" align="center">
     <tr width="50%">
         <td>
-            <div class="choiceBoxRed" id="option1" > Train the users, so they can be more aware of any stealing account attempt.</div>
+            <div class="choiceBoxRed" id="option1" ><br> Process Injection.<br></div>
             <br> <input type="button" value="Choose" onclick="feedbackFalseConf()" class=" button buttonred">
             <br><br><br><br>
-            <div class="choiceBoxRed" id="option2"> Make configuration changes related to the operating system that results in a more secured system.</div>
-            <br> <input type="button" value="Choose" onclick="feedbackTrueConf()" class=" button buttonred">
-            <div class="choiceBoxRed" id="option2"> Make configuration changes related to the operating system that results in a more secured system.</div>
-            <br> <input type="button" value="Choose" onclick="feedbackTrueConf()" class=" button buttonred">
+            <div class="choiceBoxRed" id="option2"> <br>Drive-By Compromise.<br></div>
+            <br> <input type="button" value="Choose" onclick="feedbackTrueConf1()" class=" button buttonred">
+            <div class="choiceBoxRed" id="option2"> <br>Replication Through Removable Media.<br></div>
+            <br> <input type="button" value="Choose" onclick="feedbackTrueConf2()" class=" button buttonred">
 
 
 
@@ -77,45 +77,45 @@
 
 <table id="notConfView" class="invisibleDiv" width="100%" align="center">
     <tr height="30%">
-        <td colspan="3">
+        <td colspan="2">
             <img src="{% static 'images/red1/initialAccess.png' %}" class="table">
+        </td>
+        <td > 
+            <form  id="getHelp" method="post" target="_blank">{%csrf_token%}
+            <input type="submit" name="help" value="Hint." onclick="deduct()" class=" button buttonred">
+            </form>
+            
         </td>
         
         
     </tr>    
     <tr width="50%">
             <td>
-                <div class="choiceBoxRed" id="option1" ><br> Train the users, so they can be more aware of any stealing account attempt.</div>
+                <div class="choiceBoxRed" id="option1" ><br> Process Injection.<br></div>
                 <br> <input type="button" value="Choose" onclick="feedbackFalsenotConf()" class=" button buttonred">
             
             </td>
             <td>
-                <div class="choiceBoxRed" id="option2"> Make configuration changes related to the operating system that results in a more secured system.</div>
-                <br> <input type="button" value="Choose" onclick="feedbackTruenotConf()" class=" button buttonred">
+                <div class="choiceBoxRed" id="option2"><br> Drive-By Compromise.<br></div>
+                <br> <input type="button" value="Choose" onclick="feedbackTruenotConf1()" class=" button buttonred">
             </td>
             <td>
-                <div class="choiceBoxRed" id="option2"> Make configuration changes related to the operating system that results in a more secured system.</div>
-                <br> <input type="button" value="Choose" onclick="feedbackTruenotConf()" class=" button buttonred">
+                <div class="choiceBoxRed" id="option2"> <br>Replication Through Removable Media.<br></div>
+                <br> <input type="button" value="Choose" onclick="feedbackTruenotConf2()" class=" button buttonred">
             </td>
-            <td > 
-                <form  id="getHelp" method="post" target="_blank">{%csrf_token%}
-                <input type="submit" name="help" value="Hint." onclick="deduct()" class=" button buttonred">
-                </form>
-                
-            </td>
+           
             
 
         </tr>
        
 
 </table>
-<table id="trueConf" class="invisibleDiv" width="100%" align="center">
+<table id="trueConf1" class="invisibleDiv" width="100%" align="center">
     <tr width="50%">
           <td>
-              <div class="choiceBoxRed"> You are correct, Good job.<br> Operating systems are very important, 
-                  if they were vulnerable, everything that is stored in them is vulnerable. 
-                  That is why Operating systems are the starting point for security.<br></div>
-                  <form action="https://attack.mitre.org/matrices/mobile/" target="_blank"> 
+              <div class="choiceBoxRed"> You are correct, Good job.<br>Adversaries can gain access to a system through a user visiting a website
+                while browsing. This technique makes the user's browser targeted for exploitation.<br></div>
+                  <form action="https://attack.mitre.org/techniques/T1456/" target="_blank"> 
                    
                    <input type="submit" value="Find more!" class=" button buttonred"></form>
                   
@@ -123,7 +123,7 @@
       
           <td> 
               <div class="about">
-              <img src="{% static 'images/True.png' %}" class="pic">
+              <img src="{% static 'images/trueRed.png' %}" class="pic">
            </div>
           </td>
           <td> 
@@ -139,14 +139,42 @@
       </tr>
   </table>
   
+  <table id="trueConf2" class="invisibleDiv" width="100%" align="center">
+    <tr width="50%">
+          <td>
+              <div class="choiceBoxRed"> You are correct, Good job.<br> We should consider gaining access physically,
+                adversaries may gain access to devices by exploiting or copying malware to devices connected via USB.<br></div>
+                  <form action="https://attack.mitre.org/techniques/T1458/" target="_blank"> 
+                   
+                   <input type="submit" value="Find more!" class=" button buttonred"></form>
+                  
+          </td>
+      
+          <td> 
+              <div class="about">
+              <img src="{% static 'images/trueRed.png' %}" class="pic">
+           </div>
+          </td>
+          <td> 
+              <form method="post" action="{% url 'taskRed12' %}" name="trueFormCOnf">
+                 {% csrf_token %}
+                 <input class="invisibleDiv" id="score" value="2" name="score">
+                 <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                 <input class="invisibleDiv"  value="1"  name="trueCount" >
+                 <input type="submit" value="Continue" class=" button buttonred"> 
+              
+               </form> 
+          </td>
+      </tr>
+  </table>
   
   <table id="falseConf" class="invisibleDiv" width="100%" align="center">
       <tr width="50%">
             <td>
-                <div class="choiceBoxRed" >Oh No !! We did not make the correct call.  <br>
-                  Even well-trained employees can fall into some traps.<br>
-                  Operating systems are very important, if they were vulnerable, everything that is stored in them is vulnerable.<br>
-                  So we should have focussed on configuring the operating system.<br></div>
+                <div class="choiceBoxRed" >Oops, This is a (Post-Adversary Device Access) technique employed for privilege escalation or defense evasion.
+                     The attacker needs to gain access to the target first.<br>
+                
+                    </div>
                    
                   <br><form action="https://attack.mitre.org/matrices/mobile/" target="_blank"> 
                        
@@ -154,7 +182,7 @@
               <input type="submit" value="Find more!" class=" button buttonred"></form>
             </td>
             <td>
-                 <img src="{% static 'images/fault.png' %}" class="pic">
+                 <img src="{% static 'images/falseRed.png' %}" class="pic">
             </td>
             <td>
                 <form  method="post" action="{% url 'taskRed12' %}" name="falseFormConf"> 
@@ -168,16 +196,15 @@
         </tr>
     </table>
   
-    <table id="truenotConf" class="invisibleDiv" width="100%" align="center">
+    <table id="truenotConf1" class="invisibleDiv" width="100%" align="center">
       <tr width="50%">
             <td>
-                <div class="choiceBoxRed"> You are correct, Good job.<br> Operating systems are very important, 
-                  if they were vulnerable, everything that is stored in them is vulnerable. That is why Operating systems are the starting point for security.</div>
-            </td>
+                <div class="choiceBoxRed"> You are correct, Good job.<br>Adversaries can gain access to a system through a user visiting a website
+                    while browsing. This technique makes the user's browser targeted for exploitation.</td>
         
             <td> 
               <div class="about">
-                <img src="{% static 'images/True.png' %}" class="pic">
+                <img src="{% static 'images/trueRed.png' %}" class="pic">
               </div>
             </td>
             <td> 
@@ -193,19 +220,41 @@
         </tr>
     </table>
     
-    
+    <table id="truenotConf2" class="invisibleDiv" width="100%" align="center">
+        <tr width="50%">
+              <td>
+                  <div class="choiceBoxRed"> You are correct, Good job.<br> We should consider gaining access physically,
+                    adversaries may gain access to devices by exploiting or copying malware to devices connected via USB.</td>
+          
+              <td> 
+                <div class="about">
+                  <img src="{% static 'images/trueRed.png' %}" class="pic">
+                </div>
+              </td>
+              <td> 
+                  <form method="post" action="{% url 'taskRed12' %}" name="trueFormCOnf">
+                     {% csrf_token %}
+                     <input class="invisibleDiv" id="score" value="1" name="score">
+                     <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                     <input class="invisibleDiv" id="counter" value="1"  name="trueCount" >
+                     <input type="submit" value="Continue" class=" button buttonred"> 
+                  
+                   </form> 
+              </td>
+          </tr>
+      </table>
+      
+      
     <table id="falsenotConf" class="invisibleDiv" width="100%" align="center">
         <tr width="50%">
               <td>
-                  <div class="choiceBoxRed" >Oh No !! We did not make the correct call.  <br>
-                      Even well-trained employees can fall into some traps.<br>
-                      Operating systems are very important, if they were vulnerable, everything that is stored in them is vulnerable.<br>
-                      So we should have focussed on configuring the operating system.<br>
+                  <div class="choiceBoxRed" >Oops, This is a (Post-Adversary Device Access) technique employed for privilege escalation or defense evasion.
+                    The attacker needs to gain access to the target first.<br>
                    
                 </div>
               </td>
               <td>
-                   <img src="{% static 'images/fault.png' %}" class="pic">
+                   <img src="{% static 'images/falseRed.png' %}" class="pic">
               </td>
               <td>
                   <form  method="post" action="{% url 'taskRed12' %}" name="falseFormConf"> 
@@ -236,6 +285,41 @@ document.getElementById("firstView").innerHTML = document.getElementById("confVi
 function notConfident(){
 
 document.getElementById("firstView").innerHTML = document.getElementById("notConfView").innerHTML ;
+
+
+}
+
+function feedbackTrueConf1(){
+    document.getElementById("firstView").innerHTML = document.getElementById("trueConf1").innerHTML ;
+    document.getElementById("counter").innerText= 1;
+
+}
+
+function feedbackTrueConf2(){
+    document.getElementById("firstView").innerHTML = document.getElementById("trueConf2").innerHTML ;
+    document.getElementById("counter").innerText= 1;
+
+}
+function feedbackFalseConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("falseConf").innerHTML ;
+    document.getElementById("score").innerText= 0;
+
+
+}
+
+function feedbackTruenotConf1(){
+    document.getElementById("firstView").innerHTML = document.getElementById("truenotConf1").innerHTML ;
+    document.getElementById("counter").innerText= 1;
+
+}
+function feedbackTruenotConf2(){
+    document.getElementById("firstView").innerHTML = document.getElementById("truenotConf2").innerHTML ;
+    document.getElementById("counter").innerText= 1;
+
+}
+function feedbackFalsenotConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("falsenotConf").innerHTML ;
+    document.getElementById("score").innerText= 0;
 
 
 }
