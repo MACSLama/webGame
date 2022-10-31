@@ -64,6 +64,16 @@
   text-align: center;
 }
 
+.choiceBoxRed {
+  background-color: rgb(216, 236, 244);
+  color: rgb(67, 53, 94);
+  border: 2px solid black;
+  width: 350px;
+  height: auto;
+  font-size: 30px;
+  text-align: center;
+}
+
 .tdStylemain {
   background-image: url("/static/images/logopic.png");
   background-repeat: no-repeat;
