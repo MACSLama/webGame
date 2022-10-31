@@ -86,7 +86,8 @@
             <div  class="button button2"> Your Score :{{score}} </div> 
          <br><br><br> 
              
-                <input type="submit"  value="Hint" onclick="deduct()" class=" button buttonred">
+                <input type="submit"  value="Hint. Look only for the tactics that apply 
+                 to this attack." onclick="deduct()" class=" button buttonred">
                 
             </td>
     
@@ -120,7 +121,7 @@
           <td><div class="choiceBoxRed">That is correct, especially for local administrator accounts, <br>
             they should have complex, unique passwords across all systems on the network.<br> Also, Encrypt Sensitive Information is a smart move in this case. 
         To make sure that the data is safe even if adversaries reached to it.<br> </div>
-         <form action="https://attack.mitre.org/techniques/T1003/" target="_blank"> 
+         <form action="https://mitre-attack.github.io/attack-navigator//#layerURL=https%3A%2F%2Fattack.mitre.org%2Fsoftware%2FS0328%2FS0328-mobile-layer.json" target="_blank"> 
             <input type="submit" value="Find more!" class=" button button2"> </form></td>
           <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
@@ -139,7 +140,7 @@
   <table id="false3Conf" class="invisibleDiv" width="100%" align="center">
     <tr width="100%">
           <td><div class="choiceBoxRed"> Great decision. This ensures Domain Controller backups are properly secured.<br> Also, there should be passwords policies,
-            so that local administrator accounts have complex, unique passwords across all systems on the network.<br></div> <form target="_blank" action="https://attack.mitre.org/techniques/T1003/"> 
+            so that local administrator accounts have complex, unique passwords across all systems on the network.<br></div> <form target="_blank" action="https://mitre-attack.github.io/attack-navigator//#layerURL=https%3A%2F%2Fattack.mitre.org%2Fsoftware%2FS0328%2FS0328-mobile-layer.json"> 
                 <input type="submit" value="Find more!" class=" button button2"> </form> </td>
           <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
@@ -160,7 +161,7 @@
       <tr width="50%">
             <td><div class="choiceBoxRed" >This is a lot of work, and out of preventing credential stealing domain.<br> Unfortunately that was not a wise choice.
                 The link below can give you more information.  </div>
-                <br><form action="https://attack.mitre.org/techniques/T1003/" target="_blank"> 
+                <br><form action="https://mitre-attack.github.io/attack-navigator//#layerURL=https%3A%2F%2Fattack.mitre.org%2Fsoftware%2FS0328%2FS0328-mobile-layer.json" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form>
 
              
@@ -183,7 +184,7 @@
         <tr width="50%">
               <td><div class="choiceBoxRed" >We should have thought this through. <br> Data backup will secure data from any loss, but will not prevent adversaries from stealing credentials.<br>
                 The link below can give you more information. </div> 
-                <br><form action="https://attack.mitre.org/techniques/T1003/" target="_blank"> 
+                <br><form action="https://mitre-attack.github.io/attack-navigator//#layerURL=https%3A%2F%2Fattack.mitre.org%2Fsoftware%2FS0328%2FS0328-mobile-layer.json" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form>
                
                 </td>
@@ -333,7 +334,7 @@ function feedbackFalse2Conf(){
 
  }
  function deduct(){
-    window.open("https://attack.mitre.org/techniques/T1003/");
+    window.open("https://mitre-attack.github.io/attack-navigator//#layerURL=https%3A%2F%2Fattack.mitre.org%2Fsoftware%2FS0328%2FS0328-mobile-layer.json");
 
  }
 
