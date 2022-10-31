@@ -254,7 +254,14 @@ def taskRed11 (request):
     return render(request, 'red1/taskRed11.html')
 
 def taskRed12 (request):
-    return render(request, 'red1/taskRed12.html')
+     theScore=request.POST.get('score', None)
+     deduction =  request.POST.get('helpdeduct', 0)
+     counter =  request.POST.get('trueCount', 0)
+     counteradd = request.POST.get('counterAdd', 0)
+     score= int(theScore) - int(deduction)
+     truecounter = int(counter)+ int(counteradd)
+
+     return render(request, 'red1/taskRed12.html', {'score': score, 'truecounter':truecounter})
 
 def taskRed13 (request):
     return render(request, 'red1/taskRed13.html')
