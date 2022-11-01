@@ -86,8 +86,7 @@
             <div  class="button buttonred"> Your Score :{{score}} </div> 
          <br> 
              
-                <input type="submit"  value="Hint. Look only for the tactics that apply 
-                 to this attack." onclick="deduct()" class=" button buttonred">
+                <input type="submit"  value="Hint." onclick="deduct()" class=" button buttonred">
                 
             </td>
     
@@ -118,13 +117,13 @@
 
 <table id="true1Conf" class="invisibleDiv" width="100%" align="center">
     <tr width="100%">
-          <td><div class="choiceBoxRed">That is correct, after gaining access, adversaries try to figure out the characteristics of the mobile device and 
-            potentially other networked systems. Different techniques can be used to perform this tactic, you can read about them in the link below.<br> </div>
-         <form action="https://attack.mitre.org/techniques/T1429/" target="_blank"> 
+          <td><div class="choiceBoxRed">That is correct. By leveraging standard operating system APIs of a mobile device, adversaries may capture audio from user conversations, surroundings, 
+            phone calls, or other sensitive information, to collect information.<br> You can read more about other techniques for data collection. </div>
+         <form action="https://attack.mitre.org/tactics/TA0035/" target="_blank"> 
             <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
           <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
           <td>
-              <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
+              <form action="{% url 'taskRed14' %}" method="post" >{%csrf_token%}
                 <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                 <input class="invisibleDiv"  value="2"  name="scoreAdd" >
                 <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -138,13 +137,12 @@
   </table>
   <table id="true2Conf" class="invisibleDiv" width="100%" align="center">
     <tr width="100%">
-          <td><div class="choiceBoxRed"> Unfortunately this is not correct. <br>Boot or Logon Initialization Scripts is a tactic used in attacks done to mobile devices
-            , but it is not used in this attack, the next step for this tactic would be Discovery.
-            In the link below you can find which techniques can be used for discovery.<br></div> <form target="_blank" action="https://attack.mitre.org/techniques/T1430/"> 
+          <td><div class="choiceBoxRed"> Amazing. Adversaries may track a device’s physical location through use of standard operating system 
+            APIs via malicious or exploited applications on the compromised device. Read about more techniques that can be used.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0035/">
                 <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
-          <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+          <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
           <td>
-              <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
+              <form action="{% url 'taskRed14' %}" method="post" >{%csrf_token%}
                 <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                 <input class="invisibleDiv"  value="2"  name="scoreAdd" >
                 <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -159,16 +157,15 @@
   
   <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
       <tr width="50%">
-            <td><div class="choiceBoxRed" >Unfortunately this is not correct. Execution is a tactic used in attacks done to mobile devices
-                , but it is not used in this attack, the next step for this tactic would be Discovery.
-                In the link below you can find which techniques can be used for discovery.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0032/"> 
+            <td><div class="choiceBoxRed" >Unfortunately this is not correct. This technique aims to achieve persistence in the target system through utilization boot scripts.
+                During collection, attackers aim to collect information from the target such as audio, video, files, credentials, etc.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0035/"> 
                     <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
 
              
               </td>
             <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
             <td>
-                <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
+                <form action="{% url 'taskRed14' %}" method="post" >{%csrf_token%}
                     <input class="invisibleDiv"  value="{{score}}" name="score">
                     <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="2"  name="helpdeduct" >
@@ -182,13 +179,12 @@
     </table>
     <table id="false2Conf" class="invisibleDiv" width="100%" align="center">
         <tr width="50%">
-              <td><div class="choiceBoxRed" >Unfortunately this is not correct. Persistence. is a tactic used in attacks done to mobile devices
-                , but it is not used in this attack, the next step for this tactic would be Discovery.
-                In the link below you can find which techniques can be used for discovery.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0032/"> 
+              <td><div class="choiceBoxRed" > Unfortunately this is not correct. This technique aims to achieve initial access to targets through removable media (e.g. USB). During collection,
+                attackers aim to collect information from the target such as audio, video, files, credentials, etc.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0035/"> 
                     <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
               <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
               <td>
-                  <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
+                  <form action="{% url 'taskRed14' %}" method="post" >{%csrf_token%}
                       <input class="invisibleDiv"  value="{{score}}" name="score">
                       <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                       <input class="invisibleDiv"  value="2"  name="helpdeduct" >
@@ -202,13 +198,13 @@
       </table>
       <table id="true1notConf" class="invisibleDiv" width="100%" align="center">
         <tr width="100%">
-            <td><div class="choiceBoxRed">That is correct, after gaining access, adversaries try to figure out the characteristics of the mobile device and 
-                potentially other networked systems. Different techniques can be used to perform this tactic, you can read about them in the link below.<br> </div>
-             <form action="https://attack.mitre.org/techniques/T1429/" target="_blank"> 
+            <td><div class="choiceBoxRed">That is correct. By leveraging standard operating system APIs of a mobile device, adversaries may capture audio from user conversations, surroundings, 
+                phone calls, or other sensitive information, to collect information.<br> You can read more about other techniques for data collection. </div>
+             <form action="https://attack.mitre.org/tactics/TA0035/" target="_blank"> 
                 <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
                 <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
               <td>
-                  <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
+                  <form action="{% url 'taskRed14' %}" method="post" >{%csrf_token%}
                     <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                     <input class="invisibleDiv"  value="1"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -222,13 +218,12 @@
       </table>
       <table id="true2notConf" class="invisibleDiv" width="100%" align="center">
         <tr width="100%">
-              <td><div class="choiceBoxRed">Unfortunately this is not correct. <br>Boot or Logon Initialization Scripts is a tactic used in attacks done to mobile devices
-                , but it is not used in this attack, the next step for this tactic would be Discovery.
-                In the link below you can find which techniques can be used for discovery.<br></div> <form target="_blank" action="https://attack.mitre.org/techniques/T1430/"> 
+              <td><div class="choiceBoxRed">Amazing. Adversaries may track a device’s physical location through use of standard operating system 
+                APIs via malicious or exploited applications on the compromised device. Read about more techniques that can be used.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0035/"> 
                     <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
-              <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+              <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
               <td>
-                  <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
+                  <form action="{% url 'taskRed14' %}" method="post" >{%csrf_token%}
                     <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                     <input class="invisibleDiv"  value="1"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -243,13 +238,12 @@
       
       <table id="false1notConf" class="invisibleDiv" width="100%" align="center">
           <tr width="50%">
-                <td><div class="choiceBoxRed" >Unfortunately this is not correct. Execution is a tactic used in attacks done to mobile devices
-                    , but it is not used in this attack, the next step for this tactic would be Discovery.
-                    In the link below you can find which techniques can be used for discovery.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0032/"> 
+                <td><div class="choiceBoxRed" >Unfortunately this is not correct. This technique aims to achieve persistence in the target system through utilization boot scripts.
+                     During collection, attackers aim to collect information from the target such as audio, video, files, credentials, etc. <br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0035/"> 
                         <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
                 <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
                 <td>
-                    <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
+                    <form action="{% url 'taskRed14' %}" method="post" >{%csrf_token%}
                         <input class="invisibleDiv"  value="{{score}}" name="score">
                         <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                         <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -263,13 +257,12 @@
         </table>
         <table id="false2notConf" class="invisibleDiv" width="100%" align="center">
             <tr width="50%">
-                  <td><div class="choiceBoxRed" >Unfortunately this is not correct. Persistence. is a tactic used in attacks done to mobile devices
-                    , but it is not used in this attack, the next step for this tactic would be Discovery.
-                    In the link below you can find which techniques can be used for discovery.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0032/"> 
+                  <td><div class="choiceBoxRed" >Unfortunately this is not correct. This technique aims to achieve initial access to targets through removable media (e.g. USB). During collection,
+                     attackers aim to collect information from the target such as audio, video, files, credentials, etc. <br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0035/"> 
                         <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
                   <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
                   <td>
-                      <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
+                      <form action="{% url 'taskRed14' %}" method="post" >{%csrf_token%}
                           <input class="invisibleDiv"  value="{{score}}" name="score">
                           <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                           <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -335,7 +328,7 @@ function feedbackFalse2Conf(){
 
  }
  function deduct(){
-    window.open("https://mitre-attack.github.io/attack-navigator//#layerURL=https%3A%2F%2Fattack.mitre.org%2Fsoftware%2FS0328%2FS0328-mobile-layer.json");
+    window.open("https://attack.mitre.org/tactics/TA0035/");
 
  }
 

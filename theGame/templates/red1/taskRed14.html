@@ -1,0 +1,338 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+<body id="bg" class="tdStylebackred"></body>
+
+<table align="center" id="firstView" width="100%" height="50"> 
+    <tr>
+        <td colspan="3"  >
+            <div ><img src="{% static 'images/red1/command.png' %}" class="pic"  ></div>
+        </td>
+        
+         <td> 
+            <div  class="button buttonred"> Your Score :{{score}} <br>
+            </div> 
+            <br><br>
+            <div class="choiceConf"> How Confident are you with the answer? <br>
+                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button buttonred">
+                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button buttonred">
+            </div>
+        </td>
+        
+        
+    </tr>
+    <tr>
+         <td>
+            <div class="choiceBoxRed" > <br>Out of Band Data.</div>
+
+         <br><br><br>  
+            <div class="choiceBoxRed" > Credentials from Password Store.</div>
+           
+         </td>
+         <td>
+            <div class="choiceBoxRed" ><br>Encrypted Channel.</div>
+
+          <br><br><br>  
+            <div class="choiceBoxRed" ><br>Lockscreen Bypass.</div>
+
+          </td>
+    </tr>
+  
+
+    
+</table>
+
+<table align="center" id="firstViewConf" width="100%" height="50" class="invisibleDiv"> 
+    <tr>
+        <td colspan="3"  >
+            <div  ><img src="{% static 'images/red1/command.png' %}" class="pic"  ></div>
+        </td>
+        
+         <td> 
+            <div  class="button buttonred"> Your Score :{{score}} </div> 
+         </td>
+        
+    </tr>
+    <tr>
+         <td>
+            <div class="choiceBoxRed" > <br>Out of Band Data. </div>
+            <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button buttonred">
+
+            <br>
+            <div class="choiceBoxRed" > Credentials from Password Store.  </div>
+            <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button buttonred">
+           
+         </td>
+         <td>
+            <div class="choiceBoxRed" ><br>Encrypted Channel. </div>
+            <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button buttonred">
+
+             <br> 
+            <div class="choiceBoxRed" ><br>Lockscreen Bypass.</div>
+            <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button buttonred">
+
+          </td>
+    </tr>
+    
+</table>
+<table align="center" id="firstViewnotConf" width="100%" height="50" class="invisibleDiv"> 
+    <tr>
+        <td colspan="3"  >
+            <div  ><img src="{% static 'images/red1/command.png' %}" class="pic"  ></div>
+        </td>
+        
+        <td> 
+            <div  class="button buttonred"> Your Score :{{score}} </div> 
+         <br> 
+             
+                <input type="submit"  value="Hint." onclick="deduct()" class=" button buttonred">
+                
+            </td>
+    
+        
+    </tr>
+    <tr>
+         <td>
+            <div class="choiceBoxRed" > <br>Out of Band Data. </div>
+            <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button buttonred">
+
+            <br> 
+            <div class="choiceBoxRed" > Credentials from Password Store.  </div>
+            <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button buttonred">
+           
+         </td>
+         <td>
+            <div class="choiceBoxRed" ><br>Encrypted Channel. </div>
+             <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button buttonred">
+
+             <br><br><br> 
+            <div class="choiceBoxRed" ><br>Lockscreen Bypass.</div>
+             <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button buttonred">
+
+          </td>
+    </tr>
+    
+</table>
+
+<table id="true1Conf" class="invisibleDiv" width="100%" align="center">
+    <tr width="100%">
+          <td><div class="choiceBoxRed">That is correct. By leveraging standard operating system APIs of a mobile device, adversaries may capture audio from user conversations, surroundings, 
+            phone calls, or other sensitive information, to collect information.<br> You can read more about other techniques for data collection. </div>
+         <form action="https://attack.mitre.org/tactics/TA0035/" target="_blank"> 
+            <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+          <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
+          <td>
+              <form action="{% url 'taskRed15' %}" method="post" >{%csrf_token%}
+                <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                <input class="invisibleDiv"  value="2"  name="scoreAdd" >
+                <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                <input class="invisibleDiv"  value="1"  name="counterAdd" >
+
+                <input type="submit" value="Continue" class=" button buttonred" >  
+                </form>
+            </td>
+      
+  </table>
+  <table id="true2Conf" class="invisibleDiv" width="100%" align="center">
+    <tr width="100%">
+          <td><div class="choiceBoxRed"> Amazing. Adversaries may track a device’s physical location through use of standard operating system 
+            APIs via malicious or exploited applications on the compromised device. Read about more techniques that can be used.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0035/">
+                <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+          <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
+          <td>
+              <form action="{% url 'taskRed15' %}" method="post" >{%csrf_token%}
+                <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                <input class="invisibleDiv"  value="2"  name="scoreAdd" >
+                <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                <input class="invisibleDiv" value="{{truecounter}}"  name="trueCount" >
+                <input class="invisibleDiv"  value="1"  name="counterAdd" >
+
+                <input type="submit" value="Continue" class=" button buttonred" >  
+                </form>
+            </td>
+      
+  </table>
+  
+  <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
+      <tr width="50%">
+            <td><div class="choiceBoxRed" >Unfortunately this is not correct. This technique aims to achieve persistence in the target system through utilization boot scripts.
+                During collection, attackers aim to collect information from the target such as audio, video, files, credentials, etc.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0035/"> 
+                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+
+             
+              </td>
+            <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+            <td>
+                <form action="{% url 'taskRed15' %}" method="post" >{%csrf_token%}
+                    <input class="invisibleDiv"  value="{{score}}" name="score">
+                    <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                    <input class="invisibleDiv"  value="2"  name="helpdeduct" >
+                    <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                    <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                     
+                    <input type="submit" value="Continue" class=" button buttonred" >
+                </form>
+            </td>
+        </tr>
+    </table>
+    <table id="false2Conf" class="invisibleDiv" width="100%" align="center">
+        <tr width="50%">
+              <td><div class="choiceBoxRed" > Unfortunately this is not correct. This technique aims to achieve initial access to targets through removable media (e.g. USB). During collection,
+                attackers aim to collect information from the target such as audio, video, files, credentials, etc.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0035/"> 
+                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+              <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+              <td>
+                  <form action="{% url 'taskRed15' %}" method="post" >{%csrf_token%}
+                      <input class="invisibleDiv"  value="{{score}}" name="score">
+                      <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                      <input class="invisibleDiv"  value="2"  name="helpdeduct" >
+                      <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                      <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                      
+                      <input type="submit" value="Continue" class=" button buttonred" >
+                  </form>
+              </td>
+          </tr>
+      </table>
+      <table id="true1notConf" class="invisibleDiv" width="100%" align="center">
+        <tr width="100%">
+            <td><div class="choiceBoxRed">That is correct. By leveraging standard operating system APIs of a mobile device, adversaries may capture audio from user conversations, surroundings, 
+                phone calls, or other sensitive information, to collect information.<br> You can read more about other techniques for data collection. </div>
+             <form action="https://attack.mitre.org/tactics/TA0035/" target="_blank"> 
+                <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+                <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
+              <td>
+                  <form action="{% url 'taskRed15' %}" method="post" >{%csrf_token%}
+                    <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                    <input class="invisibleDiv"  value="1"  name="scoreAdd" >
+                    <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                    <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                    <input class="invisibleDiv"  value="1"  name="counterAdd" >
+    
+                    <input type="submit" value="Continue" class=" button buttonred" >  
+                    </form>
+                </td>
+          
+      </table>
+      <table id="true2notConf" class="invisibleDiv" width="100%" align="center">
+        <tr width="100%">
+              <td><div class="choiceBoxRed">Amazing. Adversaries may track a device’s physical location through use of standard operating system 
+                APIs via malicious or exploited applications on the compromised device. Read about more techniques that can be used.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0035/"> 
+                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+              <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
+              <td>
+                  <form action="{% url 'taskRed15' %}" method="post" >{%csrf_token%}
+                    <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                    <input class="invisibleDiv"  value="1"  name="scoreAdd" >
+                    <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                    <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                    <input class="invisibleDiv"  value="1"  name="counterAdd" >
+    
+                    <input type="submit" value="Continue" class=" button buttonred" >  
+                    </form>
+                </td>
+          
+      </table>
+      
+      <table id="false1notConf" class="invisibleDiv" width="100%" align="center">
+          <tr width="50%">
+                <td><div class="choiceBoxRed" >Unfortunately this is not correct. This technique aims to achieve persistence in the target system through utilization boot scripts.
+                     During collection, attackers aim to collect information from the target such as audio, video, files, credentials, etc. <br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0035/"> 
+                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+                <td>
+                    <form action="{% url 'taskRed15' %}" method="post" >{%csrf_token%}
+                        <input class="invisibleDiv"  value="{{score}}" name="score">
+                        <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                        <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                        <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                        <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                        
+                        <input type="submit" value="Continue" class=" button buttonred" >
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <table id="false2notConf" class="invisibleDiv" width="100%" align="center">
+            <tr width="50%">
+                  <td><div class="choiceBoxRed" >Unfortunately this is not correct. This technique aims to achieve initial access to targets through removable media (e.g. USB). During collection,
+                     attackers aim to collect information from the target such as audio, video, files, credentials, etc. <br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0035/"> 
+                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                  <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+                  <td>
+                      <form action="{% url 'taskRed15' %}" method="post" >{%csrf_token%}
+                          <input class="invisibleDiv"  value="{{score}}" name="score">
+                          <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                          <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                          <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                          <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                          
+                          <input type="submit" value="Continue" class=" button buttonred" >
+                      </form>
+                  </td>
+              </tr>
+            </table>
+
+<script type="text/javascript">
+
+ function confident(){
+    document.getElementById("firstView").innerHTML = document.getElementById("firstViewConf").innerHTML ;
+ }
+
+ function notConfident(){
+    document.getElementById("firstView").innerHTML = document.getElementById("firstViewnotConf").innerHTML ;
+ }
+
+ function feedbackTrue1Conf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("true1Conf").innerHTML ;
+
+
+}
+function feedbackTrue2Conf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("true2Conf").innerHTML ;
+
+
+}
+function feedbackFalse1Conf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false1Conf").innerHTML ;
+
+
+}
+function feedbackFalse2Conf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false2Conf").innerHTML ;
+
+
+ }
+ 
+
+ function feedbackTrue1notConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("true1notConf").innerHTML ;
+
+
+ }
+ function feedbackTrue2notConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("true2notConf").innerHTML ;
+
+
+ }
+ function feedbackFalse1notConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false1notConf").innerHTML ;
+
+
+ }
+ function feedbackFalse2notConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false2notConf").innerHTML ;
+
+
+ }
+ function deduct(){
+    window.open("https://attack.mitre.org/tactics/TA0035/");
+
+ }
+
+
+
+
+</script>
