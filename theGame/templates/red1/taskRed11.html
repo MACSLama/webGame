@@ -21,18 +21,10 @@
 
 <table id="askConf" class="invisibleDiv" width="100%" align="center">
     <tr>
-        <td colspan="2">
+        <td colspan="4">
            
               <img src="{% static 'images/red1/initialAccess.png' %}" class="pic">
             
-        </td>
-        <td>
-            <div class="choiceBoxRed"> How Confident are you with the answer? <br>
-                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button buttonred">
-                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button buttonred">
-            </div>
-             
-             
         </td>
    
        
@@ -47,6 +39,14 @@
         <td>
             <div class="choiceBoxRed" id="option2"> <br> Replication Through Removable Media.<br><div>
      </td>
+     <td>
+        <div class="choiceBoxConf"> How Confident are you with the answer? <br>
+            <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button buttonred">
+            <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button buttonred">
+        </div>
+         
+         
+    </td>
         
         
     </tr>

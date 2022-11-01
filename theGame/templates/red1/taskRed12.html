@@ -11,12 +11,12 @@
         </td>
         
          <td> 
-            <div  class="button button2"> Your Score :{{score}} <br>
+            <div  class="button buttonred"> Your Score :{{score}} <br>
             </div> 
             <br><br>
             <div class="choiceBoxRed"> How Confident are you with the answer? <br>
-                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2">
-                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
+                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button buttonred">
+                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button buttonred">
             </div>
         </td>
         
@@ -50,27 +50,27 @@
         </td>
         
          <td> 
-            <div  class="button button2"> Your Score :{{score}} </div> 
+            <div  class="button buttonred"> Your Score :{{score}} </div> 
          </td>
         
     </tr>
     <tr>
          <td>
             <div class="choiceBoxRed" > <br>Execution. </div>
-            <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button button2">
+            <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button buttonred">
 
-            <br><br><br>  
+            <br>
             <div class="choiceBoxRed" > <br>Discovery.  </div>
-            <input type="button" value="Choose" onclick="feedbackTrueConf()" class=" button button2">
+            <input type="button" value="Choose" onclick="feedbackTrueConf()" class=" button buttonred">
            
          </td>
          <td>
             <div class="choiceBoxRed" > <br>Persistence. </div>
-            <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button button2">
+            <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button buttonred">
 
-             <br><br><br> 
+             <br> 
             <div class="choiceBoxRed" > <br>Defence Evasion.</div>
-            <input type="button" value="Choose" onclick="feedbackFalse3Conf()" class=" button button2">
+            <input type="button" value="Choose" onclick="feedbackFalse3Conf()" class=" button buttonred">
 
           </td>
     </tr>
@@ -83,8 +83,8 @@
         </td>
         
         <td> 
-            <div  class="button button2"> Your Score :{{score}} </div> 
-         <br><br><br> 
+            <div  class="button buttonred"> Your Score :{{score}} </div> 
+         <br> 
              
                 <input type="submit"  value="Hint. Look only for the tactics that apply 
                  to this attack." onclick="deduct()" class=" button buttonred">
@@ -95,21 +95,21 @@
     </tr>
     <tr>
          <td>
-            <div class="choiceBoxRed" > <br>Execution. <br><br></div>
-            <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button button2">
+            <div class="choiceBoxRed" > <br>Execution. </div>
+            <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button buttonred">
 
-            <br><br><br> 
-            <div class="choiceBoxRed" > <br>Discovery. <br><br><br> </div>
-            <input type="button" value="Choose" onclick="feedbackTruenotConf()" class=" button button2">
+            <br> 
+            <div class="choiceBoxRed" > <br>Discovery.  </div>
+            <input type="button" value="Choose" onclick="feedbackTruenotConf()" class=" button buttonred">
            
          </td>
          <td>
-            <div class="choiceBoxRed" > <br>Persistence.<br> <br><br> </div>
-             <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button button2">
+            <div class="choiceBoxRed" > <br>Persistence. </div>
+             <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button buttonred">
 
              <br><br><br> 
-            <div class="choiceBoxRed" > <br>Defence Evasion.<br><br></div>
-             <input type="button" value="Choose" onclick="feedbackFalse3notConf()" class=" button button2">
+            <div class="choiceBoxRed" > <br>Defence Evasion.</div>
+             <input type="button" value="Choose" onclick="feedbackFalse3notConf()" class=" button buttonred">
 
           </td>
     </tr>
@@ -118,40 +118,40 @@
 
 <table id="trueConf" class="invisibleDiv" width="100%" align="center">
     <tr width="100%">
-          <td><div class="choiceBoxRed">That is correct, especially for local administrator accounts, <br>
-            they should have complex, unique passwords across all systems on the network.<br> Also, Encrypt Sensitive Information is a smart move in this case. 
-        To make sure that the data is safe even if adversaries reached to it.<br> </div>
-         <form action="https://mitre-attack.github.io/attack-navigator//#layerURL=https%3A%2F%2Fattack.mitre.org%2Fsoftware%2FS0328%2FS0328-mobile-layer.json" target="_blank"> 
-            <input type="submit" value="Find more!" class=" button button2"> </form></td>
-          <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
+          <td><div class="choiceBoxRed">That is correct, after gaining access, adversaries try to figure out the characteristics of the mobile device and 
+            potentially other networked systems. Different techniques can be used to perform this tactic, you can read about them in the link below.<br> </div>
+         <form action="https://attack.mitre.org/tactics/TA0032/" target="_blank"> 
+            <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+          <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
           <td>
-              <form action="{% url 'task41' %}" method="post" >{%csrf_token%}
+              <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
                 <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                 <input class="invisibleDiv"  value="2"  name="scoreAdd" >
                 <input class="invisibleDiv"  value="0"  name="helpdeduct" >
                 <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
                 <input class="invisibleDiv"  value="1"  name="counterAdd" >
 
-                <input type="submit" value="Continue" class=" button button2" >  
+                <input type="submit" value="Continue" class=" button buttonred" >  
                 </form>
             </td>
       
   </table>
   <table id="false3Conf" class="invisibleDiv" width="100%" align="center">
     <tr width="100%">
-          <td><div class="choiceBoxRed"> Great decision. This ensures Domain Controller backups are properly secured.<br> Also, there should be passwords policies,
-            so that local administrator accounts have complex, unique passwords across all systems on the network.<br></div> <form target="_blank" action="https://mitre-attack.github.io/attack-navigator//#layerURL=https%3A%2F%2Fattack.mitre.org%2Fsoftware%2FS0328%2FS0328-mobile-layer.json"> 
-                <input type="submit" value="Find more!" class=" button button2"> </form> </td>
-          <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
+          <td><div class="choiceBoxRed"> Unfortunately this is not correct. Defence Evasion is a tactic used in attacks done to mobile devices
+            , but it is not used in this attack, the next step for this tactic would be Discovery.
+            In the link below you can find which techniques can be used for discovery.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0032/"> 
+                <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+          <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
           <td>
-              <form action="{% url 'task41' %}" method="post" >{%csrf_token%}
+              <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
                 <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                 <input class="invisibleDiv"  value="2"  name="scoreAdd" >
                 <input class="invisibleDiv"  value="0"  name="helpdeduct" >
                 <input class="invisibleDiv" value="{{truecounter}}"  name="trueCount" >
                 <input class="invisibleDiv"  value="1"  name="counterAdd" >
 
-                <input type="submit" value="Continue" class=" button button2" >  
+                <input type="submit" value="Continue" class=" button buttonred" >  
                 </form>
             </td>
       
@@ -159,82 +159,83 @@
   
   <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
       <tr width="50%">
-            <td><div class="choiceBoxRed" >This is a lot of work, and out of preventing credential stealing domain.<br> Unfortunately that was not a wise choice.
-                The link below can give you more information.  </div>
-                <br><form action="https://mitre-attack.github.io/attack-navigator//#layerURL=https%3A%2F%2Fattack.mitre.org%2Fsoftware%2FS0328%2FS0328-mobile-layer.json" target="_blank"> 
-                    <input type="submit" value="Find more!" class=" button button2"> </form>
+            <td><div class="choiceBoxRed" >Unfortunately this is not correct. Execution is a tactic used in attacks done to mobile devices
+                , but it is not used in this attack, the next step for this tactic would be Discovery.
+                In the link below you can find which techniques can be used for discovery.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0032/"> 
+                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
 
              
               </td>
-            <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
+            <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
             <td>
-                <form action="{% url 'task41' %}" method="post" >{%csrf_token%}
+                <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
                     <input class="invisibleDiv"  value="{{score}}" name="score">
                     <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="2"  name="helpdeduct" >
                     <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
                     <input class="invisibleDiv"  value="0"  name="counterAdd" >
                      
-                    <input type="submit" value="Continue" class=" button button2" >
+                    <input type="submit" value="Continue" class=" button buttonred" >
                 </form>
             </td>
         </tr>
     </table>
     <table id="false2Conf" class="invisibleDiv" width="100%" align="center">
         <tr width="50%">
-              <td><div class="choiceBoxRed" >We should have thought this through. <br> Data backup will secure data from any loss, but will not prevent adversaries from stealing credentials.<br>
-                The link below can give you more information. </div> 
-                <br><form action="https://mitre-attack.github.io/attack-navigator//#layerURL=https%3A%2F%2Fattack.mitre.org%2Fsoftware%2FS0328%2FS0328-mobile-layer.json" target="_blank"> 
-                    <input type="submit" value="Find more!" class=" button button2"> </form>
-               
-                </td>
-              <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
+              <td><div class="choiceBoxRed" >Unfortunately this is not correct. Persistence. is a tactic used in attacks done to mobile devices
+                , but it is not used in this attack, the next step for this tactic would be Discovery.
+                In the link below you can find which techniques can be used for discovery.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0032/"> 
+                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+              <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
               <td>
-                  <form action="{% url 'task41' %}" method="post" >{%csrf_token%}
+                  <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
                       <input class="invisibleDiv"  value="{{score}}" name="score">
                       <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                       <input class="invisibleDiv"  value="2"  name="helpdeduct" >
                       <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
                       <input class="invisibleDiv"  value="0"  name="counterAdd" >
                       
-                      <input type="submit" value="Continue" class=" button button2" >
+                      <input type="submit" value="Continue" class=" button buttonred" >
                   </form>
               </td>
           </tr>
       </table>
       <table id="truenotConf" class="invisibleDiv" width="100%" align="center">
         <tr width="100%">
-              <td><div class="choiceBoxRed">That is correct, especially for local administrator accounts, <br>
-                they should have complex, unique passwords across all systems on the network.<br> Also, Encrypt Sensitive Information is a smart move in this case. 
-            To make sure that the data is safe even if adversaries reached to it.<br> </td>
-              <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
+            <td><div class="choiceBoxRed">That is correct, after gaining access, adversaries try to figure out the characteristics of the mobile device and 
+                potentially other networked systems. Different techniques can be used to perform this tactic, you can read about them in the link below.<br> </div>
+             <form action="https://attack.mitre.org/tactics/TA0032/" target="_blank"> 
+                <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+                <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
               <td>
-                  <form action="{% url 'task41' %}" method="post" >{%csrf_token%}
+                  <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
                     <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                     <input class="invisibleDiv"  value="1"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="0"  name="helpdeduct" >
                     <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
                     <input class="invisibleDiv"  value="1"  name="counterAdd" >
     
-                    <input type="submit" value="Continue" class=" button button2" >  
+                    <input type="submit" value="Continue" class=" button buttonred" >  
                     </form>
                 </td>
           
       </table>
       <table id="false3notConf" class="invisibleDiv" width="100%" align="center">
         <tr width="100%">
-              <td><div class="choiceBoxRed">Great decision. This ensures Domain Controller backups are properly secured.<br> Also, there should be passwords policies,
-                so that local administrator accounts have complex, unique passwords across all systems on the network. </td>
-              <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
+              <td><div class="choiceBoxRed">Unfortunately this is not correct. Defence Evasion is a tactic used in attacks done to mobile devices
+                , but it is not used in this attack, the next step for this tactic would be Discovery.
+                In the link below you can find which techniques can be used for discovery.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0032/"> 
+                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+              <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
               <td>
-                  <form action="{% url 'task41' %}" method="post" >{%csrf_token%}
+                  <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
                     <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
                     <input class="invisibleDiv"  value="1"  name="scoreAdd" >
                     <input class="invisibleDiv"  value="0"  name="helpdeduct" >
                     <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
                     <input class="invisibleDiv"  value="1"  name="counterAdd" >
     
-                    <input type="submit" value="Continue" class=" button button2" >  
+                    <input type="submit" value="Continue" class=" button buttonred" >  
                     </form>
                 </td>
           
@@ -242,40 +243,40 @@
       
       <table id="false1notConf" class="invisibleDiv" width="100%" align="center">
           <tr width="50%">
-                <td><div class="choiceBoxRed" >This is a lot of work, and out of preventing credential stealing domain.<br> Unfortunately that was not a wise choice.
-                    
-    
-                 
-                  </div></td>
-                <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
+                <td><div class="choiceBoxRed" >Unfortunately this is not correct. Execution is a tactic used in attacks done to mobile devices
+                    , but it is not used in this attack, the next step for this tactic would be Discovery.
+                    In the link below you can find which techniques can be used for discovery.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0032/"> 
+                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
                 <td>
-                    <form action="{% url 'task41' %}" method="post" >{%csrf_token%}
+                    <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
                         <input class="invisibleDiv"  value="{{score}}" name="score">
                         <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                         <input class="invisibleDiv"  value="0"  name="helpdeduct" >
                         <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
                         <input class="invisibleDiv"  value="0"  name="counterAdd" >
                         
-                        <input type="submit" value="Continue" class=" button button2" >
+                        <input type="submit" value="Continue" class=" button buttonred" >
                     </form>
                 </td>
             </tr>
         </table>
         <table id="false2notConf" class="invisibleDiv" width="100%" align="center">
             <tr width="50%">
-                  <td><div class="choiceBoxRed" >We should have thought this through. <br> Data backup will secure data from any loss, but will not prevent adversaries from stealing credentials.  <br>
-                   
-                    </div></td>
-                  <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>
+                  <td><div class="choiceBoxRed" >Unfortunately this is not correct. Persistence. is a tactic used in attacks done to mobile devices
+                    , but it is not used in this attack, the next step for this tactic would be Discovery.
+                    In the link below you can find which techniques can be used for discovery.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0032/"> 
+                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                  <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
                   <td>
-                      <form action="{% url 'task41' %}" method="post" >{%csrf_token%}
+                      <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
                           <input class="invisibleDiv"  value="{{score}}" name="score">
                           <input class="invisibleDiv"  value="0"  name="scoreAdd" >
                           <input class="invisibleDiv"  value="0"  name="helpdeduct" >
                           <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
                           <input class="invisibleDiv"  value="0"  name="counterAdd" >
                           
-                          <input type="submit" value="Continue" class=" button button2" >
+                          <input type="submit" value="Continue" class=" button buttonred" >
                       </form>
                   </td>
               </tr>

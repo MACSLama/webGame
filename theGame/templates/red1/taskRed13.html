@@ -1,0 +1,345 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+<body id="bg" class="tdStylebackred"></body>
+
+<table align="center" id="firstView" width="100%" height="50"> 
+    <tr>
+        <td colspan="2"  >
+            <div ><img src="{% static 'images/red1/dataCollection.png' %}" class="pic"  ></div>
+        </td>
+        
+         <td> 
+            <div  class="button buttonred"> Your Score :{{score}} <br>
+            </div> 
+            <br><br>
+            <div class="choiceBoxRed"> How Confident are you with the answer? <br>
+                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button buttonred">
+                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button buttonred">
+            </div>
+        </td>
+        
+        
+    </tr>
+    <tr>
+         <td>
+            <div class="choiceBoxRed" > <br>Audio Capture.</div>
+
+         <br><br><br>  
+            <div class="choiceBoxRed" > <br>Location Tracking.</div>
+           
+         </td>
+         <td>
+            <div class="choiceBoxRed" > <br>Replication Through Removable Media.</div>
+
+          <br><br><br>  
+            <div class="choiceBoxRed" > <br>Boot or Logon Initialization Scripts.</div>
+
+          </td>
+    </tr>
+  
+
+    
+</table>
+
+<table align="center" id="firstViewConf" width="100%" height="50" class="invisibleDiv"> 
+    <tr>
+        <td colspan="3"  >
+            <div  ><img src="{% static 'images/red1/dataCollection.png' %}" class="pic"  ></div>
+        </td>
+        
+         <td> 
+            <div  class="button buttonred"> Your Score :{{score}} </div> 
+         </td>
+        
+    </tr>
+    <tr>
+         <td>
+            <div class="choiceBoxRed" > <br>Audio Capture. </div>
+            <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button buttonred">
+
+            <br>
+            <div class="choiceBoxRed" > <br>Location Tracking.  </div>
+            <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button buttonred">
+           
+         </td>
+         <td>
+            <div class="choiceBoxRed" > <br>Replication Through Removable Media. </div>
+            <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button buttonred">
+
+             <br> 
+            <div class="choiceBoxRed" > <br><br>Boot or Logon Initialization Scripts.</div>
+            <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button buttonred">
+
+          </td>
+    </tr>
+    
+</table>
+<table align="center" id="firstViewnotConf" width="100%" height="50" class="invisibleDiv"> 
+    <tr>
+        <td colspan="3"  >
+            <div  ><img src="{% static 'images/red1/dataCollection.png' %}" class="pic"  ></div>
+        </td>
+        
+        <td> 
+            <div  class="button buttonred"> Your Score :{{score}} </div> 
+         <br> 
+             
+                <input type="submit"  value="Hint. Look only for the tactics that apply 
+                 to this attack." onclick="deduct()" class=" button buttonred">
+                
+            </td>
+    
+        
+    </tr>
+    <tr>
+         <td>
+            <div class="choiceBoxRed" > <br>Audio Capture. </div>
+            <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button buttonred">
+
+            <br> 
+            <div class="choiceBoxRed" > <br>Location Tracking.  </div>
+            <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button buttonred">
+           
+         </td>
+         <td>
+            <div class="choiceBoxRed" > <br>Replication Through Removable Media. </div>
+             <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button buttonred">
+
+             <br><br><br> 
+            <div class="choiceBoxRed" > <br><br>Boot or Logon Initialization Scripts.</div>
+             <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button buttonred">
+
+          </td>
+    </tr>
+    
+</table>
+
+<table id="true1Conf" class="invisibleDiv" width="100%" align="center">
+    <tr width="100%">
+          <td><div class="choiceBoxRed">That is correct, after gaining access, adversaries try to figure out the characteristics of the mobile device and 
+            potentially other networked systems. Different techniques can be used to perform this tactic, you can read about them in the link below.<br> </div>
+         <form action="https://attack.mitre.org/techniques/T1429/" target="_blank"> 
+            <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+          <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
+          <td>
+              <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
+                <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                <input class="invisibleDiv"  value="2"  name="scoreAdd" >
+                <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                <input class="invisibleDiv"  value="1"  name="counterAdd" >
+
+                <input type="submit" value="Continue" class=" button buttonred" >  
+                </form>
+            </td>
+      
+  </table>
+  <table id="true2Conf" class="invisibleDiv" width="100%" align="center">
+    <tr width="100%">
+          <td><div class="choiceBoxRed"> Unfortunately this is not correct. <br>Boot or Logon Initialization Scripts is a tactic used in attacks done to mobile devices
+            , but it is not used in this attack, the next step for this tactic would be Discovery.
+            In the link below you can find which techniques can be used for discovery.<br></div> <form target="_blank" action="https://attack.mitre.org/techniques/T1430/"> 
+                <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+          <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+          <td>
+              <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
+                <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                <input class="invisibleDiv"  value="2"  name="scoreAdd" >
+                <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                <input class="invisibleDiv" value="{{truecounter}}"  name="trueCount" >
+                <input class="invisibleDiv"  value="1"  name="counterAdd" >
+
+                <input type="submit" value="Continue" class=" button buttonred" >  
+                </form>
+            </td>
+      
+  </table>
+  
+  <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
+      <tr width="50%">
+            <td><div class="choiceBoxRed" >Unfortunately this is not correct. Execution is a tactic used in attacks done to mobile devices
+                , but it is not used in this attack, the next step for this tactic would be Discovery.
+                In the link below you can find which techniques can be used for discovery.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0032/"> 
+                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+
+             
+              </td>
+            <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+            <td>
+                <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
+                    <input class="invisibleDiv"  value="{{score}}" name="score">
+                    <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                    <input class="invisibleDiv"  value="2"  name="helpdeduct" >
+                    <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                    <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                     
+                    <input type="submit" value="Continue" class=" button buttonred" >
+                </form>
+            </td>
+        </tr>
+    </table>
+    <table id="false2Conf" class="invisibleDiv" width="100%" align="center">
+        <tr width="50%">
+              <td><div class="choiceBoxRed" >Unfortunately this is not correct. Persistence. is a tactic used in attacks done to mobile devices
+                , but it is not used in this attack, the next step for this tactic would be Discovery.
+                In the link below you can find which techniques can be used for discovery.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0032/"> 
+                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+              <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+              <td>
+                  <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
+                      <input class="invisibleDiv"  value="{{score}}" name="score">
+                      <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                      <input class="invisibleDiv"  value="2"  name="helpdeduct" >
+                      <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                      <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                      
+                      <input type="submit" value="Continue" class=" button buttonred" >
+                  </form>
+              </td>
+          </tr>
+      </table>
+      <table id="true1notConf" class="invisibleDiv" width="100%" align="center">
+        <tr width="100%">
+            <td><div class="choiceBoxRed">That is correct, after gaining access, adversaries try to figure out the characteristics of the mobile device and 
+                potentially other networked systems. Different techniques can be used to perform this tactic, you can read about them in the link below.<br> </div>
+             <form action="https://attack.mitre.org/techniques/T1429/" target="_blank"> 
+                <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+                <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
+              <td>
+                  <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
+                    <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                    <input class="invisibleDiv"  value="1"  name="scoreAdd" >
+                    <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                    <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                    <input class="invisibleDiv"  value="1"  name="counterAdd" >
+    
+                    <input type="submit" value="Continue" class=" button buttonred" >  
+                    </form>
+                </td>
+          
+      </table>
+      <table id="true2notConf" class="invisibleDiv" width="100%" align="center">
+        <tr width="100%">
+              <td><div class="choiceBoxRed">Unfortunately this is not correct. <br>Boot or Logon Initialization Scripts is a tactic used in attacks done to mobile devices
+                , but it is not used in this attack, the next step for this tactic would be Discovery.
+                In the link below you can find which techniques can be used for discovery.<br></div> <form target="_blank" action="https://attack.mitre.org/techniques/T1430/"> 
+                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+              <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+              <td>
+                  <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
+                    <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                    <input class="invisibleDiv"  value="1"  name="scoreAdd" >
+                    <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                    <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                    <input class="invisibleDiv"  value="1"  name="counterAdd" >
+    
+                    <input type="submit" value="Continue" class=" button buttonred" >  
+                    </form>
+                </td>
+          
+      </table>
+      
+      <table id="false1notConf" class="invisibleDiv" width="100%" align="center">
+          <tr width="50%">
+                <td><div class="choiceBoxRed" >Unfortunately this is not correct. Execution is a tactic used in attacks done to mobile devices
+                    , but it is not used in this attack, the next step for this tactic would be Discovery.
+                    In the link below you can find which techniques can be used for discovery.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0032/"> 
+                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+                <td>
+                    <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
+                        <input class="invisibleDiv"  value="{{score}}" name="score">
+                        <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                        <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                        <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                        <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                        
+                        <input type="submit" value="Continue" class=" button buttonred" >
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <table id="false2notConf" class="invisibleDiv" width="100%" align="center">
+            <tr width="50%">
+                  <td><div class="choiceBoxRed" >Unfortunately this is not correct. Persistence. is a tactic used in attacks done to mobile devices
+                    , but it is not used in this attack, the next step for this tactic would be Discovery.
+                    In the link below you can find which techniques can be used for discovery.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0032/"> 
+                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                  <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+                  <td>
+                      <form action="{% url 'taskRed13' %}" method="post" >{%csrf_token%}
+                          <input class="invisibleDiv"  value="{{score}}" name="score">
+                          <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                          <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                          <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                          <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                          
+                          <input type="submit" value="Continue" class=" button buttonred" >
+                      </form>
+                  </td>
+              </tr>
+            </table>
+
+<script type="text/javascript">
+
+ function confident(){
+    document.getElementById("firstView").innerHTML = document.getElementById("firstViewConf").innerHTML ;
+ }
+
+ function notConfident(){
+    document.getElementById("firstView").innerHTML = document.getElementById("firstViewnotConf").innerHTML ;
+ }
+
+ function feedbackTrue1Conf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("true1Conf").innerHTML ;
+
+
+}
+function feedbackTrue2Conf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("true2Conf").innerHTML ;
+
+
+}
+function feedbackFalse1Conf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false1Conf").innerHTML ;
+
+
+}
+function feedbackFalse2Conf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false2Conf").innerHTML ;
+
+
+ }
+ 
+
+ function feedbackTrue1notConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("true1notConf").innerHTML ;
+
+
+ }
+ function feedbackTrue2notConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("true2notConf").innerHTML ;
+
+
+ }
+ function feedbackFalse1notConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false1notConf").innerHTML ;
+
+
+ }
+ function feedbackFalse2notConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false2notConf").innerHTML ;
+
+
+ }
+ function deduct(){
+    window.open("https://mitre-attack.github.io/attack-navigator//#layerURL=https%3A%2F%2Fattack.mitre.org%2Fsoftware%2FS0328%2FS0328-mobile-layer.json");
+
+ }
+
+
+
+
+</script>
