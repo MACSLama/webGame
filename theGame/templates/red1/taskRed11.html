@@ -86,13 +86,7 @@
         <td colspan="3">
             <img src="{% static 'images/red1/initialAccess.png' %}" class="table">
         </td>
-        <td > 
-            <form  id="getHelp" method="post" target="_blank">{%csrf_token%}
-            <input type="submit" name="help" value="Hint." onclick="deduct()" class=" button buttonred">
-            </form>
-            
-        </td>
-        
+       
         
     </tr>    
     <tr width="50%">
@@ -110,8 +104,18 @@
                 <br> <input type="button" value="Choose" onclick="feedbackTruenotConf2()" class=" button buttonred">
             </td>
            
-            
-
+        </tr>
+        <tr> <td colspan="3">
+            <div><br><br></div>
+        </td></tr>
+        <tr>
+            <td colspan="3" > 
+                <div class="hintBox">
+                <form  id="getHelp" method="post" target="_blank">{%csrf_token%}
+                <input type="submit" name="help" value="                        Hint.                           " onclick="deduct()" class=" button buttonHint">
+                </form>
+             </div>
+            </td>
         </tr>
        
 
