@@ -28,24 +28,27 @@
     <img src="{% static 'images/about26.png' %}" class="pic">
     <br>
     <br>
+    <input type="submit" value="Next" class=" button button2" onclick="next2()"><br>
     <input type="submit" value="Back" class=" button button2" onclick="back1()">
-    <input type="submit" value="Next" class=" button button2" onclick="next2()">
+    
 
 </div>
 <div class="invisibleDiv" id="about2Backup">
     <img src="{% static 'images/about26.png' %}" class="pic">
     <br>
     <br>
+    <input type="submit" value="Next" class=" button button2" onclick="next2()"><br>
     <input type="submit" value="Back" class=" button button2" onclick="back1()">
-    <input type="submit" value="Next" class=" button button2" onclick="next2()">
+    
 
 </div>
 <div class="invisibleDiv" id="about3">
     <img src="{% static 'images/about36.png' %}" class="pic"><br><br>
-    <input type="submit" value="Back" class=" button button2" onclick="back2()">
     <form action="{% url 'main' %}" method="post" >{%csrf_token%}
         <input type="submit" value="Back to Main" class=" button button2" >  
     </form>
+    <input type="submit" value="Back" class=" button button2" onclick="back2()">
+
    
     
 
