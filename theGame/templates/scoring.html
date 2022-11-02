@@ -3,10 +3,10 @@
 <body id="bg" class="tdStyScore">
 
 
-<table align="center" id="scoring1">
+<table align="center">
     <tr>
         <td>
-            <div ><img src="{% static 'images/scoring1.png' %}" class="pic">
+            <div id="scoring1" ><img src="{% static 'images/scoring1.png' %}" class="pic">
                 <br>
                 <br>
                 <br>
@@ -42,8 +42,8 @@
     <img src="{% static 'images/scoring3.png' %}" class="pic"><br><br>
     
     <form action="{% url 'team' %}" method="post" >{%csrf_token%}
-        <input type="submit" value="Play" class=" button button2" >  
-    </form><br>
+        <input type="submit" value="Play" class=" button button2" >   </form>
+   
     <input type="submit" value="Back" class=" button button2" onclick="back2()">
 
 </div>
