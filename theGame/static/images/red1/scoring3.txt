@@ -1,6 +1,0 @@
-This method encourages the player to seek help and search more before
-answering. The 2 points fine for an incorrect answer motivates the
-player to avoid not asking for help unless he/she is very confident
-
-with the answer.
-

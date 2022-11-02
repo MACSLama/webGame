@@ -1,4 +1,0 @@
-ATT&CK To Defend gives the player the opportunity to visit the
-ATT&CK matrix for more information, by offering links related
-to each attack.
-

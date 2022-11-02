@@ -1,6 +1,0 @@
-Meanwhile, if the player was not so sure and asked for help.
-He/she will be directed to a page with a hint option.
-
-If the answer then was correct, the player will gain 1 point, and if
-wrong, no deduction will happen.
-

@@ -1,10 +1,0 @@
-This game was made to introduce MITRE ATT&CK to cyber security
-students. To give them the chance to rehearse their knowledge
-in a fun way.
-
-This game consists of several questions with multiple answers
-to choose from.
-
-Each question can have more than one correct answer, the
-player can choose any.
-
