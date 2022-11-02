@@ -1,13 +1,11 @@
 {% load static %}
-<html >
-<body id="bg" class="back" >
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-<table>
+
+<body id="bg" class="tdStyScore" >
+
+<table align="center">
     <tr>
-      <td >
-          <div class="div1"></div> 
-      </td>
       <td>
           <div class="about"   id="about1">
              <img src="{% static 'images/about16.png' %}" class="pic" > 
@@ -16,13 +14,11 @@
              <input type="submit" value="Next" class=" button button2" onclick="next1()">
            </div>
        </td>
-     <td>
-        <div class="div1"></div> 
-     </td>
+   
    </tr>
 </table>
 
-
+</body>
 <div class="invisibleDiv" id="about1Backup">
     <img src="{% static 'images/about16.png' %}" class="pic">
     <br>
@@ -55,9 +51,9 @@
 
 </div>
 
-</body>
 
-</html>
+
+
 <script>
 function next1(){
 

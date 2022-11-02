@@ -1,0 +1,8 @@
+Each question in this game is about an attack technique for an
+adversary group and can have more than one correct answer, the
+player can choose any correct mitigation to stop the attack.
+
+After answering each question, instant feedback will be given
+
+to the player
+
