@@ -13,32 +13,37 @@
         </td>
         
          <td> 
-            <div  class="button buttonred"> Your Score :{{score}} <br>
+            <div  class="button buttonHint"> Your Score :{{score}} <br>
             </div> 
             <br><br>
-            <div class="choiceConf"> How Confident are you with the answer? <br>
-                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button buttonred">
-                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button buttonred">
-            </div>
+          
         </td>
         
         
     </tr>
     <tr>
          <td>
-            <div class="choiceBoxRed" > <br>Audio Capture.</div>
+            <div class="choiceBoxRed" > A. <br>Audio Capture<br><br></div>
 
          <br><br><br>  
-            <div class="choiceBoxRed" > <br>Location Tracking.</div>
+            <div class="choiceBoxRed" > C.<br>Location Tracking<br><br></div>
            
          </td>
          <td>
-            <div class="choiceBoxRed" >Replication Through Removable Media.</div>
+            <div class="choiceBoxRed" >B. <br>Replication Through Removable Media</div>
 
           <br><br><br>  
-            <div class="choiceBoxRed" >Boot or Logon Initialization Scripts.</div>
+            <div class="choiceBoxRed" >D. <br>Boot or Logon Initialization Scripts<br><br> </div>
 
           </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="hintBox"> How Confident are you with the answer? <br>
+                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button buttonred"><br>
+                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button buttonred">
+            </div>
+        </td>
     </tr>
   
 
@@ -59,20 +64,20 @@
     </tr>
     <tr>
          <td>
-            <div class="choiceBoxRed" > <br>Audio Capture. </div>
+            <div class="choiceBoxRed" > A. <br>Audio Capture<br><br> </div>
             <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button buttonred">
 
             <br>
-            <div class="choiceBoxRed" > <br>Location Tracking.  </div>
+            <div class="choiceBoxRed" > C.<br>Location Tracking<br><br>  </div>
             <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button buttonred">
            
          </td>
          <td>
-            <div class="choiceBoxRed" >Replication Through Removable Media. </div>
+            <div class="choiceBoxRed" >B. <br>Replication Through Removable Media </div>
             <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button buttonred">
 
              <br> 
-            <div class="choiceBoxRed" >Boot or Logon Initialization Scripts.</div>
+            <div class="choiceBoxRed" >D. <br>Boot or Logon Initialization Scripts<br><br> </div>
             <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button buttonred">
 
           </td>
@@ -87,9 +92,7 @@
         
         <td> 
             <div  class="button buttonred"> Your Score :{{score}} </div> 
-         <br> 
-             
-                <input type="submit"  value="Hint." onclick="deduct()" class=" button buttonred">
+         
                 
             </td>
     
@@ -97,23 +100,35 @@
     </tr>
     <tr>
          <td>
-            <div class="choiceBoxRed" > <br>Audio Capture. </div>
+            <div class="choiceBoxRed" > A. <br>Audio Capture<br><br> </div>
             <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button buttonred">
 
             <br> 
-            <div class="choiceBoxRed" > <br>Location Tracking.  </div>
+            <div class="choiceBoxRed" > C.<br>Location Tracking<br><br>  </div>
             <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button buttonred">
            
          </td>
          <td>
-            <div class="choiceBoxRed" >Replication Through Removable Media. </div>
+            <div class="choiceBoxRed" >B. <br>Replication Through Removable Media </div>
              <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button buttonred">
 
              <br><br><br> 
-            <div class="choiceBoxRed" >Boot or Logon Initialization Scripts.</div>
+            <div class="choiceBoxRed" >D. <br>Boot or Logon Initialization Scripts<br><br> </div>
              <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button buttonred">
 
           </td>
+    </tr>
+    <tr> <td colspan="2">
+        <div><br><br></div>
+    </td></tr>
+    <tr>
+        <td colspan="2" > 
+            <div class="hintBox">
+            <form  id="getHelp" method="post" target="_blank">{%csrf_token%}
+            <input type="submit" name="help" value="                        Hint.                           " onclick="deduct()" class=" button buttonHint">
+            </form>
+         </div>
+        </td>
     </tr>
     
 </table>

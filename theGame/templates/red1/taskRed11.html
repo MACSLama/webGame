@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 <body id="bg" class="tdStylebackred">
 
-<table id="firstView">
+<table align="center" id="firstView">
     <tr> 
     
         <td width="50%">
@@ -21,36 +21,42 @@
 
 <table id="askConf" class="invisibleDiv" width="100%" align="center">
     <tr>
-        <td colspan="4">
+        <td colspan="3">
            
               <img src="{% static 'images/red1/initialAccess.png' %}" class="pic">
             
         </td>
    
+   
        
     </tr>
     <tr>
         <td>
-            <div class="choiceBoxRed" id="option1" > <br>Process Injection.<br></div>
+            <div class="choiceBoxRed" id="option1" >  A.<br> Process Injection<br><br></div>
         </td>
         <td>
-               <div class="choiceBoxRed" id="option2"> <br> Drive-By Compromise.<br><div>
+               <div class="choiceBoxRed" id="option2"> B. <br> Drive-By Compromise<br><br> <div>
         </td>
         <td>
-            <div class="choiceBoxRed" id="option2"> Replication Through Removable Media.<br><div>
+            <div class="choiceBoxRed" id="option2"> C. <br> Replication Through Removable Media<div>
      </td>
-     <td>
-        <div class="choiceConf"> How Confident are you with the answer? <br>
-            <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button buttonred">
-            <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button buttonred">
-        </div>
-         
-         
-    </td>
+     
         
         
     </tr>
-   
+    <tr>
+        <td>
+            <div><br><br><br><br><br><br></div>
+        </td>
+    </tr>
+   <tr>     <td colspan="3">
+    <div class="hintBox"> How Confident are you with the answer? <br>
+        <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button buttonred"><br>
+        <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button buttonred">
+    </div>
+     
+     
+</td></tr>
 
 </table>
 </body>
@@ -61,15 +67,15 @@
             <td colspan="3"><img src="{% static 'images/red1/initialAccess.png' %}" class="table"></td>
         </tr>
         <td>
-            <div class="choiceBoxRed" id="option1" ><br> Process Injection.<br></div>
+            <div class="choiceBoxRed" id="option1" > A.<br> Process Injection.<br><br></div>
             <br> <input type="button" value="Choose" onclick="feedbackFalseConf()" class=" button buttonred">
         </td>
         <td>
-            <div class="choiceBoxRed" id="option2"> <br>Drive-By Compromise.<br></div>
+            <div class="choiceBoxRed" id="option2"> B. <br> Drive-By Compromise.<br><br></div>
             <br> <input type="button" value="Choose" onclick="feedbackTrueConf1()" class=" button buttonred">
         </td>
         <td>
-            <div class="choiceBoxRed" id="option2">Replication Through Removable Media.<br></div>
+            <div class="choiceBoxRed" id="option2">C. <br> Replication Through Removable Media<br></div>
             <br> <input type="button" value="Choose" onclick="feedbackTrueConf2()" class=" button buttonred">
 
 
@@ -91,16 +97,16 @@
     </tr>    
     <tr width="50%">
             <td>
-                <div class="choiceBoxRed" id="option1" ><br> Process Injection.<br></div>
+                <div class="choiceBoxRed" id="option1" > A.<br> Process Injection<br><br></div>
                 <br> <input type="button" value="Choose" onclick="feedbackFalsenotConf()" class=" button buttonred">
             
             </td>
             <td>
-                <div class="choiceBoxRed" id="option2"><br> Drive-By Compromise.<br></div>
+                <div class="choiceBoxRed" id="option2">B. <br> Drive-By Compromise<br><br></div>
                 <br> <input type="button" value="Choose" onclick="feedbackTruenotConf1()" class=" button buttonred">
             </td>
             <td>
-                <div class="choiceBoxRed" id="option2">Replication Through Removable Media.<br></div>
+                <div class="choiceBoxRed" id="option2">C. <br> Replication Through Removable Media<br></div>
                 <br> <input type="button" value="Choose" onclick="feedbackTruenotConf2()" class=" button buttonred">
             </td>
            
