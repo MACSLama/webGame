@@ -40,17 +40,14 @@
 </body>
 <table align="center" id="firstViewnotConf" width="100%" height="50" class="invisibleDiv"> 
     <tr>
-        <td colspan="2"  >
-            <div  ><img src="{% static 'images/blue1/blue1/priVileg.png' %}" class="table" width="100%" ></div>
+        <td colspan="3"  >
+            <div  ><img src="{% static 'images/blue1/priVileg.png' %}"  class="pic"></div>
         </td>
         
          <td> 
             <div  class="button buttonHint"> Your Score :{{score}} </div> 
-         <br><br><br> 
-             
-                <input type="submit"  value="Hint" onclick="deduct()" class=" button buttonred">
                 
-            </td>
+        </td>
 
     </tr>
     <tr>
@@ -69,6 +66,15 @@
              <input type="button" value="Choose" onclick="feedbackFalsenotConf()" class=" button button2">
 
           </td>
+    </tr>
+    <tr>
+        <td colspan="3" > 
+            <div class="hintBox">
+            <form  id="getHelp" method="post" target="_blank">{%csrf_token%}
+            <input type="submit" name="help" value="                        Hint.                           " onclick="deduct()" class=" button buttonHint">
+            </form>
+         </div>
+        </td>
     </tr>
     
 </table>
