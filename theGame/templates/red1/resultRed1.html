@@ -17,22 +17,22 @@
         </tr>
         <tr>
             <td>
-                <div  class="button button2"> You answered {{truecounter}} out of 5 correctly.<br>
+                <div  class="button buttonred"> You answered {{truecounter}} out of 5 correctly.<br>
                    Your Final Score :{{score}} </div> 
              </td>
             <td>
                 <form action="{% url 'task11' %}" method="post" >{%csrf_token%}
-                    <input type="submit" value="Re-play?" class=" button button2" >  
+                    <input type="submit" value="Re-play?" class=" button buttonred" >  
                 </form>
             </td>
             <td>
                 <form action="{% url 'team' %}" method="post" >{%csrf_token%}
-                    <input type="submit" value="New Mession!" class=" button button2" > 
+                    <input type="submit" value="New Mession!" class=" button buttonred" > 
                 </form> 
             </td>
             <td>
                     <form action="{% url 'end' %}" method="post" >{%csrf_token%}
-                        <input type="submit" value="Quit!" class=" button button2" >  
+                        <input type="submit" value="Quit!" class=" button buttonred" >  
                     </form>
                 
             </td>
@@ -55,22 +55,22 @@
        
         <tr>
             <td>
-                <div  class="button button2"> You answered {{truecounter}} out of 5 correctly.<br>
+                <div  class="button buttonred"> You answered {{truecounter}} out of 5 correctly.<br>
                 Your Final Score :{{score}} </div> 
             </td>
             <td>
                 <form action="{% url 'task11' %}" method="post" >{%csrf_token%}
-                    <input type="submit" value="Re-play?" class=" button button2" >  
+                    <input type="submit" value="Re-play?" class=" button buttonred" >  
                 </form>
             </td>
             <td>
                 <form action="{% url 'team' %}" method="post" >{%csrf_token%}
-                    <input type="submit" value="New Mession!" class=" button button2" >  
+                    <input type="submit" value="New Mession!" class=" button buttonred" >  
                 </form>
             </td>
             <td>
                 <form action="{% url 'end' %}" method="post" >{%csrf_token%}
-                    <input type="submit" value="Quit!" class=" button button2" >  
+                    <input type="submit" value="Quit!" class=" button buttonred" >  
                 </form>
             </td>
         </tr>
@@ -91,22 +91,22 @@
     </tr>
     <tr>  
         <td>
-            <div  class="button button2"> You answered {{truecounter}} out of 5 correctly.<br>
+            <div  class="button buttonred"> You answered {{truecounter}} out of 5 correctly.<br>
             Your Final Score :{{score}} </div> 
         </td>
         <td>
             <form action="{% url 'task11' %}" method="post" >{%csrf_token%}
-                <input type="submit" value="Re-play?" class=" button button2" >  
+                <input type="submit" value="Re-play?" class=" button buttonred" >  
             </form>
         </td>
         <td>
             <form action="{% url 'team' %}" method="post" >{%csrf_token%}
-                <input type="submit" value="New Mession!" class=" button button2" >  
+                <input type="submit" value="New Mession!" class=" button buttonred" >  
             </form>
         </td>
         <td>
             <form action="{% url 'end' %}" method="post" >{%csrf_token%}
-                <input type="submit" value="Quit!" class=" button button2" >  
+                <input type="submit" value="Quit!" class=" button buttonred" >  
             </form>
         </td>
      
