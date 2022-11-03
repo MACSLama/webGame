@@ -2,11 +2,11 @@
 
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-<body>
+<body class="tdStylebackred">
 
 {% if truecounter == 5 %}
 
-    <table align="center" class="tdStylebackred">
+    <table align="center" >
         <tr>
             <td colspan="3">
                 <img src="{% static 'images/red1/win1.png' %}" class="pic"  >
@@ -21,7 +21,7 @@
                    Your Final Score :{{score}} </div> 
              </td>
             <td>
-                <form action="{% url 'task11' %}" method="post" >{%csrf_token%}
+                <form action="{% url 'taskRed11' %}" method="post" >{%csrf_token%}
                     <input type="submit" value="Re-play?" class=" button buttonred" >  
                 </form>
             </td>
@@ -59,7 +59,7 @@
                 Your Final Score :{{score}} </div> 
             </td>
             <td>
-                <form action="{% url 'task11' %}" method="post" >{%csrf_token%}
+                <form action="{% url 'taskred11' %}" method="post" >{%csrf_token%}
                     <input type="submit" value="Re-play?" class=" button buttonred" >  
                 </form>
             </td>
@@ -95,7 +95,7 @@
             Your Final Score :{{score}} </div> 
         </td>
         <td>
-            <form action="{% url 'task11' %}" method="post" >{%csrf_token%}
+            <form action="{% url 'taskred11' %}" method="post" >{%csrf_token%}
                 <input type="submit" value="Re-play?" class=" button buttonred" >  
             </form>
         </td>
