@@ -1,0 +1,349 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+<body id="bg" class="tdStylebackred">
+
+<table align="center" id="firstView" > 
+    <tr>
+        <td colspan="3"  >
+            <div ><img src="{% static 'images/red1/impact.png' %}" class="pic"  ></div>
+        </td>
+        
+         <td> 
+            <div  class="button buttonHint"> Your Score :{{score}} <br>
+            </div> 
+        
+        </td>
+        
+    </tr>
+    <tr>
+         <td>
+            <div class="choiceBoxRed" > A. <br>Account Access Removal<br><br></div>
+
+         <br> 
+            <div class="choiceBoxRed" > C. <br>Network Denial of Service<br><br></div>
+           
+         </td>
+         <td>
+            <div class="choiceBoxRed" >B. <br>Process Discovery<br><br></div>
+
+          <br> 
+            <div class="choiceBoxRed" >D. <br>Scheduled Task/Job<br><br></div>
+
+          </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+         <div class="hintBox""> How Confident are you with the answer? <br>
+            <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button buttonred"> <br>
+            <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button buttonred">
+          </div>
+       </td>
+    </tr>
+
+    
+</table>
+</body>
+
+<table align="center" id="firstViewConf" width="100%" height="50" class="invisibleDiv"> 
+    <tr>
+        <td colspan="3"  >
+            <div  ><img src="{% static 'images/red1/impact.png' %}" class="pic"  ></div>
+        </td>
+        
+         <td> 
+            <div  class="button buttonHint"> Your Score :{{score}} </div> 
+         </td>
+        
+    </tr>
+    <tr>
+         <td>
+            <div class="choiceBoxRed" > A. <br>Account Access Removal<br><br> </div>
+            <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button buttonred">
+
+            <br>
+            <div class="choiceBoxRed" > C. <br>Network Denial of Service<br><br>  </div>
+            <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button buttonred">
+           
+         </td>
+         <td>
+            <div class="choiceBoxRed" >B. <br>Process Discovery<br><br> </div>
+            <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button buttonred">
+
+             <br> 
+            <div class="choiceBoxRed" >D. <br>Scheduled Task/Job<br><br></div>
+            <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button buttonred">
+
+          </td>
+    </tr>
+    
+</table>
+<table align="center" id="firstViewnotConf" width="100%" height="50" class="invisibleDiv"> 
+    <tr>
+        <td colspan="3"  >
+            <div  ><img src="{% static 'images/red1/impact.png' %}" class="pic"  ></div>
+        </td>
+        
+        <td> 
+            <div  class="button buttonHint"> Your Score :{{score}} </div> 
+                
+            </td>
+    
+    </tr>
+    <tr>
+         <td>
+            <div class="choiceBoxRed" > A. <br>Account Access Removal<br><br> </div>
+            <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button buttonred">
+
+            <br> 
+            <div class="choiceBoxRed" > C. <br>Network Denial of Service<br><br>  </div>
+            <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button buttonred">
+           
+         </td>
+         <td>
+            <div class="choiceBoxRed" >B. <br>Process Discovery<br><br> </div>
+             <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button buttonred">
+
+             <br> 
+            <div class="choiceBoxRed" >D. <br>Scheduled Task/Job<br><br></div>
+             <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button buttonred">
+
+          </td>
+    </tr>
+    <tr> <td colspan="2">
+        <div></div>
+    </td></tr>
+    <tr>
+        <td colspan="2" > 
+            <div class="hintBox">
+            <form  id="getHelp" method="post" target="_blank">{%csrf_token%}
+            <input type="submit" name="help" value="                        Hint.                           " onclick="deduct()" class=" button buttonHint">
+            </form>
+         </div>
+        </td>
+    </tr>
+    
+</table>
+
+<table id="true1Conf" class="invisibleDiv" width="100%" align="center">
+    <tr width="100%">
+          <td><div class="choiceBoxRed">That is correct. Adversaries may interrupt availability of system and network resources by inhibiting access to accounts utilized by legitimate users.
+            You can read about other techniques used in the Impact tactic. </div>
+         <form action="https://attack.mitre.org/tactics/TA0034/" target="_blank"> 
+            <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+          <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
+          <td>
+              <form action="{% url 'resultRed1' %}" method="post" >{%csrf_token%}
+                <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                <input class="invisibleDiv"  value="2"  name="scoreAdd" >
+                <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                <input class="invisibleDiv"  value="1"  name="counterAdd" >
+
+                <input type="submit" value="Continue" class=" button buttonred" >  
+                </form>
+            </td>
+      
+  </table>
+  <table id="true2Conf" class="invisibleDiv" width="100%" align="center">
+    <tr width="100%">
+          <td><div class="choiceBoxRed"> Amazing. This technique is done to degrade or block the availability of targeted resources to users,
+            by exhausting the network bandwidth that services rely on, or by jamming the signal going to or coming from devices.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0034/">
+                <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+          <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
+          <td>
+              <form action="{% url 'resultRed1' %}" method="post" >{%csrf_token%}
+                <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                <input class="invisibleDiv"  value="2"  name="scoreAdd" >
+                <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                <input class="invisibleDiv" value="{{truecounter}}"  name="trueCount" >
+                <input class="invisibleDiv"  value="1"  name="counterAdd" >
+
+                <input type="submit" value="Continue" class=" button buttonred" >  
+                </form>
+            </td>
+      
+  </table>
+  
+  <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
+      <tr width="50%">
+            <td><div class="choiceBoxRed" >That was not correct. Scheduled Task/Job aims to execute scripts or malware or achieve persistent in the target. During the Impact  stage, attackers aim to affect the target in undesired way.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0034/"> 
+                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+
+             
+              </td>
+            <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+            <td>
+                <form action="{% url 'resultRed1' %}" method="post" >{%csrf_token%}
+                    <input class="invisibleDiv"  value="{{score}}" name="score">
+                    <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                    <input class="invisibleDiv"  value="2"  name="helpdeduct" >
+                    <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                    <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                     
+                    <input type="submit" value="Continue" class=" button buttonred" >
+                </form>
+            </td>
+        </tr>
+    </table>
+    <table id="false2Conf" class="invisibleDiv" width="100%" align="center">
+        <tr width="50%">
+              <td><div class="choiceBoxRed" >Unfortunately this is not true. Process descovery aims to discover the target for running processes, it doesn’t cause an impact against the target. 
+                During the Impact  stage, attackers aim to affect the target in undesired way. <br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0034/"> 
+                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+              <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+              <td>
+                  <form action="{% url 'resultRed1' %}" method="post" >{%csrf_token%}
+                      <input class="invisibleDiv"  value="{{score}}" name="score">
+                      <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                      <input class="invisibleDiv"  value="2"  name="helpdeduct" >
+                      <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                      <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                      
+                      <input type="submit" value="Continue" class=" button buttonred" >
+                  </form>
+              </td>
+          </tr>
+      </table>
+      <table id="true1notConf" class="invisibleDiv" width="100%" align="center">
+        <tr width="100%">
+            <td><div class="choiceBoxRed">That is correct. Adversaries may interrupt availability of system and network resources by inhibiting access to accounts utilized by legitimate users.
+                
+            </div>
+             <form action="https://attack.mitre.org/techniques/T1640/" target="_blank"> 
+                <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+                <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
+              <td>
+                  <form action="{% url 'resultRed1' %}" method="post" >{%csrf_token%}
+                    <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                    <input class="invisibleDiv"  value="1"  name="scoreAdd" >
+                    <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                    <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                    <input class="invisibleDiv"  value="1"  name="counterAdd" >
+    
+                    <input type="submit" value="Continue" class=" button buttonred" >  
+                    </form>
+                </td>
+          
+      </table>
+      <table id="true2notConf" class="invisibleDiv" width="100%" align="center">
+        <tr width="100%">
+              <td><div class="choiceBoxRed">Amazing. This technique is done to degrade or block the availability of targeted resources to users,
+                 by exhausting the network bandwidth that services rely on, or by jamming the signal going to or coming from devices.
+                  Read about more techniques that can be used.<br></div> <form target="_blank" action="https://attack.mitre.org/techniques/T1464/"> 
+                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+              <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
+              <td>
+                  <form action="{% url 'resultRed1' %}" method="post" >{%csrf_token%}
+                    <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                    <input class="invisibleDiv"  value="1"  name="scoreAdd" >
+                    <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                    <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                    <input class="invisibleDiv"  value="1"  name="counterAdd" >
+    
+                    <input type="submit" value="Continue" class=" button buttonred" >  
+                    </form>
+                </td>
+          
+      </table>
+      
+      <table id="false1notConf" class="invisibleDiv" width="100%" align="center">
+          <tr width="50%">
+                <td><div class="choiceBoxRed" >That was not correct. Scheduled Task/Job aims to execute scripts or malware or achieve persistent in the target. During the Impact  stage, attackers aim to affect the target in undesired way. <br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0034/"> 
+                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+                <td>
+                    <form action="{% url 'resultRed1' %}" method="post" >{%csrf_token%}
+                        <input class="invisibleDiv"  value="{{score}}" name="score">
+                        <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                        <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                        <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                        <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                        
+                        <input type="submit" value="Continue" class=" button buttonred" >
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <table id="false2notConf" class="invisibleDiv" width="100%" align="center">
+            <tr width="50%">
+                  <td><div class="choiceBoxRed" >Unfortunately this is not true. Process descovery aims to discover the target for running processes, it doesn’t cause an impact against the target. 
+                    During the Impact  stage, attackers aim to affect the target in undesired way. <br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0034/"> 
+                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                  <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+                  <td>
+                      <form action="{% url 'resultRed1' %}" method="post" >{%csrf_token%}
+                          <input class="invisibleDiv"  value="{{score}}" name="score">
+                          <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                          <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                          <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                          <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                          
+                          <input type="submit" value="Continue" class=" button buttonred" >
+                      </form>
+                  </td>
+              </tr>
+            </table>
+
+<script type="text/javascript">
+
+ function confident(){
+    document.getElementById("firstView").innerHTML = document.getElementById("firstViewConf").innerHTML ;
+ }
+
+ function notConfident(){
+    document.getElementById("firstView").innerHTML = document.getElementById("firstViewnotConf").innerHTML ;
+ }
+
+ function feedbackTrue1Conf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("true1Conf").innerHTML ;
+
+
+}
+function feedbackTrue2Conf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("true2Conf").innerHTML ;
+
+
+}
+function feedbackFalse1Conf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false1Conf").innerHTML ;
+
+
+}
+function feedbackFalse2Conf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false2Conf").innerHTML ;
+
+
+ }
+ 
+
+ function feedbackTrue1notConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("true1notConf").innerHTML ;
+
+
+ }
+ function feedbackTrue2notConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("true2notConf").innerHTML ;
+
+
+ }
+ function feedbackFalse1notConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false1notConf").innerHTML ;
+
+
+ }
+ function feedbackFalse2notConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false2notConf").innerHTML ;
+
+
+ }
+ function deduct(){
+    window.open("https://attack.mitre.org/tactics/TA0034/");
+
+ }
+
+
+
+
+</script>

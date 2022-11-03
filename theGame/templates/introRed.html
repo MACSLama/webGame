@@ -2,51 +2,41 @@
 
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-    <body id="bg" class="tdStylebackred"></body>
+<body id="bg" class="tdStylebackred">
    
-    <table id="firstView">
+    <table id="firstView" align="center">
 
         <tr> 
-    
-            <td width="50%">
-                <div class="about">
-                  <img src="{% static 'images/introAlma.png' %}" class="pic" >
-               </div>
-            </td>
-            <td width="50%" height="auto%"></td>
-            <td float="right" > 
+            <td > 
                 <input id="1to2" type="button" value="Next" onclick="view()" class=" button buttonred">
             </td>
-    
-        </tr>
+            <td >
+                <div class="about">
+                  <img src="{% static 'images/introalma.png' %}" class="pic" >
+               </div>
+            </td>
+            </tr>
+            
     </table>
-
+</body>
 
     <table id="firstViewBackup" class="invisibleDiv" align="center">
         <tr> 
-    
-            <td width="50%">
-                <div class="about">
-                  <img src="{% static 'images/introAlma.png' %}" class="pic" >
-               </div>
-            </td>
-            <td width="50%" height="auto%"></td>
-            <td float="right" > 
+            <td> 
                 <input id="1to2" type="button" value="Next" onclick="view()" class=" button buttonred">
             </td>
-    
+            <td >
+                <div class="about">
+                  <img src="{% static 'images/introalma.png' %}" class="pic" >
+               </div>
+            </td>
         </tr>
+      
     </table>
     
     <table id="secondView" class="invisibleDiv" align="center">
         <tr>
-            <td width="50%" height="auto%">
-                <div class="about">
-                  <img src="{% static 'images/introAlma2.png' %}" class="pic">
-                </div>
-            </td>
-            <td width="50%" height="auto%"> </td>
-            <td float="right"> 
+            <td> 
                 <form action="{% url 'taskChoiceRed' %}">
 
                     <input class="button buttonred" type="submit" value="Start">
@@ -56,7 +46,13 @@
                     <input class="button buttonred" onclick="viewBack()" type="button" value="Back">
                 </form>
             </td>
-        </tr>
+            <td>
+                <div class="about">
+                  <img src="{% static 'images/introalma2.png' %}" class="pic">
+                </div>
+            </td>
+           </tr>
+        
     </table>
     
 

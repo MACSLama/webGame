@@ -1,0 +1,126 @@
+
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<body>
+
+{% if truecounter == 5 %}
+
+    <table align="center" class="tdStylebackred">
+        <tr>
+            <td colspan="3">
+                <img src="{% static 'images/red1/win1.png' %}" class="pic"  >
+            </td>
+            <td>
+                <div  class="choiceBoxRed"> You were a great help. We were able to predict all techniques correctly. </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div  class="button button2"> You answered {{truecounter}} out of 5 correctly.<br>
+                   Your Final Score :{{score}} </div> 
+             </td>
+            <td>
+                <form action="{% url 'task11' %}" method="post" >{%csrf_token%}
+                    <input type="submit" value="Re-play?" class=" button button2" >  
+                </form>
+            </td>
+            <td>
+                <form action="{% url 'team' %}" method="post" >{%csrf_token%}
+                    <input type="submit" value="New Mession!" class=" button button2" > 
+                </form> 
+            </td>
+            <td>
+                    <form action="{% url 'end' %}" method="post" >{%csrf_token%}
+                        <input type="submit" value="Quit!" class=" button button2" >  
+                    </form>
+                
+            </td>
+        </tr>
+    </table>
+
+
+</div>
+{% elif score >= 3 %}
+
+    <table align="center">
+        <tr>
+            <td colspan="3">
+                <img src="{% static 'images/red1/goodjob.png' %}" class="pic1show"  >
+            </td>
+            <td>
+                <div  class="choiceBoxRed">Although we had some incorrect answers, but we did a good job overall.</div>
+            </td>
+        </tr>
+       
+        <tr>
+            <td>
+                <div  class="button button2"> You answered {{truecounter}} out of 5 correctly.<br>
+                Your Final Score :{{score}} </div> 
+            </td>
+            <td>
+                <form action="{% url 'task11' %}" method="post" >{%csrf_token%}
+                    <input type="submit" value="Re-play?" class=" button button2" >  
+                </form>
+            </td>
+            <td>
+                <form action="{% url 'team' %}" method="post" >{%csrf_token%}
+                    <input type="submit" value="New Mession!" class=" button button2" >  
+                </form>
+            </td>
+            <td>
+                <form action="{% url 'end' %}" method="post" >{%csrf_token%}
+                    <input type="submit" value="Quit!" class=" button button2" >  
+                </form>
+            </td>
+        </tr>
+    </table>
+    
+
+{% else  %}
+<table align="center">
+ 
+    <tr>
+        <td colspan="3">
+            <img src="{% static 'images/red1/ohNo.png' %}" class="pic1show"  >
+        </td>
+        <td>
+            <div  class="choiceBoxRed">  Unfortunately, we did not do good. but I hope that in the future we use what we have learned from our mistakes.
+            </div>
+        </td>
+    </tr>
+    <tr>  
+        <td>
+            <div  class="button button2"> You answered {{truecounter}} out of 5 correctly.<br>
+            Your Final Score :{{score}} </div> 
+        </td>
+        <td>
+            <form action="{% url 'task11' %}" method="post" >{%csrf_token%}
+                <input type="submit" value="Re-play?" class=" button button2" >  
+            </form>
+        </td>
+        <td>
+            <form action="{% url 'team' %}" method="post" >{%csrf_token%}
+                <input type="submit" value="New Mession!" class=" button button2" >  
+            </form>
+        </td>
+        <td>
+            <form action="{% url 'end' %}" method="post" >{%csrf_token%}
+                <input type="submit" value="Quit!" class=" button button2" >  
+            </form>
+        </td>
+     
+    </tr>
+    
+</table>
+
+   
+{% endif %}
+
+
+</body>
+<script>
+ window.onload = function() {
+    document.getElementById("win").play();
+}
+</script>
