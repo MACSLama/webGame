@@ -4,16 +4,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
     <body id="bg" class="tdStyleback">
    
-    <table>
+    <table  align="center">
 
         <tr>
-            <td width="50%" height="auto%">
-                <div class="about">
-                  <img src="{% static 'images/Introduc.png' %}" class="pic">
-                </div>
-            </td>
-            <td width="50%" height="auto%"> </td>
-            <td float="right"> 
+            <td > 
                 <form action="{% url 'taskChoiceBlue' %}">
 
                     <input class="button button2" type="submit" value="Start">
@@ -23,6 +17,13 @@
                     <input class="button button2" type="submit" value="Back">
                 </form>
             </td>
+            <td >
+                <div class="about">
+                  <img src="{% static 'images/Introduc.png' %}" class="pic">
+                </div>
+            </td>
+          
+           
         </tr>
     </table>
 
