@@ -26,6 +26,12 @@
               <img src="{% static 'images/red1/initialAccess.png' %}" class="pic">
             
         </td>
+        <td>
+            <form action="{% url 'taskChoiceRed' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
+        </td>
    
    
        
@@ -62,9 +68,15 @@
 </body>
 
 <table id="confView" class="invisibleDiv" width="100%" align="center">
-    <tr width="50%">
+    <tr  >
         <tr>
             <td colspan="3"><img src="{% static 'images/red1/initialAccess.png' %}" class="table"></td>
+            <td>
+                <form action="{% url 'taskChoiceRed' %}">
+
+                    <input class="button buttonHint" type="submit" value="Back">
+                </form>
+            </td>
         </tr>
         <td>
             <div class="choiceBoxRed" id="option1" > A.<br> Process Injection.<br><br></div>
@@ -92,10 +104,16 @@
         <td colspan="3">
             <img src="{% static 'images/red1/initialAccess.png' %}" class="table">
         </td>
+        <td>
+            <form action="{% url 'taskChoiceRed' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
+        </td>
        
         
     </tr>    
-    <tr width="50%">
+    <tr  >
             <td>
                 <div class="choiceBoxRed" id="option1" > A.<br> Process Injection<br><br></div>
                 <br> <input type="button" value="Choose" onclick="feedbackFalsenotConf()" class=" button buttonred">
@@ -127,7 +145,7 @@
 
 </table>
 <table id="trueConf1" class="invisibleDiv" width="100%" align="center">
-    <tr width="50%">
+    <tr  >
           <td>
               <div class="choiceBoxRed"> You are correct, Good job.<br>Adversaries can gain access to a system through a user visiting a website
                 while browsing. This technique makes the user's browser targeted for exploitation.<br></div>
@@ -156,7 +174,7 @@
   </table>
   
   <table id="trueConf2" class="invisibleDiv" width="100%" align="center">
-    <tr width="50%">
+    <tr  >
           <td>
               <div class="choiceBoxRed"> You are correct, Good job.<br> We should consider gaining access physically,
                 adversaries may gain access to devices by exploiting or copying malware to devices connected via USB.<br></div>
@@ -185,7 +203,7 @@
   </table>
   
   <table id="falseConf" class="invisibleDiv" width="100%" align="center">
-      <tr width="50%">
+      <tr  >
             <td>
                 <div class="choiceBoxRed" >Oops, This is a (Post-Adversary Device Access) technique employed for privilege escalation or defense evasion.
                      The attacker needs to gain access to the target first.<br>
@@ -213,7 +231,7 @@
     </table>
   
     <table id="truenotConf1" class="invisibleDiv" width="100%" align="center">
-      <tr width="50%">
+      <tr  >
             <td>
                 <div class="choiceBoxRed"> You are correct, Good job.<br>Adversaries can gain access to a system through a user visiting a website
                     while browsing. This technique makes the user's browser targeted for exploitation.</td>
@@ -237,7 +255,7 @@
     </table>
     
     <table id="truenotConf2" class="invisibleDiv" width="100%" align="center">
-        <tr width="50%">
+        <tr  >
               <td>
                   <div class="choiceBoxRed"> You are correct, Good job.<br> We should consider gaining access physically,
                     adversaries may gain access to devices by exploiting or copying malware to devices connected via USB.</td>
@@ -262,7 +280,7 @@
       
       
     <table id="falsenotConf" class="invisibleDiv" width="100%" align="center">
-        <tr width="50%">
+        <tr  >
               <td>
                   <div class="choiceBoxRed" >Oops, This is a (Post-Adversary Device Access) technique employed for privilege escalation or defense evasion.
                     The attacker needs to gain access to the target first.<br>

@@ -11,6 +11,12 @@
         
          <td> 
            <div  class="button buttonHint"> Your Score :{{score}} </div> 
+           
+            <form action="{% url 'taskChoiceBlue' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
+        
          </td>
     </tr>
     <tr>
@@ -46,7 +52,10 @@
         
          <td> 
             <div  class="button buttonHint"> Your Score :{{score}} </div> 
-                
+            <form action="{% url 'taskChoiceBlue' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
         </td>
 
     </tr>
@@ -86,7 +95,11 @@
         </td>
         
          <td> 
-            <div  class="button buttonHint"> Your Score :{{score}} </div>  
+            <div  class="button buttonHint"> Your Score :{{score}} </div> 
+            <form action="{% url 'taskChoiceBlue' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form> 
          </td>
        
 
