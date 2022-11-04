@@ -9,12 +9,13 @@
     <table align="center">
         <tr>
             <td colspan="3">
-                <div  class="choice"> WOW, Great job. you gave me the correct answer to all questions.
-                    <br> You helped me secure my client, and save my job. </div>
-            </td>
-            <td>
                 <img src="{% static 'images/giphy.gif' %}" class="pic"  >
             </td>
+            <td >
+                <div  class="feedbackox"> WOW, Great job. you gave me the correct answer to all questions.
+                    <br> You helped me secure my client, and save my job. </div>
+            </td>
+           
               
         </tr>
         <tr>
@@ -44,15 +45,16 @@
 </div>
 {% elif score >= 4 %}
 
-    <table>
+    <table align="center">
         <tr>
             <td colspan="3">
-                <div  class="choice">I think that we did a good job. I hope our mistakes did not have an impact on our client.
-                    thanks a lot for your help.</div>
-            </td>
-            <td>
                 <img src="{% static 'images/fine.gif' %}" class="pic"  >
             </td>
+            <td>
+                <div  class="feedbackox">I think that we did a good job. I hope our mistakes did not have an impact on our client.
+                    thanks a lot for your help.</div>
+            </td>
+          
           
             
         </tr>
@@ -81,10 +83,10 @@
     
 
 {% else  %}
-<table>
+<table align="center">
  
     <tr>
-        <td colspan="3">
+        <td colspan="3" >
             <img src="{% static 'images/lose.gif' %}" class="pic"  >
         </td>
         <td>
