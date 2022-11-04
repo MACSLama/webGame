@@ -6,19 +6,15 @@
 
 <body id="bg" class="tdStyleback">
 
-<table align="center" id="firstView" width="100%" height="50"> 
+<table align="center" id="firstView"  > 
     <tr>
         <td colspan="3"  >
             <div  ><img src="{% static 'images/blue1/phishin.png' %}" class="pic"  ></div>
         </td>
         
         <td> 
-            <div  class="button button2"> Your Score :{{score}} </div> 
-            <br><br>
-            <div class="choiceboxshow"> How Confident are you with the answer? <br>
-                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2">
-                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
-            </div>
+            <div  class="button buttonHint"> Your Score :{{score}} </div> 
+           
         </td>
     
     
@@ -26,99 +22,114 @@
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" >Restrict Web-Based Content. </div>
+            <div class="choiceboxshow" > A. <br>Restrict Web-Based Content <br><br> </div>
 
          <br>  
-            <div class="choiceboxshow" >  Boot Integrity.	</div>
+            <div class="choiceboxshow" > C. <br>  Boot Integrity <br><br>	</div>
            
          </td>
          <td>
-            <div class="choiceboxshow" > Update Software.</div>
+            <div class="choiceboxshow" >  B. <br>Update Software <br><br></div>
 
             <br>
-            <div class="choiceboxshow" > User Training.</div>
+            <div class="choiceboxshow" > D. <br>User Training <br><br></div>
 
           </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="hintBox"> How Confident are you with the answer? <br>
+                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2"> <br>
+                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
+            </div>
+
+        </td>
     </tr>
     
 </table>
 </body>
-<table align="center" id="firstViewConf"  class="invisibleDiv" width="100%" height="50"> 
+<table align="center" id="firstViewConf"  class="invisibleDiv"  > 
     <tr>
         <td colspan="2"  >
             <div  ><img src="{% static 'images/blue1/phishin.png' %}" class="pic"  ></div>
         </td>
         
          <td > 
-            <div  class="button button2"> Your Score :{{score}} </div> 
+            <div  class="button buttonHint"> Your Score :{{score}} </div> 
        
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" > Restrict Web-Based Content.  <br><br></div>
+            <div class="choiceboxshow" >  A. <br>Restrict Web-Based Content   <br><br></div>
             <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button button2">
 
          <br>  
-            <div class="choiceboxshow" > Boot Integrity. <br><br><br></div>
+            <div class="choiceboxshow" > C. <br> Boot Integrity<br><br></div>
             <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button button2">
            
          </td>
          <td>
-            <div class="choiceboxshow" > Update Software.<br> <br><br> </div>
+            <div class="choiceboxshow" >  B. <br>Update Software<br><br> </div>
              <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button button2">
 
           
           <br>
-            <div class="choiceboxshow" > User Training.<br><br><br></div>
+            <div class="choiceboxshow" > D. <br>User Training<br><br></div>
              <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button button2">
 
           </td>
     </tr>
     
 </table>
-<table align="center" id="firstViewnotConf"  class="invisibleDiv" width="100%" height="50"> 
+<table align="center" id="firstViewnotConf"  class="invisibleDiv"  > 
     <tr>
         <td colspan="3"  >
             <div  ><img src="{% static 'images/blue1/phishin.png' %}" class="pic"  ></div>
         </td>
         
         <td> 
-            <div  class="button button2"> Your Score :{{score}} </div> 
-         <br><br><br> 
-             
-                <input type="submit"  value="Hint" onclick="deduct()" class=" button buttonred">
-                
-            </td>
+            <div  class="button buttonHint"> Your Score :{{score}} </div> 
+   
+        </td>
     
        
     </tr>
     <tr>
         <td>
-           <div class="choiceboxshow" > Restrict Web-Based Content. <br><br> </div>
+           <div class="choiceboxshow" >  A. <br>Restrict Web-Based Content  <br><br> </div>
            <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button button2">
 
         <br>  
-           <div class="choiceboxshow" > Boot Integrity.<br><br><br> </div>
+           <div class="choiceboxshow" >C. <br> Boot Integrity<br><br> </div>
            <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button button2">
           
         </td>
         <td>
-           <div class="choiceboxshow" >Update Software.<br> <br><br> </div>
+           <div class="choiceboxshow" > B. <br>Update Software<br><br> </div>
             <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button button2">
 
          
          <br>
-           <div class="choiceboxshow" >User Training.<br><br><br></div>
+           <div class="choiceboxshow" >D. <br>User Training<br><br></div>
             <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button button2">
 
          </td>
+   </tr>
+   <tr>
+    <td colspan="2">
+        <div class="hintBox">
+            <form  id="getHelp" method="post" target="_blank">{%csrf_token%}
+            <input type="submit" name="help" value="                        Hint.                           " onclick="deduct()" class=" button buttonHint">
+            </form>
+         </div>
+    </td>
    </tr>
    
     
 </table>
 
-<table id="true1Conf" class="invisibleDiv" width="100%" align="center">
-    <tr width="100%">
+<table id="true1Conf" class="invisibleDiv"   align="center">
+    <tr  >
           <td><div class="feedbackox">This is a very important step.
             Although we can not entirely depend on the awareness of the users, we can not underestimate the value of training the users against phishin attempts. 
             But of course we have to take other measurements, like Restrict Web-Based Content. <br></div>
@@ -139,8 +150,8 @@
             </td>
       
   </table>
-  <table id="true2Conf" class="invisibleDiv" width="100%" align="center">
-    <tr width="100%">
+  <table id="true2Conf" class="invisibleDiv"   align="center">
+    <tr  >
           <td><div class="feedbackox">Yes!! This is crucial to prevent opening malicious content. 
             Some download scanning devices can open and analyze compressed and encrypted formats, 
             such as zip and rar that may be used to conceal malicious files. We can also train the user to be more aware of these attempts.</div>
@@ -161,8 +172,8 @@
       
   </table>
   
-  <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
-      <tr width="50%">
+  <table id="false1Conf" class="invisibleDiv"   align="center">
+      <tr  >
             <td><div class="feedbackox" >Am afraid this is not correct. Because the attack occurs after the system is booted and doesn’t require a corrupt boot record.
                  <br>The link below can give you more information.   </div> 
                 <br><form action="https://attack.mitre.org/techniques/T1204/001/" target="_blank"> 
@@ -184,8 +195,8 @@
             </td>
         </tr>
     </table>
-    <table id="false2Conf" class="invisibleDiv" width="100%" align="center">
-        <tr width="50%">
+    <table id="false2Conf" class="invisibleDiv"   align="center">
+        <tr  >
               <td><div class="feedbackox" >Updating the software can't help us here. Because the attack occurs through a link and not vulnerable software. 
                 The link below can give you more information.  </div>
                 <br><form action="https://attack.mitre.org/techniques/T1204/001/" target="_blank"> 
@@ -206,8 +217,8 @@
               </td>
           </tr>
       </table>
-      <table id="true1notConf" class="invisibleDiv" width="100%" align="center">
-        <tr width="100%">
+      <table id="true1notConf" class="invisibleDiv"   align="center">
+        <tr  >
               <td><div class="feedbackox">This is a very important step.
                 Although we can not entirely depend on the awareness of the users, we can not underestimate the value of training the users against phishin attempts. 
                 But of course we have to take other measurements, like Restrict Web-Based Content </td>
@@ -225,8 +236,8 @@
                 </td>
           
       </table>
-      <table id="true2notConf" class="invisibleDiv" width="100%" align="center">
-        <tr width="100%">
+      <table id="true2notConf" class="invisibleDiv"   align="center">
+        <tr  >
               <td><div class="feedbackox"> Yes!! This is crucial to prevent opening malicious content. 
                 Some download scanning devices can open and analyze compressed and encrypted formats, 
                 such as zip and rar that may be used to conceal malicious files. We can also train the user to be more aware of these attempts.</td>
@@ -245,8 +256,8 @@
           
       </table>
       
-      <table id="false1notConf" class="invisibleDiv" width="100%" align="center">
-          <tr width="50%">
+      <table id="false1notConf" class="invisibleDiv"   align="center">
+          <tr  >
                 <td><div class="feedbackox" >Am afraid this is not correct. Because the attack occurs after the system is booted and doesn’t require a corrupt boot record.
     
                  
@@ -264,8 +275,8 @@
                 </td>
             </tr>
         </table>
-        <table id="false2notConf" class="invisibleDiv" width="100%" align="center">
-            <tr width="50%">
+        <table id="false2notConf" class="invisibleDiv"   align="center">
+            <tr  >
                   <td><div class="feedbackox" >Updating the software can't help us here. Because the attack occurs through a link and not vulnerable software.
   
                    

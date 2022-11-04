@@ -6,19 +6,15 @@
 
 <body id="bg" class="tdStyleback">
 
-<table align="center" id="firstView" width="100%" height="50"> 
+<table align="center" id="firstView"  > 
     <tr>
         <td colspan="3"  >
             <div  ><img src="{% static 'images/blue1/Exfiltratio.png' %}" class="pic"  ></div>
         </td>
         
         <td> 
-            <div  class="button button2"> Your Score :{{score}} </div> 
-            <br><br>
-            <div class="choiceboxshow"> How Confident are you with the answer? <br>
-                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2">
-                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
-            </div>
+            <div  class="button buttonHint"> Your Score :{{score}} </div> 
+           
         </td>
     
     
@@ -26,99 +22,114 @@
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" >Data Loss Prevention. </div>
+            <div class="choiceboxshow" >A. <br> Data Loss Prevention <br><br></div>
 
          <br>  
-            <div class="choiceboxshow" > Execution Prevention.	</div>
+            <div class="choiceboxshow" > C.<br> Execution Prevention<br><br> 	</div>
            
          </td>
          <td>
-            <div class="choiceboxshow" > Encrypt Sensitive Information.</div>
+            <div class="choiceboxshow" >B. <br> Encrypt Sensitive Information<br></div>
 
             <br>
-            <div class="choiceboxshow" > Network Intrusion Prevention.</div>
+            <div class="choiceboxshow" >D. <br> Network Intrusion Prevention<br></div>
 
           </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="hintBox"> How Confident are you with the answer? <br>
+                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2"><br>
+                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
+            </div>
+        </td>
     </tr>
     
 </table>
 </body>
-<table align="center" id="firstViewConf"  class="invisibleDiv" width="100%" height="50"> 
+<table align="center" id="firstViewConf"  class="invisibleDiv"  > 
     <tr>
         <td colspan="2"  >
             <div  ><img src="{% static 'images/blue1/Exfiltratio.png' %}" class="pic"  ></div>
         </td>
         
          <td > 
-            <div  class="button button2"> Your Score :{{score}} </div> 
+            <div  class="button buttonHint"> Your Score :{{score}} </div> 
        
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" > Data Loss Prevention <br><br><br> <br></div>
+            <div class="choiceboxshow" > A. <br> Data Loss Prevention <br> <br></div>
             <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button button2">
 
          <br>  
-            <div class="choiceboxshow" >  Execution Prevention. <br><br><br> <br></div>
+            <div class="choiceboxshow" >  C. <br> Execution Prevention  <br> <br></div>
             <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button button2">
            
          </td>
          <td>
-            <div class="choiceboxshow" > Encrypt Sensitive Information.<br> <br><br> </div>
+            <div class="choiceboxshow" > B. <br> Encrypt Sensitive Information <br> </div>
              <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button button2">
 
           
           <br>
-            <div class="choiceboxshow" > Network Intrusion Prevention.<br><br><br></div>
+            <div class="choiceboxshow" > D. <br> Network Intrusion Prevention<br></div>
              <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button button2">
 
           </td>
     </tr>
     
 </table>
-<table align="center" id="firstViewnotConf"  class="invisibleDiv" width="100%" height="50"> 
+<table align="center" id="firstViewnotConf"  class="invisibleDiv"  > 
     <tr>
         <td colspan="3"  >
             <div  ><img src="{% static 'images/blue1/Exfiltratio.png' %}" class="pic"  ></div>
         </td>
         
         <td> 
-            <div  class="button button2"> Your Score :{{score}} </div> 
-         <br><br><br> 
-             
-                <input type="submit"  value="Hint" onclick="deduct()" class=" button buttonred">
-                
-            </td>
+            <div  class="button buttonHint"> Your Score :{{score}} </div> 
+      
+        </td>
     
        
     </tr>
     <tr>
         <td>
-           <div class="choiceboxshow" > Data Loss Prevention. <br><br><br> <br> </div>
+           <div class="choiceboxshow" > A. <br> Data Loss Prevention<br> <br> </div>
            <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button button2">
 
         <br>  
-           <div class="choiceboxshow" > Execution Prevention.<br><br><br> <br> </div>
+           <div class="choiceboxshow" > C. <br> Execution Prevention <br><br></div>
            <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button button2">
           
         </td>
         <td>
-           <div class="choiceboxshow" >Encrypt Sensitive Information.<br> <br><br> </div>
+           <div class="choiceboxshow" >B. <br> Encrypt Sensitive Information <br> </div>
             <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button button2">
 
          
          <br>
-           <div class="choiceboxshow" > Network Intrusion Prevention.<br><br><br></div>
+           <div class="choiceboxshow" > D. <br> Network Intrusion Prevention<br></div>
             <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button button2">
 
          </td>
+   </tr>
+   <tr>
+    <td colspan="2">
+        <div class="hintBox">
+            <form  id="getHelp" method="post" target="_blank">{%csrf_token%}
+            <input type="submit" name="help" value="                        Hint.                           " onclick="deduct()" class=" button buttonHint">
+            </form>
+         </div>
+
+    </td>
    </tr>
    
     
 </table>
 
-<table id="true1Conf" class="invisibleDiv" width="100%" align="center">
-    <tr width="100%">
+<table id="true1Conf" class="invisibleDiv"   align="center">
+    <tr  >
           <td><div class="feedbackox">This is a very smart move, especially with systems that use network signatures to identify traffic for specific adversary malware, which can be used to mitigate activity at the network level.
                  <br>We can also do Data Loss Prevention to detect and block sensitive data being sent over unencrypted protocols.</div> <form action="https://attack.mitre.org/techniques/T1041/" target="_blank"> 
             <input type="submit" value="Find more!" class=" button button2"> </form> </td>
@@ -136,8 +147,8 @@
             </td>
       
   </table>
-  <table id="true2Conf" class="invisibleDiv" width="100%" align="center">
-    <tr width="100%">
+  <table id="true2Conf" class="invisibleDiv"   align="center">
+    <tr  >
           <td><div class="feedbackox">That is correct, Data Loss Prevention can detect and block sensitive data being sent over unencrypted protocols. We can also use Network Intrusion Prevention
             with systems that use network signatures to identify traffic for specific adversary malware, which can be used to mitigate activity at the network level.
             </div>
@@ -158,8 +169,8 @@
       
   </table>
   
-  <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
-      <tr width="50%">
+  <table id="false1Conf" class="invisibleDiv"   align="center">
+      <tr  >
             <td><div class="feedbackox" >Oh NO!!. I don't think this move was the correct one for this attack. Because Exfiltratio is the act of transferring information outside the system by an active malware/attacker.
                  Preventing execution targets techniques aiming to initiate malicious execution.
                  <br>The link below can give you more information.  </div>  
@@ -182,8 +193,8 @@
             </td>
         </tr>
     </table>
-    <table id="false2Conf" class="invisibleDiv" width="100%" align="center">
-        <tr width="50%">
+    <table id="false2Conf" class="invisibleDiv"   align="center">
+        <tr  >
               <td><div class="feedbackox" >This act is not for this attack, because Exfiltratio is the act of transferring information outside the system including encrypted content. 
                   For instance, adversaries may exfiltrate encrypted credential stores to brute force them outside the victim machine.
                 The link below can give you more information.  </div>
@@ -205,8 +216,8 @@
               </td>
           </tr>
       </table>
-      <table id="true1notConf" class="invisibleDiv" width="100%" align="center">
-        <tr width="100%">
+      <table id="true1notConf" class="invisibleDiv"   align="center">
+        <tr  >
               <td><div class="feedbackox">This is a very smart move, especially with systems that use network signatures to identify traffic for specific adversary malware, which can be used to mitigate activity at the network level.
                 <br>We can also do Data Loss Prevention to detect and block sensitive data being sent over unencrypted protocols.<br> </td>
               <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
@@ -223,8 +234,8 @@
                 </td>
           
       </table>
-      <table id="true2notConf" class="invisibleDiv" width="100%" align="center">
-        <tr width="100%">
+      <table id="true2notConf" class="invisibleDiv"   align="center">
+        <tr  >
               <td><div class="feedbackox"> That is correct, Data Loss Prevention can detect and block sensitive data being sent over unencrypted protocols. We can also use Network Intrusion Prevention
                 with systems that use network signatures to identify traffic for specific adversary malware, which can be used to mitigate activity at the network level. </td>
               <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
@@ -242,8 +253,8 @@
           
       </table>
       
-      <table id="false1notConf" class="invisibleDiv" width="100%" align="center">
-          <tr width="50%">
+      <table id="false1notConf" class="invisibleDiv"   align="center">
+          <tr  >
                 <td><div class="feedbackox" >Oh NO!!. I don't think this move was the correct one for this attack. Because Exfiltratio is the act of transferring information outside the system by an active malware/attacker.
                     Preventing execution targets techniques aiming to initiate malicious execution.
     
@@ -262,8 +273,8 @@
                 </td>
             </tr>
         </table>
-        <table id="false2notConf" class="invisibleDiv" width="100%" align="center">
-            <tr width="50%">
+        <table id="false2notConf" class="invisibleDiv"   align="center">
+            <tr  >
                   <td><div class="feedbackox" >This act is not for this attack, because Exfiltratio is the act of transferring information outside the system including encrypted content. 
                     For instance, adversaries may exfiltrate encrypted credential stores to brute force them outside the victim machine.
   

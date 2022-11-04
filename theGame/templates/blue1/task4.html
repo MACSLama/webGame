@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 
 <body id="bg" class="tdStyleback">
-<table align="center" id="firstView" width="100%" height="50"> 
+<table align="center" id="firstView"       > 
     <tr>
         <td colspan="2"  >
             <div  ><img src="{% static 'images/blue1/manipulation.png' %}" class="pic"  ></div>
@@ -18,17 +18,17 @@
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" >  A. <br> Domain administrator accounts management</div>
+            <div class="choiceboxshow" > A. <br> Domain administrator accounts management</div>
 
             <br>  
-            <div class="choiceboxshow" > Multi-factor Authentication.</div>
+            <div class="choiceboxshow" > C. <br> Multi-factor Authentication <br><br></div>
            
          </td>
          <td>
-            <div class="choiceboxshow" > B. <br> Boot Integrity<br><br><br></div>
+            <div class="choiceboxshow" > B. <br> Boot Integrity<br><br></div>
 
              <br>
-            <div class="choiceboxshow" > D. <br> Data Loss Prevention<br><br><br></div>
+            <div class="choiceboxshow" > D. <br> Data Loss Prevention<br><br></div>
 
           </td>
     </tr>
@@ -42,7 +42,7 @@
     </tr>
 </table>
 </body>
-<table align="center" id="firstViewConf" width="100%" height="50" class="invisibleDiv"> 
+<table align="center" id="firstViewConf"        class="invisibleDiv"> 
     <tr>
         <td colspan="3"  >
             <div  ><img src="{% static 'images/blue1/manipulation.png' %}" class="pic"  ></div>
@@ -57,19 +57,19 @@
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" >  A. <br> Domain administrator accounts management <br><br></div>
+            <div class="choiceboxshow" >  A. <br> Domain administrator accounts management <br></div>
             <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button button2">
 
             <br>   
-            <div class="choiceboxshow" > C. <br> Domain administrator accounts management<br><br></div>
+            <div class="choiceboxshow" > C. <br> Multi-factor Authentication<br><br></div>
             <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button button2">
            
          </td>
          <td>
-            <div class="choiceboxshow" > B. <br> Boot Integrity<br> <br><br> </div> 
+            <div class="choiceboxshow" > B. <br> Boot Integrity<br><br> </div> 
              <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button button2">
              <br> 
-            <div class="choiceboxshow" > D. <br> Data Loss Prevention<br><br><br></div>
+            <div class="choiceboxshow" > D. <br> Data Loss Prevention<br><br></div>
              <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button button2">
 
           </td>
@@ -77,7 +77,7 @@
     
 </table>
 
-<table align="center" id="firstViewnotConf" class="invisibleDiv" width="100%" height="50"> 
+<table align="center" id="firstViewnotConf" class="invisibleDiv"       > 
     <tr>
         <td colspan="3"  >
             <div  ><img src="{% static 'images/blue1/manipulation.png' %}" class="pic"  ></div>
@@ -85,39 +85,43 @@
         
         <td> 
             <div  class="button buttonHint"> Your Score :{{score}} </div> 
-         <br><br><br> 
-             
-                <input type="submit"  value="Hint" onclick="deduct()" class=" button buttonred">
                 
-            </td>
-    
-       
+        </td>
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" >  A. <br> Domain administrator accounts management <br></div>
+            <div class="choiceboxshow" >  A. <br> Domain administrator accounts management</div>
             <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button button2">
 
             <br>
-            <div class="choiceboxshow" > C. <br> Domain administrator accounts management<br></div>
+            <div class="choiceboxshow" > C. <br> Multi-factor Authentication<br><br></div>
             <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button button2">
            
          </td>
          <td>
-            <div class="choiceboxshow" > B. <br> Boot Integrity<br> <br><br> </div>
+            <div class="choiceboxshow" > B. <br> Boot Integrity<br><br> </div>
              <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button button2">
 
              <br>
-            <div class="choiceboxshow" > D. <br> Data Loss Prevention<br><br><br></div>
+            <div class="choiceboxshow" > D. <br> Data Loss Prevention<br><br></div>
              <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button button2">
 
           </td>
     </tr>
+    <tr>
+        <td colspan="2" > 
+            <div class="hintBox">
+            <form  id="getHelp" method="post" target="_blank">{%csrf_token%}
+            <input type="submit" name="help" value="                        Hint.                           " onclick="deduct()" class=" button buttonHint">
+            </form>
+         </div>
+        </td>
+    </tr>
     
 </table>
 
-<table id="true1Conf" class="invisibleDiv" width="100%" align="center">
-    <tr width="100%">
+<table id="true1Conf" class="invisibleDiv"    align="center">
+    <tr   >
           <td><div class="feedbackox">This is very important for users, especially for those with privileged accounts.<br> As well as accounts management for the administrator 
             to prevent exposing them to potential adversaries on unprivileged systems. </div> <br> <form action="https://attack.mitre.org/techniques/T1098/" target="_blank"> 
             <input type="submit" value="Find more!" class=" button button2"> </form> </td>
@@ -135,8 +139,8 @@
             </td>
       
   </table>
-  <table id="true2Conf" class="invisibleDiv" width="100%" align="center">
-    <tr width="100%">
+  <table id="true2Conf" class="invisibleDiv"    align="center">
+    <tr   >
           <td><div class="feedbackox"> This is a smart move.<br> Domain administrator accounts should not be allowed to be used for day-to-day operations. This may expose them to potential adversaries on unprivileged systems.
             Also Multi-factor Authentication . is very important for users, especially for those with privileged accounts. </div>
             <br> <form action="https://attack.mitre.org/techniques/T1098/" target="_blank"> 
@@ -156,7 +160,7 @@
       
   </table>
   
-  <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
+  <table id="false1Conf" class="invisibleDiv"    align="center">
       <tr width="50%">
             <td><div class="feedbackox" >Data loss prevention stops adversaries from stealing information from the system, it has nothing to do with securing accounts. </div> 
                 <br><form action="https://attack.mitre.org/techniques/T1098/" target="_blank"> 
@@ -178,7 +182,7 @@
             </td>
         </tr>
     </table>
-    <table id="false2Conf" class="invisibleDiv" width="100%" align="center">
+    <table id="false2Conf" class="invisibleDiv"    align="center">
         <tr width="50%">
               <td><div class="feedbackox" >We should have thought this through. <br> Account manipulation may happen on a valid booted system. Boot integrity will not secure a system from account manipulation.<br>
                 The link below can give you more information.  </div>
@@ -200,8 +204,8 @@
               </td>
           </tr>
       </table>
-      <table id="true1notConf" class="invisibleDiv" width="100%" align="center">
-        <tr width="100%">
+      <table id="true1notConf" class="invisibleDiv"    align="center">
+        <tr   >
               <td><div class="feedbackox">This is very important for users, especially for those with privileged accounts.<br> As well as accounts management for the administrator 
                 to prevent exposing them to potential adversaries on unprivileged systems. <br> </td>
               <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
@@ -218,8 +222,8 @@
                 </td>
           
       </table>
-      <table id="true2notConf" class="invisibleDiv" width="100%" align="center">
-        <tr width="100%">
+      <table id="true2notConf" class="invisibleDiv"    align="center">
+        <tr   >
               <td><div class="feedbackox"> This is a smart move.<br> Domain administrator accounts should not be allowed to be used for day-to-day operations. This may expose them to potential adversaries on unprivileged systems.
                 Also C. <br> Domain administrator accounts managementis very important for users, especially for those with privileged accounts. </td>
               <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
@@ -237,7 +241,7 @@
           
       </table>
       
-      <table id="false1notConf" class="invisibleDiv" width="100%" align="center">
+      <table id="false1notConf" class="invisibleDiv"    align="center">
           <tr width="50%">
                 <td><div class="feedbackox" >Data loss prevention stops adversaries from stealing information from the system, it has nothing to do with securing accounts.
     
@@ -257,7 +261,7 @@
                 </td>
             </tr>
         </table>
-        <table id="false2notConf" class="invisibleDiv" width="100%" align="center">
+        <table id="false2notConf" class="invisibleDiv"    align="center">
             <tr width="50%">
                   <td><div class="feedbackox" >We should have thought this through. <br> Account manipulation may happen on a valid booted system. Boot integrity will not secure a system from account manipulation.<br>
                    
