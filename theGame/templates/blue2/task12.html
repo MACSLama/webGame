@@ -5,14 +5,13 @@
 <table id="firstView" align="center">
     <tr> 
     
-        <td width="50%">
+        <td > 
+            <input id="1to2" type="button" value="Next" onclick="view()" class=" button button2">
+        </td>
+        <td>
             <div class="about">
             <img src="{% static 'images/attac.png' %}" class="pic" id="1">
         </div>
-        </td>
-        <td width="50%" height="auto%"></td>
-        <td float="right" > 
-            <input id="1to2" type="button" value="Next" onclick="view()" class=" button button2">
         </td>
 
     </tr>
@@ -24,62 +23,62 @@
 
 <table id="firstViewBackup" class="invisibleDiv" align="center">
     <tr> 
-      
-        <td width="50%">
-            <div class="about">
-            
-                <img src="{% static 'images/attac.png' %}" class="pic" id="1">
-            </div>
-        </td>
-
-        <td width="50%" >
-            
-        </td>
-        <td float="right" > 
+        <td > 
             <input id="1to2" type="button" value="Next" onclick="view()" class=" button button2">
         </td>
+        <td>
+            <div class="about">
+            <img src="{% static 'images/attac.png' %}" class="pic" id="1">
+        </div>
+        </td>
+       
 
     </tr>
 </table>
 
 <table id="secondView" class="invisibleDiv" align="center">
     <tr>
-        
-        <td width="50%">
+        <td  >
+            <input id="2to3" type="button" value="Next" onclick="view2()" class=" button button2"><br>
+            <input id="2to1" type="button" value="Back" onclick="viewBack()" class=" button button2"> 
+        </td>
+        <td>
             <div class="about">
             <img src="{% static 'images/blue2/pic.png' %}" class="pic">
          </div>
-        </td>
-   
-        <td width="50%" height="auto%"></td>
-        <td float="right">
-            <input id="2to1" type="button" value="Back" onclick="viewBack()" class=" button button2"> 
-            <input id="2to3" type="button" value="Next" onclick="view2()" class=" button button2">
         </td>
     </tr>
 
 </table>
 
-<table id="thrdviewAskConf" class="invisibleDiv" width="100%" align="center">
+<table id="thrdviewAskConf" class="invisibleDiv"  align="center">
     <tr>
-        <td colspan="3">
+        <td colspan="2">
            
               <img src="{% static 'images/blue2/initialacc.png' %}" class="pic">
             
+        </td>
+        <td>
+            <form action="{% url 'taskChoiceBlue' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
         </td>
    
        
     </tr>
     <tr>
         <td>
-            <div class="choiceboxshow" id="option1" > Use physical and logical segmentation to prevent access to potentially sensitive systems and information.</div>
+            <div class="choiceboxshow" id="option1" >  A. <br> Use physical and logical segmentation to prevent access to potentially sensitive systems and information</div>
         </td>
         <td>
-               <div class="choiceboxshow" id="option2"> Safety Instrumented Systems.<div>
+               <div class="choiceboxshow" id="option2"> B. <br><br> Safety Instrumented Systems <br><br><br><br><div>
         </td>
-        <td>
-            <div class="choiceboxshow"> How Confident are you with the answer? <br>
-                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2">
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="hintBox"> How Confident are you with the answer? <br>
+                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2"><br>
                 <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
             </div>
              
@@ -91,50 +90,63 @@
 
 </table>
 
-<table id="thrdviewConf" class="invisibleDiv" width="100%" align="center">
-    <tr width="50%">
+<table id="thrdviewConf" class="invisibleDiv"  align="center">
+    <tr  >
+        <td colspan="2"><img src="{% static 'images/blue2/initialacc.png' %}" class="table"></td>
         <td>
-            <div class="choiceboxshow" id="option1" > Use physical and logical segmentation to prevent access to potentially sensitive systems and information.</div>
-            <br> <input type="button" value="Choose" onclick="feedbackTrueConf()" class=" button button2">
-            <br><br><br><br>
-            <div class="choiceboxshow" id="option2">  Safety Instrumented Systems.</div>
-            <br> <input type="button" value="Choose" onclick="feedbackFalseConf()" class=" button button2">
+            <form action="{% url 'taskChoiceBlue' %}">
 
-
-
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
         </td>
-        <td><img src="{% static 'images/blue2/initialacc.png' %}" class="table"></td>
     </tr>
-   
+    <tr>
+        <td>
+            <div class="choiceboxshow" id="option1" >  A. <br> Use physical and logical segmentation to prevent access to potentially sensitive systems and information</div>
+            <br> <input type="button" value="Choose" onclick="feedbackTrueConf()" class=" button button2">
+        </td>
+        <td>
+            <div class="choiceboxshow" id="option2">  B. <br><br> Safety Instrumented Systems <br><br><br><br></div>
+            <br> <input type="button" value="Choose" onclick="feedbackFalseConf()" class=" button button2">
+        </td>
+     
+   </tr>
 
 </table>
 
-<table id="thrdviewNotConf" class="invisibleDiv" width="100%" align="center">
+<table id="thrdviewNotConf" class="invisibleDiv"  align="center">
     <tr height="30%">
         <td colspan="3">
             <img src="{% static 'images/blue2/initialacc.png' %}" class="table">
         </td>
+        <td>
+            <form action="{% url 'taskChoiceBlue' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
+        </td>
         
         
     </tr>    
-    <tr width="50%">
+    <tr  >
             <td>
-                <div class="choiceboxshow" id="option1" ><br> Use physical and logical segmentation to prevent access to potentially sensitive systems and information.</div>
+                <div class="choiceboxshow" id="option1" >  A. <br> Use physical and logical segmentation to prevent access to potentially sensitive systems and information</div>
                 <br> <input type="button" value="Choose" onclick="feedbackTruenotConf()" class=" button button2">
             
             </td>
             <td>
-                <div class="choiceboxshow" id="option2">  Safety Instrumented Systems.</div>
+                <div class="choiceboxshow" id="option2">  B. <br><br> Safety Instrumented Systems <br><br><br><br></div>
                 <br> <input type="button" value="Choose" onclick="feedbackFalsenotConf()" class=" button button2">
             </td>
-            <td > 
+        </tr>
+        <tr>
+            <td colspan="2" > 
+                <div class="hintBox">
                 <form  id="getHelp" method="post" target="_blank">{%csrf_token%}
-                <input type="submit" name="help" value="Hint." onclick="deduct()" class=" button buttonred">
+                <input type="submit" name="help" value="                        Hint.                           " onclick="deduct()" class=" button buttonHint">
                 </form>
-                
+             </div>
             </td>
-            
-
         </tr>
        
 
@@ -142,8 +154,8 @@
 
   
 
-<table id="trueConf" class="invisibleDiv" width="100%" align="center">
-  <tr width="50%">
+<table id="trueConf" class="invisibleDiv"  align="center">
+  <tr  >
         <td>
             <div class="choiceBoxshow"> You are correct, Good job.<br> Network segmentation helps with isolating critical systems, functions, or resources.<br></div>
                 <form action="https://attack.mitre.org/techniques/T1133/" target="_blank"> 
@@ -171,8 +183,8 @@
 </table>
 
 
-<table id="falseConf" class="invisibleDiv" width="100%" align="center">
-    <tr width="50%">
+<table id="falseConf" class="invisibleDiv"  align="center">
+    <tr  >
           <td>
               <div class="choiceBoxshow" >Unfortunately that was not correct.  <br>
                 This technique on itself doesn’t cause any safety-related consequence, so it is out of scope.<br></div>
@@ -197,8 +209,8 @@
       </tr>
   </table>
 
-  <table id="truenotConf" class="invisibleDiv" width="100%" align="center">
-    <tr width="50%">
+  <table id="truenotConf" class="invisibleDiv"  align="center">
+    <tr  >
           <td>
               <div class="choiceBoxshow"> You are correct, Good job.<br> Network segmentation helps with isolating critical systems, functions, or resources. </div>
           </td>
@@ -222,8 +234,8 @@
   </table>
   
   
-  <table id="falsenotConf" class="invisibleDiv" width="100%" align="center">
-      <tr width="50%">
+  <table id="falsenotConf" class="invisibleDiv"  align="center">
+      <tr  >
             <td>
                 <div class="choiceBoxshow" >Unfortunately that was not correct.  <br>
                     This technique on itself doesn’t cause any safety-related consequence, so it is out of scope
