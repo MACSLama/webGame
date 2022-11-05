@@ -4,20 +4,20 @@
 
 <body id="bg" class="tdStyleback"></body>
 
-<table align="center" id="firstView" width="100%" height="50"> 
+<table align="center" id="firstView" > 
     <tr>
         <td colspan="3"  >
             <div ><img src="{% static 'images/blue2/shut.png' %}" class="pic"  ></div>
         </td>
         
          <td> 
-            <div  class="button button2"> Your Score :{{score}} <br>
+            <div  class="button buttonHint"> Your Score :{{score}}
             </div> 
-            <br><br>
-            <div class="choiceboxshow"> How Confident are you with the answer? <br>
-                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2">
-                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
-            </div>
+            <form action="{% url 'taskChoiceBlue' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
+           
         </td>
         
         
@@ -26,70 +26,79 @@
 
     <tr>
          <td>
-            <div class="choiceboxshow" > User training  .</div>
+            <div class="choiceboxshow" > A. <br> User training <br><br></div>
 
-         </td>
-         <td> 
-            <div class="choiceboxshow" > Authorization Enforcement.</div>
+        <br>
+            <div class="choiceboxshow" > C. <br> Authorization Enforcement <br><br></div>
            
          </td>
          <td>
-            <div class="choiceboxshow" >  Data Loss Prevention  . </div>
+            <div class="choiceboxshow" >  B. <br> Data Loss Prevention  <br><br></div>
 
-         </td>
-         <td>
-            <div class="choiceboxshow" > Communication Authenticity.</div>
+        <br>
+            <div class="choiceboxshow" > D. <br> Communication Authenticity</div>
 
           </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="hintBox"> How Confident are you with the answer? <br>
+                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2"><br>
+                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
+            </div>
+        </td>
     </tr>
   
 
     
 </table>
 
-<table align="center" id="firstViewConf" width="100%" height="50" class="invisibleDiv"> 
+<table align="center" id="firstViewConf"  class="invisibleDiv"> 
     <tr>
         <td colspan="3"  >
             <div  ><img src="{% static 'images/blue2/shut.png' %}" class="pic"  ></div>
         </td>
         
          <td> 
-            <div  class="button button2"> Your Score :{{score}} </div> 
+            <div  class="button buttonHint"> Your Score :{{score}} </div> 
+            <form action="{% url 'taskChoiceBlue' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
          </td>
         
     </tr>
     
     <tr>
          <td>
-             <div class="choiceboxshow" > User training  . <br><br></div>
+             <div class="choiceboxshow" > A. <br> User training  <br><br></div>
              <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button button2">
-         </td>
-         <td>
-             <div class="choiceboxshow" > Authorization Enforcement. <br> </div>
+         <br>
+             <div class="choiceboxshow" > C. <br> Authorization Enforcement <br><br> </div>
              <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button button2">
          </td>
          <td>
-             <div class="choiceboxshow" > Data Loss Prevention  . <br>  </div>
+             <div class="choiceboxshow" > B. <br> Data Loss Prevention  <br><br>  </div>
              <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button button2">
-         </td> 
-         <td>
-             <div class="choiceboxshow" > Communication Authenticity. <br><br></div>
+         <br>
+             <div class="choiceboxshow" > D. <br> Communication Authenticity </div>
              <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button button2">
           </td>
     </tr>
     
 </table>
-<table align="center" id="firstViewnotConf" width="100%" height="50" class="invisibleDiv"> 
+<table align="center" id="firstViewnotConf"  class="invisibleDiv"> 
     <tr>
         <td colspan="3"  >
             <div  ><img src="{% static 'images/blue2/shut.png' %}" class="pic"  ></div>
         </td>
         
         <td> 
-            <div  class="button button2"> Your Score :{{score}} </div> 
-         <br><br><br> 
-             
-                <input type="submit"  value="Hint" onclick="deduct()" class=" button buttonred">
+            <div  class="button buttonHint"> Your Score :{{score}} </div> 
+            <form action="{% url 'taskChoiceBlue' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
                 
             </td>
     
@@ -97,29 +106,38 @@
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" > User training  . <br><br></div>
+            <div class="choiceboxshow" > A. <br> User training  <br><br></div>
             <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button button2">
 
-            <br><br><br> 
-            <div class="choiceboxshow" > Authorization Enforcement. <br> </div>
+            <br>
+            <div class="choiceboxshow" > C. <br> Authorization Enforcement <br><br> </div>
             <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button button2">
            
          </td>
          <td>
-            <div class="choiceboxshow" > Data Loss Prevention  . <br>  </div>
+            <div class="choiceboxshow" > B. <br> Data Loss Prevention  <br><br>  </div>
              <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button button2">
 
-             <br><br><br> 
-            <div class="choiceboxshow" > Communication Authenticity.<br><br></div>
+             <br>
+            <div class="choiceboxshow" > D. <br> Communication Authenticity</div>
              <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button button2">
 
           </td>
     </tr>
+    <tr>
+        <td colspan="3" > 
+            <div class="hintBox">
+            <form  id="getHelp" method="post" target="_blank">{%csrf_token%}
+            <input type="submit" name="help" value="                        Hint.                           " onclick="deduct()" class=" button buttonHint">
+            </form>
+         </div>
+        </td>
+    </tr
     
 </table>
 
-<table id="true1Conf" class="invisibleDiv" width="100%" align="center">
-    <tr width="100%">
+<table id="true1Conf" class="invisibleDiv"   align="center">
+    <tr  >
           <td><div class="choiceboxshow">That is correct. This makes all field controllers restrict the modification of programs to only certain users.<br> </div>
          <form action="https://attack.mitre.org/techniques/T0816/" target="_blank"> 
             <input type="submit" value="Find more!" class=" button button2"> </form></td>
@@ -137,8 +155,8 @@
             </td>
       
   </table>
-  <table id="true2Conf" class="invisibleDiv" width="100%" align="center">
-    <tr width="100%">
+  <table id="true2Conf" class="invisibleDiv"   align="center">
+    <tr  >
           <td><div class="choiceboxshow"> Great decision.Protocols used for control functions should provide authenticity through MAC functions or digital signatures..</div> <form target="_blank" action="https://attack.mitre.org/techniques/T0816/"> 
                 <input type="submit" value="Find more!" class=" button button2"> </form> </td>
           <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
@@ -156,8 +174,8 @@
       
   </table>
   
-  <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
-      <tr width="50%">
+  <table id="false1Conf" class="invisibleDiv"   align="center">
+      <tr  >
             <td><div class="choiceboxshow" >Oh Noo. The technique can be done without any action from the user. So training the users is not useful for this.  </div>
                 <br><form action="https://attack.mitre.org/techniques/T0816/" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form>
@@ -178,8 +196,8 @@
             </td>
         </tr>
     </table>
-    <table id="false2Conf" class="invisibleDiv" width="100%" align="center">
-        <tr width="50%">
+    <table id="false2Conf" class="invisibleDiv"   align="center">
+        <tr  >
               <td><div class="choiceboxshow" >Not really, Adversaries don't aim to exfiltrate data with this technique. </div> 
                 <br><form action="https://attack.mitre.org/techniques/T0816/" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form>
@@ -199,8 +217,8 @@
               </td>
           </tr>
       </table>
-      <table id="true1notConf" class="invisibleDiv" width="100%" align="center">
-        <tr width="100%">
+      <table id="true1notConf" class="invisibleDiv"   align="center">
+        <tr  >
               <td><div class="choiceboxshow">That is correct. This makes all field controllers restrict the modification of programs to only certain users.</td>
               <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
@@ -216,8 +234,8 @@
                 </td>
           
       </table>
-      <table id="true2notConf" class="invisibleDiv" width="100%" align="center">
-        <tr width="100%">
+      <table id="true2notConf" class="invisibleDiv"   align="center">
+        <tr  >
               <td><div class="choiceboxshow"> Great decision.Protocols used for control functions should provide authenticity through MAC functions or digital signatures.. </td>
               <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
@@ -234,8 +252,8 @@
           
       </table>
       
-      <table id="false1notConf" class="invisibleDiv" width="100%" align="center">
-          <tr width="50%">
+      <table id="false1notConf" class="invisibleDiv"   align="center">
+          <tr  >
                 <td><div class="choiceboxshow" >Oh Noo. The technique can be done without any action from the user. So training the users is not useful for this.
     
                  
@@ -254,8 +272,8 @@
                 </td>
             </tr>
         </table>
-        <table id="false2notConf" class="invisibleDiv" width="100%" align="center">
-            <tr width="50%">
+        <table id="false2notConf" class="invisibleDiv"   align="center">
+            <tr  >
                   <td><div class="choiceboxshow" >Not really, Adversaries don't aim to exfiltrate data with this technique.   <br>
                    
                     </div></td>

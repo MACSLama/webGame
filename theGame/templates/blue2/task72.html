@@ -6,37 +6,45 @@
 
 <table align="center" id="firstView" width="100%" height="50"> 
     <tr>
-        <td colspan="2"  >
+        <td colspan="3"  >
             <div ><img src="{% static 'images/blue2/unauth.png' %}" class="pic"  ></div>
         </td>
         
          <td> 
-            <div  class="button button2"> Your Score :{{score}} <br>
+            <div  class="button buttonHint"> Your Score :{{score}} <br>
             </div> 
-            <br><br>
-            <div class="choiceboxshow"> How Confident are you with the answer? <br>
-                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2">
-                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
-            </div>
+            <form action="{% url 'taskChoiceBlue' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
+           
         </td>
         
         
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" > SSL/TLS Inspection.</div>
+            <div class="choiceboxshow" > A. <br> SSL/TLS Inspection <br><br></div>
 
-         <br><br><br>  
-            <div class="choiceboxshow" > Software Process and Device Authentication</div>
+         <br>
+            <div class="choiceboxshow" > C. <br> Software Process and Device Authentication</div>
            
          </td>
          <td>
-            <div class="choiceboxshow" >  Restrict Web-Based Content . </div>
+            <div class="choiceboxshow" >  B. <br> Restrict Web-Based Content <br><br> </div>
 
           <br>
-            <div class="choiceboxshow" > Network Segmentation</div>
+            <div class="choiceboxshow" > D. <br> Network Segmentation <br><br></div>
 
           </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="hintBox"> How Confident are you with the answer? <br>
+                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2"><br>
+                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
+            </div>
+        </td>
     </tr>
   
 
@@ -50,26 +58,30 @@
         </td>
         
          <td> 
-            <div  class="button button2"> Your Score :{{score}} </div> 
+            <div  class="button buttonHint"> Your Score :{{score}} </div>
+            <form action="{% url 'taskChoiceBlue' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form> 
          </td>
         
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" > SSL/TLS Inspection. <br><br></div>
+            <div class="choiceboxshow" > A. <br> SSL/TLS Inspection <br><br></div>
             <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button button2">
 
-            <br><br><br>  
-            <div class="choiceboxshow" > Software Process and Device Authentication <br> </div>
+            <br> 
+            <div class="choiceboxshow" > C. <br> Software Process and Device Authentication </div>
             <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button button2">
            
          </td>
          <td>
-            <div class="choiceboxshow" > Restrict Web-Based Content . <br>  </div>
+            <div class="choiceboxshow" > B. <br> Restrict Web-Based Content <br><br>   </div>
             <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button button2">
 
              <br>
-            <div class="choiceboxshow" > Network Segmentation. <br><br></div>
+            <div class="choiceboxshow" > D. <br> Network Segmentation<br><br></div>
             <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button button2">
 
           </td>
@@ -83,10 +95,11 @@
         </td>
         
         <td> 
-            <div  class="button button2"> Your Score :{{score}} </div> 
-         <br><br><br> 
-             
-                <input type="submit"  value="Hint" onclick="deduct()" class=" button buttonred">
+            <div  class="button buttonHint"> Your Score :{{score}} </div> 
+            <form action="{% url 'taskChoiceBlue' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
                 
             </td>
     
@@ -94,24 +107,33 @@
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" > SSL/TLS Inspection. <br><br></div>
+            <div class="choiceboxshow" > A. <br> SSL/TLS Inspection <br><br></div>
             <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button button2">
 
-            <br><br><br> 
-            <div class="choiceboxshow" > Software Process and Device Authentication <br> </div>
+            <br>
+            <div class="choiceboxshow" > C. <br> Software Process and Device Authentication</div>
             <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button button2">
            
          </td>
          <td>
-            <div class="choiceboxshow" > Restrict Web-Based Content . <br>  </div>
+            <div class="choiceboxshow" > B. <br> Restrict Web-Based Content <br><br>   </div>
              <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button button2">
 
-             <br><br><br> 
-            <div class="choiceboxshow" > Network Segmentation<br><br></div>
+             <br> 
+            <div class="choiceboxshow" > D. <br> Network Segmentation<br><br></div>
              <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button button2">
 
           </td>
     </tr>
+    <tr>
+        <td colspan="3" > 
+            <div class="hintBox">
+            <form  id="getHelp" method="post" target="_blank">{%csrf_token%}
+            <input type="submit" name="help" value="                        Hint.                           " onclick="deduct()" class=" button buttonHint">
+            </form>
+         </div>
+        </td>
+    </tr
     
 </table>
 
