@@ -4,89 +4,102 @@
 
 <body id="bg" class="tdStyleback"></body>
 
-<table align="center" id="firstView" width="100%" height="50"> 
+<table align="center" id="firstView" > 
     <tr>
-        <td colspan="2"  >
+        <td colspan="3"  >
             <div ><img src="{% static 'images/blue2/Persistence.png' %}" class="pic"  ></div>
         </td>
         
          <td> 
-            <div  class="button button2"> Your Score :{{score}} <br>
-            </div> 
-            <br><br>
-            <div class="choiceboxshow"> How Confident are you with the answer? <br>
-                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2">
-                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
+            <div  class="button buttonHint"> Your Score :{{score}}
             </div>
+            <form action="{% url 'taskChoiceBlue' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
         </td>
         
         
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" > User training.</div>
+            <div class="choiceboxshow" > A. <br> User training<br><br></div>
 
-         <br><br><br>  
-            <div class="choiceboxshow" > Limit Access to Resource Over Network.</div>
+            <br>
+            <div class="choiceboxshow" > C. <br> Limit Access to Resource Over Network</div>
            
          </td>
          <td>
-            <div class="choiceboxshow" >  Timer that is used to detect and recover from system malfunctions(Watchdog Timers). </div>
+            <div class="choiceboxshow" >  B. <br>Watchdog Timers <br><br></div>
 
-          <br>
-            <div class="choiceboxshow" > Disable or Remove Feature or Program</div>
+            <br>
+            <div class="choiceboxshow" >  D. <br>Disable or Remove Feature or Program</div>
 
           </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="hintBox"> How Confident are you with the answer? <br>
+                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2"><br>
+                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
+            </div>
+        </td>
     </tr>
   
 
     
 </table>
 
-<table align="center" id="firstViewConf" width="100%" height="50" class="invisibleDiv"> 
+<table align="center" id="firstViewConf"  class="invisibleDiv"> 
     <tr>
         <td colspan="3"  >
             <div  ><img src="{% static 'images/blue2/Persistence.png' %}" class="pic"  ></div>
         </td>
         
          <td> 
-            <div  class="button button2"> Your Score :{{score}} </div> 
+            <div  class="button buttonHint"> Your Score :{{score}} </div>
+            <form action="{% url 'taskChoiceBlue' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
+         
          </td>
         
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" > User training. <br><br></div>
+            <div class="choiceboxshow" > A. <br> User training<br><br></div>
             <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button button2">
-
-            <br><br><br>  
-            <div class="choiceboxshow" > Limit Access to Resource Over Network. <br> </div>
+            <br>
+            
+            <div class="choiceboxshow" > C. <br> Limit Access to Resource Over Network  </div>
             <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button button2">
            
          </td>
          <td>
-            <div class="choiceboxshow" > Timer that is used to detect and recover from system malfunctions(Watchdog Timers). <br>  </div>
+            <div class="choiceboxshow" > B. <br>Watchdog Timers <br><br>  </div>
             <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button button2">
 
-             <br>
-            <div class="choiceboxshow" > Disable or Remove Feature or Program. <br><br></div>
+            <br>
+            <div class="choiceboxshow" > D. <br>Disable or Remove Feature or Program </div>
             <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button button2">
 
           </td>
     </tr>
     
 </table>
-<table align="center" id="firstViewnotConf" width="100%" height="50" class="invisibleDiv"> 
+<table align="center" id="firstViewnotConf"  class="invisibleDiv"> 
     <tr>
         <td colspan="3"  >
             <div  ><img src="{% static 'images/blue2/Persistence.png' %}" class="pic"  ></div>
         </td>
         
         <td> 
-            <div  class="button button2"> Your Score :{{score}} </div> 
-         <br><br><br> 
-             
-                <input type="submit"  value="Hint" onclick="deduct()" class=" button buttonred">
+            <div  class="button buttonHint"> Your Score :{{score}} </div> 
+            <form action="{% url 'taskChoiceBlue' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
                 
             </td>
     
@@ -94,29 +107,35 @@
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" > User training. <br><br></div>
+            <div class="choiceboxshow" > A. <br> User training<br><br></div>
             <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button button2">
-
-            <br><br><br> 
-            <div class="choiceboxshow" > Limit Access to Resource Over Network. <br> </div>
+            <br>
+            <div class="choiceboxshow" > C. <br> Limit Access to Resource Over Network </div>
             <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button button2">
            
          </td>
          <td>
-            <div class="choiceboxshow" > Timer that is used to detect and recover from system malfunctions(Watchdog Timers. <br>  </div>
+            <div class="choiceboxshow" > B. <br>Watchdog Timers <br> <br>  </div>
              <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button button2">
-
-             <br><br><br> 
-            <div class="choiceboxshow" > Disable or Remove Feature or Program<br><br></div>
+             <br>
+            <div class="choiceboxshow" >  D. <br>Disable or Remove Feature or Program</div>
              <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button button2">
 
           </td>
     </tr>
-    
+    <tr>
+        <td colspan="3" > 
+            <div class="hintBox">
+            <form  id="getHelp" method="post" target="_blank">{%csrf_token%}
+            <input type="submit" name="help" value="                        Hint.                           " onclick="deduct()" class=" button buttonHint">
+            </form>
+         </div>
+        </td>
+    </tr
 </table>
 
-<table id="true1Conf" class="invisibleDiv" width="100%" align="center">
-    <tr width="100%">
+<table id="true1Conf" class="invisibleDiv"  align="center">
+    <tr >
           <td><div class="choiceboxshow">Bravo, this limits access to remote services through centrally managed concentrators such 
             as VPNs and other managed remote access systems.<br> </div>
          <form action="https://attack.mitre.org/techniques/T1133/" target="_blank"> 
@@ -135,8 +154,8 @@
             </td>
       
   </table>
-  <table id="true2Conf" class="invisibleDiv" width="100%" align="center">
-    <tr width="100%">
+  <table id="true2Conf" class="invisibleDiv"  align="center">
+    <tr >
           <td><div class="choiceboxshow"> Great decision. This can help us disable or block remotely available services that may be unnecessary.</div> <form target="_blank" action="https://attack.mitre.org/techniques/T1133/"> 
                 <input type="submit" value="Find more!" class=" button button2"> </form> </td>
           <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
@@ -154,8 +173,8 @@
       
   </table>
   
-  <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
-      <tr width="50%">
+  <table id="false1Conf" class="invisibleDiv"  align="center">
+      <tr >
             <td><div class="choiceboxshow" >User training won't help in this case. The technique does not require any action from the user, so even well-trained users can be affected by this.  </div>
                 <br><form action="https://attack.mitre.org/techniques/T1133/" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form>
@@ -176,8 +195,8 @@
             </td>
         </tr>
     </table>
-    <table id="false2Conf" class="invisibleDiv" width="100%" align="center">
-        <tr width="50%">
+    <table id="false2Conf" class="invisibleDiv"  align="center">
+        <tr >
               <td><div class="choiceboxshow" >Watchdog Timers are used when the system becomes unresponsive, and that does not happen in this case. </div> 
                 <br><form action="https://attack.mitre.org/techniques/T1133/" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form>
@@ -197,8 +216,8 @@
               </td>
           </tr>
       </table>
-      <table id="true1notConf" class="invisibleDiv" width="100%" align="center">
-        <tr width="100%">
+      <table id="true1notConf" class="invisibleDiv"  align="center">
+        <tr >
               <td><div class="choiceboxshow">Bravo, this limits access to remote services through centrally managed concentrators such 
                 as VPNs and other managed remote access systems. </td>
               <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
@@ -215,8 +234,8 @@
                 </td>
           
       </table>
-      <table id="true2notConf" class="invisibleDiv" width="100%" align="center">
-        <tr width="100%">
+      <table id="true2notConf" class="invisibleDiv"  align="center">
+        <tr >
               <td><div class="choiceboxshow">Great decision. This can help us disable or block remotely available services that may be unnecessary. </td>
               <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
@@ -233,8 +252,8 @@
           
       </table>
       
-      <table id="false1notConf" class="invisibleDiv" width="100%" align="center">
-          <tr width="50%">
+      <table id="false1notConf" class="invisibleDiv"  align="center">
+          <tr >
                 <td><div class="choiceboxshow" >User training won't help in this case. The technique does not require any action from the user, so even well-trained users can be affected by this.
     
                  
@@ -253,8 +272,8 @@
                 </td>
             </tr>
         </table>
-        <table id="false2notConf" class="invisibleDiv" width="100%" align="center">
-            <tr width="50%">
+        <table id="false2notConf" class="invisibleDiv"  align="center">
+            <tr >
                   <td><div class="choiceboxshow" >Watchdog Timers are used when the system becomes unresponsive, and that does not happen in this case.   <br>
                    
                     </div></td>
