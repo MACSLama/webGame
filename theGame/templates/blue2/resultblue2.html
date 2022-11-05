@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 <body class="tdStyleback">
 
-{% if truecounter == 7 %}
+{% if truecounter == 8 %}
 
     <table align="center">
         <tr>
@@ -20,11 +20,11 @@
         </tr>
         <tr>
             <td >
-                <div  class="button button2"> You answered {{truecounter}} out of 7 correctly.<br>
+                <div  class="button button2"> You answered {{truecounter}} out of 8 correctly.<br>
                     Your Final Score :{{score}} </div> 
             </td>
             <td>
-                <form action="{% url ' task12' %}" method="post" >{%csrf_token%}
+                <form action="{% url 'task12' %}" method="post" >{%csrf_token%}
                     <input type="submit" value="Re-play?" class=" button button2" >  
                 </form>
             </td>
@@ -60,11 +60,11 @@
         </tr>
         <tr>
             <td >
-                <div  class="button button2"> You answered {{truecounter}} out of 7 correctly.<br>
+                <div  class="button button2"> You answered {{truecounter}} out of 8 correctly.<br>
                     Your Final Score :{{score}} </div> 
             </td>
             <td>
-                <form action="{% url ' task12' %}" method="post" >{%csrf_token%}
+                <form action="{% url 'task12' %}" method="post" >{%csrf_token%}
                     <input type="submit" value="Re-play?" class=" button button2" >  
                 </form>
             </td>
@@ -98,11 +98,11 @@
     </tr>
     <tr>
         <td >
-            <div  class="button button2"> You answered {{truecounter}} out of 7 correctly.<br>
+            <div  class="button button2"> You answered {{truecounter}} out of 8 correctly.<br>
                 Your Final Score :{{score}} </div> 
         </td>
         <td>
-            <form action="{% url ' task12' %}" method="post" >{%csrf_token%}
+            <form action="{% url 'task12' %}" method="post" >{%csrf_token%}
                 <input type="submit" value="Re-play?" class=" button button2" >  
             </form>
         </td>

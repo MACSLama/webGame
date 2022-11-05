@@ -4,119 +4,141 @@
 
 <body id="bg" class="tdStyleback"></body>
 
-<table align="center" id="firstView" width="100%" height="50"> 
+<table align="center" id="firstView" > 
     <tr>
-        <td colspan="2"  >
+        <td colspan="3"  >
             <div ><img src="{% static 'images/blue2/credentialaccess.png' %}" class="pic"  ></div>
         </td>
         
          <td> 
-            <div  class="button button2"> Your Score :{{score}} <br>
+            <div  class="button buttonHint"> Your Score :{{score}}
             </div> 
-            <br><br>
-            <div class="choiceboxshow"> How Confident are you with the answer? <br>
-                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2">
-                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
-            </div>
+            <form action="{% url 'taskChoiceBlue' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
+            
         </td>
         
         
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" > Redundancy of Service.</div>
+            <div class="choiceboxshow" > A. <br> Redundancy of Service<br><br></div>
 
-         <br><br><br>  
-            <div class="choiceboxshow" > Safety Instrumented Systems.</div>
+         <br>
+            <div class="choiceboxshow" > C. <br>Safety Instrumented Systems<br><br></div>
            
          </td>
          <td>
-            <div class="choiceboxshow" >  Access Management . </div>
+            <div class="choiceboxshow" >  B. <br>Access Management<br><br> </div>
 
           <br>
-            <div class="choiceboxshow" > Application Developer Guidance</div>
+            <div class="choiceboxshow" > D. <br>Application Developer Guidance</div>
 
           </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            
+            <div class="hintBox"> How Confident are you with the answer? <br>
+                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2"><br>
+                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
+            </div>
+        </td>
     </tr>
   
 
     
 </table>
 
-<table align="center" id="firstViewConf" width="100%" height="50" class="invisibleDiv"> 
+<table align="center" id="firstViewConf"  class="invisibleDiv"> 
     <tr>
         <td colspan="3"  >
             <div  ><img src="{% static 'images/blue2/credentialaccess.png' %}" class="pic"  ></div>
         </td>
         
          <td> 
-            <div  class="button button2"> Your Score :{{score}} </div> 
+            <div  class="button buttonHint"> Your Score :{{score}} </div>
+            <form action="{% url 'taskChoiceBlue' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form> 
          </td>
         
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" > Redundancy of Service. <br><br></div>
+            <div class="choiceboxshow" > A. <br> Redundancy of Service<br><br></div>
             <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button button2">
 
-            <br><br><br>  
-            <div class="choiceboxshow" > Safety Instrumented Systems. <br> </div>
+            <br>
+            <div class="choiceboxshow" > C. <br>Safety Instrumented Systems<br><br> </div>
             <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button button2">
            
          </td>
          <td>
-            <div class="choiceboxshow" > Access Management . <br>  </div>
+            <div class="choiceboxshow" > B. <br>Access Management<br><br>  </div>
             <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button button2">
 
              <br>
-            <div class="choiceboxshow" > Application Developer Guidance. <br><br></div>
+            <div class="choiceboxshow" > D. <br>Application Developer Guidance</div>
             <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button button2">
 
           </td>
     </tr>
     
 </table>
-<table align="center" id="firstViewnotConf" width="100%" height="50" class="invisibleDiv"> 
+<table align="center" id="firstViewnotConf"  class="invisibleDiv"> 
     <tr>
         <td colspan="3"  >
             <div  ><img src="{% static 'images/blue2/credentialaccess.png' %}" class="pic"  ></div>
         </td>
         
         <td> 
-            <div  class="button button2"> Your Score :{{score}} </div> 
-         <br><br><br> 
-             
-                <input type="submit"  value="Hint" onclick="deduct()" class=" button buttonred">
-                
+            <div  class="button buttonHint"> Your Score :{{score}} </div> 
+            <form action="{% url 'taskChoiceBlue' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>       
             </td>
     
         
     </tr>
     <tr>
          <td>
-            <div class="choiceboxshow" > Redundancy of Service. <br><br></div>
+            <div class="choiceboxshow" > A. <br> Redundancy of Service<br><br></div>
             <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button button2">
 
-            <br><br><br> 
-            <div class="choiceboxshow" > Safety Instrumented Systems. <br> </div>
+            <br>
+            <div class="choiceboxshow" > C. <br>Safety Instrumented Systems<br><br> </div>
             <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button button2">
            
          </td>
          <td>
-            <div class="choiceboxshow" > Access Management . <br>  </div>
+            <div class="choiceboxshow" > B. <br>Access Management<br><br>  </div>
              <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button button2">
 
-             <br><br><br> 
-            <div class="choiceboxshow" > Application Developer Guidance<br><br></div>
+             <br>
+            <div class="choiceboxshow" > D. <br>Application Developer Guidance</div>
              <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button button2">
 
           </td>
     </tr>
+    <tr>
+        <td colspan="3" > 
+            <div class="hintBox">
+            <form  id="getHelp" method="post" target="_blank">{%csrf_token%}
+            <input type="submit" name="help" value="                        Hint.                           " onclick="deduct()" class=" button buttonHint">
+            </form>
+         </div>
+        </td>
+    </tr
     
 </table>
 
-<table id="true1Conf" class="invisibleDiv" width="100%" align="center">
-    <tr width="100%">
+<table id="true1Conf" class="invisibleDiv"   align="center">
+    <tr  >
           <td><div class="choiceboxshow">That is so smart, This mitigation authenticate all access to field controllers before authorizing access to, or modification of, a device's state, logic, or programs. Centralized authentication techniques can help manage the large number of field controller accounts needed across the ICS.<br> </div>
          <form action="https://attack.mitre.org/techniques/T0859/" target="_blank"> 
             <input type="submit" value="Find more!" class=" button button2"> </form></td>
@@ -134,8 +156,8 @@
             </td>
       
   </table>
-  <table id="true2Conf" class="invisibleDiv" width="100%" align="center">
-    <tr width="100%">
+  <table id="true2Conf" class="invisibleDiv"   align="center">
+    <tr  >
           <td><div class="choiceboxshow"> Perfect. This mitigation ensures that applications and devices do not store sensitive data or credentials insecurely.</div> <form target="_blank" action="https://attack.mitre.org/techniques/T0859/"> 
                 <input type="submit" value="Find more!" class=" button button2"> </form> </td>
           <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
@@ -153,8 +175,8 @@
       
   </table>
   
-  <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
-      <tr width="50%">
+  <table id="false1Conf" class="invisibleDiv"   align="center">
+      <tr  >
             <td><div class="choiceboxshow" >The technique doesn’t target service availability. We were wrong this time. .  </div>
                 <br><form action="https://attack.mitre.org/techniques/T0859/" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form>
@@ -175,8 +197,8 @@
             </td>
         </tr>
     </table>
-    <table id="false2Conf" class="invisibleDiv" width="100%" align="center">
-        <tr width="50%">
+    <table id="false2Conf" class="invisibleDiv"   align="center">
+        <tr  >
               <td><div class="choiceboxshow" >This is out of scope, since the technique on itself doesn’t cause any safety-related consequence. </div> 
                 <br><form action="https://attack.mitre.org/techniques/T0859/" target="_blank"> 
                     <input type="submit" value="Find more!" class=" button button2"> </form>
@@ -196,8 +218,8 @@
               </td>
           </tr>
       </table>
-      <table id="true1notConf" class="invisibleDiv" width="100%" align="center">
-        <tr width="100%">
+      <table id="true1notConf" class="invisibleDiv"   align="center">
+        <tr  >
               <td><div class="choiceboxshow">That is so smart, This mitigation authenticate all access to field controllers before authorizing access to, or modification of, a device's state, logic, or programs. Centralized authentication techniques can help manage the large number of field controller accounts needed across the ICS. </td>
               <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
@@ -213,8 +235,8 @@
                 </td>
           
       </table>
-      <table id="true2notConf" class="invisibleDiv" width="100%" align="center">
-        <tr width="100%">
+      <table id="true2notConf" class="invisibleDiv"   align="center">
+        <tr  >
               <td><div class="choiceboxshow">Perfect. This mitigation ensures that applications and devices do not store sensitive data or credentials insecurely. </td>
               <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
               <td>
@@ -231,8 +253,8 @@
           
       </table>
       
-      <table id="false1notConf" class="invisibleDiv" width="100%" align="center">
-          <tr width="50%">
+      <table id="false1notConf" class="invisibleDiv"   align="center">
+          <tr  >
                 <td><div class="choiceboxshow" >The technique doesn’t target service availability. We were wrong this time. .
     
                  
@@ -251,8 +273,8 @@
                 </td>
             </tr>
         </table>
-        <table id="false2notConf" class="invisibleDiv" width="100%" align="center">
-            <tr width="50%">
+        <table id="false2notConf" class="invisibleDiv"   align="center">
+            <tr  >
                   <td><div class="choiceboxshow" >This is out of scope, since the technique on itself doesn’t cause any safety-related consequence.   <br>
                    
                     </div></td>
