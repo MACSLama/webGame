@@ -4,10 +4,15 @@
 
 <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 <header class="headRed"> ATT&CK To Defend </header>
-<br> <br><br><br><br><br><br><br><br><br>
-<h2> Choose your mission here </h2>
-<table>
+<br> <br><br><br><br>
 
+<table align="center">
+<tr>
+  <td colspan="2">
+    <div class="hintBox"> Choose your mission here </div>
+    <br><br><br>
+  </td>
+</tr>
   <tr>
 
     <td>
@@ -25,10 +30,10 @@
      </td>
     
  </tr>
- <tr rowspan="2">
-  <td>
+ <tr >
+  <td colspan="2">
     <form action="{% url 'main' %}" method="post" >{%csrf_token%}
-      <input type="submit" value="Back to Main" class=" button buttonred">
+      <input type="submit" value="Back to Main" class=" button buttonHint">
      </form>
    </td>
  </tr>
