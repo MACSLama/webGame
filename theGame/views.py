@@ -313,7 +313,7 @@ def taskRed21 (request):
     counteradd = request.POST.get('counterAdd', 0)
     score = int(theScore) + int(theScorAdd) - int(deduction)
     truecounter = int(counter)+ int(counteradd)
-    return render(request, 'red1/taskRed21.html',{'score': score, 'truecounter':truecounter})
+    return render(request, 'red2/taskRed21.html',{'score': score, 'truecounter':truecounter})
 
 def taskRed22 (request):
     theScore=request.POST.get('score', 0)
@@ -323,7 +323,7 @@ def taskRed22 (request):
     counteradd = request.POST.get('counterAdd', 0)
     score = int(theScore) + int(theScorAdd) - int(deduction)
     truecounter = int(counter)+ int(counteradd)
-    return render(request, 'red1/taskRed22.html',{'score': score, 'truecounter':truecounter})
+    return render(request, 'red2/taskRed22.html',{'score': score, 'truecounter':truecounter})
 
 def taskRed23 (request):
     theScore=request.POST.get('score', 0)
@@ -333,7 +333,7 @@ def taskRed23 (request):
     counteradd = request.POST.get('counterAdd', 0)
     score = int(theScore) + int(theScorAdd) - int(deduction)
     truecounter = int(counter)+ int(counteradd)
-    return render(request, 'red1/taskRed23.html',{'score': score, 'truecounter':truecounter})
+    return render(request, 'red2/taskRed23.html',{'score': score, 'truecounter':truecounter})
 
 def taskRed24 (request):
     theScore=request.POST.get('score', 0)
@@ -343,7 +343,7 @@ def taskRed24 (request):
     counteradd = request.POST.get('counterAdd', 0)
     score = int(theScore) + int(theScorAdd) - int(deduction)
     truecounter = int(counter)+ int(counteradd)
-    return render(request, 'red1/taskRed24.html',{'score': score, 'truecounter':truecounter})
+    return render(request, 'red2/taskRed24.html',{'score': score, 'truecounter':truecounter})
 
 def taskRed25 (request):
     theScore=request.POST.get('score', 0)
@@ -353,7 +353,7 @@ def taskRed25 (request):
     counteradd = request.POST.get('counterAdd', 0)
     score = int(theScore) + int(theScorAdd) - int(deduction)
     truecounter = int(counter)+ int(counteradd)
-    return render(request, 'red1/taskRed25.html',{'score': score, 'truecounter':truecounter})
+    return render(request, 'red2/taskRed25.html',{'score': score, 'truecounter':truecounter})
 
 def resultRed2 (request):
     theScore=request.POST.get('score', 0)
@@ -363,4 +363,4 @@ def resultRed2 (request):
     counteradd = request.POST.get('counterAdd', 0)
     score = int(theScore) + int(theScorAdd) - int(deduction)
     truecounter = int(counter)+ int(counteradd)
-    return render(request, 'red1/resultRed2.html',{'score': score, 'truecounter':truecounter})
+    return render(request, 'red2/resultRed2.html',{'score': score, 'truecounter':truecounter})
