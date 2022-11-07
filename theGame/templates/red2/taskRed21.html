@@ -17,13 +17,45 @@
 
     </tr>
 </table>
+<table align="center" id="firstViewBackup" class="invisibleDiv">
+    <tr> 
+        <td float="right" > 
+            <input id="1to2" type="button" value="Next" onclick="view()" class=" button buttonred">
+        </td>
+        <td>
+            <div class="about">
+            <img src="{% static 'images/red2/funnyDream1.png' %}" class="pic" id="1">
+        </div>
+        </td>
+        
+        
+
+    </tr>
+</table>
+
+<table align="center" id="secondView">
+    <tr> 
+        <td float="right" > 
+            <input  type="button" value="Next" onclick="view3()" class=" button buttonred"><br>
+            <input  type="button" value="Back" onclick="view2()" class=" button buttonred">
+        </td>
+        <td>
+            <div class="about">
+            <img src="{% static 'images/red2/funnyDream2.png' %}" class="pic" id="1">
+        </div>
+        </td>
+        
+        
+
+    </tr>
+</table>
 
 
 <table id="askConf" class="invisibleDiv"  align="center">
     <tr>
         <td colspan="3">
            
-              <img src="{% static 'images/red1/initialAccess.png' %}" class="pic">
+              <img src="{% static 'images/red2/resDev.png' %}" class="pic">
             
         </td>
         <td>
@@ -38,13 +70,13 @@
     </tr>
     <tr>
         <td>
-            <div class="choiceBoxRed" id="option1" >  A.<br> Process Injection<br><br></div>
+            <div class="choiceBoxRed" id="option1" >  A.<br> Compromise Accounts: Email Accounts<br></div>
         </td>
         <td>
-               <div class="choiceBoxRed" id="option2"> B. <br> Drive-By Compromise<br><br> <div>
+               <div class="choiceBoxRed" id="option2"> B. <br> Adversary-in-the-Middle<br><br> <div>
         </td>
         <td>
-            <div class="choiceBoxRed" id="option2"> C. <br> Replication Through Removable Media<div>
+            <div class="choiceBoxRed" id="option2"> C. <br> Develop Capabilities: Malware<br><br><div>
      </td>
      
         
@@ -67,10 +99,10 @@
 </table>
 </body>
 
-<table id="confView" class="invisibleDiv" width="100%" align="center">
+<table id="confView" class="invisibleDiv"   align="center">
     <tr  >
         <tr>
-            <td colspan="3"><img src="{% static 'images/red1/initialAccess.png' %}" class="table"></td>
+            <td colspan="3"><img src="{% static 'images/red2/resDev.png' %}" class="table"></td>
             <td>
                 <form action="{% url 'taskChoiceRed' %}">
 
@@ -79,15 +111,15 @@
             </td>
         </tr>
         <td>
-            <div class="choiceBoxRed" id="option1" > A.<br> Process Injection.<br><br></div>
-            <br> <input type="button" value="Choose" onclick="feedbackFalseConf()" class=" button buttonred">
-        </td>
-        <td>
-            <div class="choiceBoxRed" id="option2"> B. <br> Drive-By Compromise.<br><br></div>
+            <div class="choiceBoxRed" id="option1" > A.<br> Compromise Accounts: Email Accounts<br></div>
             <br> <input type="button" value="Choose" onclick="feedbackTrueConf1()" class=" button buttonred">
         </td>
         <td>
-            <div class="choiceBoxRed" id="option2">C. <br> Replication Through Removable Media<br></div>
+            <div class="choiceBoxRed" id="option2"> B. <br> Adversary-in-the-Middle.<br><br></div>
+            <br> <input type="button" value="Choose" onclick="feedbackFalseConf()" class=" button buttonred">
+        </td>
+        <td>
+            <div class="choiceBoxRed" id="option2">C. <br> Develop Capabilities: Malware<br><br></div>
             <br> <input type="button" value="Choose" onclick="feedbackTrueConf2()" class=" button buttonred">
 
 
@@ -99,10 +131,10 @@
 
 </table>
 
-<table id="notConfView" class="invisibleDiv" width="100%" align="center">
+<table id="notConfView" class="invisibleDiv"   align="center">
     <tr height="30%">
         <td colspan="3">
-            <img src="{% static 'images/red1/initialAccess.png' %}" class="table">
+            <img src="{% static 'images/red2/resDev.png' %}" class="table">
         </td>
         <td>
             <form action="{% url 'taskChoiceRed' %}">
@@ -115,16 +147,16 @@
     </tr>    
     <tr  >
             <td>
-                <div class="choiceBoxRed" id="option1" > A.<br> Process Injection<br><br></div>
-                <br> <input type="button" value="Choose" onclick="feedbackFalsenotConf()" class=" button buttonred">
+                <div class="choiceBoxRed" id="option1" > A.<br> Compromise Accounts: Email Accounts<br></div>
+                <br> <input type="button" value="Choose" onclick="feedbackTruenotConf1()" class=" button buttonred">
             
             </td>
             <td>
-                <div class="choiceBoxRed" id="option2">B. <br> Drive-By Compromise<br><br></div>
-                <br> <input type="button" value="Choose" onclick="feedbackTruenotConf1()" class=" button buttonred">
+                <div class="choiceBoxRed" id="option2">B. <br> Adversary-in-the-Middle<br><br></div>
+                <br> <input type="button" value="Choose" onclick="feedbackFalsenotConf()" class=" button buttonred">
             </td>
             <td>
-                <div class="choiceBoxRed" id="option2">C. <br> Replication Through Removable Media<br></div>
+                <div class="choiceBoxRed" id="option2">C. <br> Develop Capabilities: Malware<br><br></div>
                 <br> <input type="button" value="Choose" onclick="feedbackTruenotConf2()" class=" button buttonred">
             </td>
            
@@ -144,12 +176,14 @@
        
 
 </table>
-<table id="trueConf1" class="invisibleDiv" width="100%" align="center">
+<table id="trueConf1" class="invisibleDiv"   align="center">
     <tr  >
           <td>
-              <div class="choiceBoxRed"> You are correct, Good job.<br>Adversaries can gain access to a system through a user visiting a website
-                while browsing. This technique makes the user's browser targeted for exploitation.<br></div>
-                  <form action="https://attack.mitre.org/techniques/T1456/" target="_blank"> 
+              <div class="choiceBoxRed"> Absolutely true. Adversaries may compromise email accounts, and use them for further 
+                operations, such as leveraging them to conduct phishing.<br> There are other techniques that can be used.
+                feel free to read more.
+            </div>
+                  <form action="https://attack.mitre.org/tactics/TA0042/" target="_blank"> 
                    
                    <input type="submit" value="Find more!" class=" button buttonred"></form>
                   
@@ -161,7 +195,7 @@
            </div>
           </td>
           <td> 
-              <form method="post" action="{% url 'taskRed12' %}" name="trueFormCOnf">
+              <form method="post" action="{% url 'taskRed22' %}" name="trueFormCOnf">
                  {% csrf_token %}
                  <input class="invisibleDiv" id="score" value="2" name="score">
                  <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -173,12 +207,12 @@
       </tr>
   </table>
   
-  <table id="trueConf2" class="invisibleDiv" width="100%" align="center">
+  <table id="trueConf2" class="invisibleDiv"   align="center">
     <tr  >
           <td>
-              <div class="choiceBoxRed"> You are correct, Good job.<br> We should consider gaining access physically,
-                adversaries may gain access to devices by exploiting or copying malware to devices connected via USB.<br></div>
-                  <form action="https://attack.mitre.org/techniques/T1458/" target="_blank"> 
+              <div class="choiceBoxRed"> You are correct, Good job.<br>Adversaries may develop malware and malware components that can be used during targeting.
+                Reda more about other techniques that can be used for this tactic.</div>
+                  <form action="https://attack.mitre.org/tactics/TA0042/" target="_blank"> 
                    
                    <input type="submit" value="Find more!" class=" button buttonred"></form>
                   
@@ -190,7 +224,7 @@
            </div>
           </td>
           <td> 
-              <form method="post" action="{% url 'taskRed12' %}" name="trueFormCOnf">
+              <form method="post" action="{% url 'taskRed22' %}" name="trueFormCOnf">
                  {% csrf_token %}
                  <input class="invisibleDiv" id="score" value="2" name="score">
                  <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -202,15 +236,15 @@
       </tr>
   </table>
   
-  <table id="falseConf" class="invisibleDiv" width="100%" align="center">
+  <table id="falseConf" class="invisibleDiv"   align="center">
       <tr  >
             <td>
-                <div class="choiceBoxRed" >Oops, This is a (Post-Adversary Device Access) technique employed for privilege escalation or defense evasion.
-                     The attacker needs to gain access to the target first.<br>
+                <div class="choiceBoxRed" >Unfortunately, this is incorrect. This technique aims to collect data and gain access to credentials in the target network or system. Prior to this technique attack recourses needs to be developed or 
+                    acquired and initial access to the target network or system to be established.<br>
                 
                     </div>
                    
-                  <br><form action="https://attack.mitre.org/matrices/mobile/" target="_blank"> 
+                  <br><form action="https://attack.mitre.org/tactics/TA0042/" target="_blank"> 
                        
               
               <input type="submit" value="Find more!" class=" button buttonred"></form>
@@ -219,7 +253,7 @@
                  <img src="{% static 'images/falseRed.png' %}" class="pic">
             </td>
             <td>
-                <form  method="post" action="{% url 'taskRed12' %}" name="falseFormConf"> 
+                <form  method="post" action="{% url 'taskRed22' %}" name="falseFormConf"> 
                   {% csrf_token %}
                   <input class="invisibleDiv"  value="0" name="score">
                   <input class="invisibleDiv"  value="2"  name="helpdeduct" >
@@ -230,19 +264,23 @@
         </tr>
     </table>
   
-    <table id="truenotConf1" class="invisibleDiv" width="100%" align="center">
+    <table id="truenotConf1" class="invisibleDiv"   align="center">
       <tr  >
             <td>
-                <div class="choiceBoxRed"> You are correct, Good job.<br>Adversaries can gain access to a system through a user visiting a website
-                    while browsing. This technique makes the user's browser targeted for exploitation.</td>
+                <div class="choiceBoxRed"> Absolutely true. Adversaries may compromise email accounts, and use them for further 
+                    operations, such as leveraging them to conduct phishing.<br> 
+                    feel free to read more about this technique.</td>
         
             <td> 
               <div class="about">
                 <img src="{% static 'images/trueRed.png' %}" class="pic">
               </div>
+              <form action="https://attack.mitre.org/techniques/T1586/002/" target="_blank"> 
+                   
+                <input type="submit" value="Find more!" class=" button buttonred"></form>
             </td>
             <td> 
-                <form method="post" action="{% url 'taskRed12' %}" name="trueFormCOnf">
+                <form method="post" action="{% url 'taskRed22' %}" name="trueFormCOnf">
                    {% csrf_token %}
                    <input class="invisibleDiv" id="score" value="1" name="score">
                    <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -254,19 +292,24 @@
         </tr>
     </table>
     
-    <table id="truenotConf2" class="invisibleDiv" width="100%" align="center">
+    <table id="truenotConf2" class="invisibleDiv"   align="center">
         <tr  >
               <td>
-                  <div class="choiceBoxRed"> You are correct, Good job.<br> We should consider gaining access physically,
-                    adversaries may gain access to devices by exploiting or copying malware to devices connected via USB.</td>
+                  <div class="choiceBoxRed"> You are correct, Good job.<br>Adversaries may develop malware and malware components that can be used during targeting.
+                Reda more about this technique.</div>
+                <form action="https://attack.mitre.org/techniques/T1587/001/" target="_blank"> 
+                   
+                    <input type="submit" value="Find more!" class=" button buttonred"></form>
+            </td>
           
               <td> 
                 <div class="about">
                   <img src="{% static 'images/trueRed.png' %}" class="pic">
                 </div>
+               
               </td>
               <td> 
-                  <form method="post" action="{% url 'taskRed12' %}" name="trueFormCOnf">
+                  <form method="post" action="{% url 'taskRed22' %}" name="trueFormCOnf">
                      {% csrf_token %}
                      <input class="invisibleDiv" id="score" value="1" name="score">
                      <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -279,19 +322,21 @@
       </table>
       
       
-    <table id="falsenotConf" class="invisibleDiv" width="100%" align="center">
+    <table id="falsenotConf" class="invisibleDiv"   align="center">
         <tr  >
               <td>
-                  <div class="choiceBoxRed" >Oops, This is a (Post-Adversary Device Access) technique employed for privilege escalation or defense evasion.
-                    The attacker needs to gain access to the target first.<br>
+                  <div class="choiceBoxRed" >Unfortunately, this is incorrect. This technique aims to collect data and gain access to credentials in the target network or system. Prior to this technique attack recourses needs to be developed or 
+                    acquired and initial access to the target network or system to be established.<br>
                    
                 </div>
+                <br><form action="https://attack.mitre.org/tactics/TA0042/" target="_blank">
+                    <input type="submit" value="Find more!" class=" button buttonred"></form>
               </td>
               <td>
                    <img src="{% static 'images/falseRed.png' %}" class="pic">
               </td>
               <td>
-                  <form  method="post" action="{% url 'taskRed12' %}" name="falseFormConf"> 
+                  <form  method="post" action="{% url 'taskRed22' %}" name="falseFormConf"> 
                     {% csrf_token %}
                     <input class="invisibleDiv"  value="0" name="score">
                     <input class="invisibleDiv"  value="0"  name="helpdeduct" >
@@ -306,6 +351,16 @@
 
 <script>
     function view(){
+
+document.getElementById("firstView").innerHTML = document.getElementById("secondView").innerHTML ;
+
+}
+function view2(){
+
+document.getElementById("firstView").innerHTML = document.getElementById("firstViewBackup").innerHTML ;
+
+}
+function view3(){
 
 document.getElementById("firstView").innerHTML = document.getElementById("askConf").innerHTML ;
 
@@ -358,6 +413,6 @@ function feedbackFalsenotConf(){
 
 }
 function deduct(){
-    window.open("https://attack.mitre.org/matrices/mobile/");
+    window.open("https://attack.mitre.org/tactics/TA0042/");
     }
 </script>

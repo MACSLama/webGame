@@ -1,16 +1,378 @@
+{% load static %}
 
-<table align="center" id="firstView">
-    <tr> 
-        <td float="right" > 
-            <input id="1to2" type="button" value="Next" onclick="view()" class=" button buttonred">
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+<body id="bg" class="tdStylebackred">
+
+<table align="center" id="firstView"> 
+    <tr>
+        <td colspan="3"  >
+            <div ><img src="{% static 'images/red2/execution.png' %}" class="pic"  ></div>
         </td>
-        <td>
-            <div class="about">
-            <img src="{% static 'images/red2/funnyDream.png' %}" class="pic" id="1">
-        </div>
+        
+         <td> 
+            <div  class="button buttonHint"> Your Score :{{score}} <br>
+            </div> 
+            <form action="{% url 'taskChoiceRed' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
+           
         </td>
         
         
-
     </tr>
+    <tr>
+         <td>
+            <div class="choiceBoxRed" > A. <br>Disk Wipe<br><br></div>
+            <br><br><br>
+         
+            <div class="choiceBoxRed" >C. <br>Windows Management Instrumentation</div>
+           
+         </td>
+            
+         <td>
+            <div class="choiceBoxRed" > B. <br>Lateral Tool Transfer<br><br> </div>
+
+          <br><br><br>
+            <div class="choiceBoxRed" >D.  <br>Command and Scripting Interpreter: Windows Command Shell</div>
+
+          </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div><br></div>
+        </td>
+    </tr>
+   <tr> 
+       <td colspan="2">
+          <div class="hintBox"> How Confident are you with the answer? <br>
+             <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button buttonred"><br>
+             <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button buttonred">
+          </div>
+       </td> 
+   </tr>
+  
+
+    
 </table>
+</body>
+
+<table align="center" id="firstViewConf" width="100%" height="50" class="invisibleDiv"> 
+    <tr>
+        <td colspan="3"  >
+            <div  ><img src="{% static 'images/red2/execution.png' %}" class="pic"  ></div>
+        </td>
+        
+         <td> 
+            <div  class="button buttonHint"> Your Score :{{score}} </div> 
+            <form action="{% url 'taskChoiceRed' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
+         </td>
+        
+    </tr>
+    <tr>
+         <td>
+            <div class="choiceBoxRed" > A. <br>Disk Wipe<br><br> </div>
+            <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button buttonred">
+
+            <br>
+            <div class="choiceBoxRed" >C. <br>Windows Management Instrumentation  </div>
+            <input type="button" value="Choose" onclick="feedbackTrueConf()" class=" button buttonred">
+           
+         </td>
+         <td>
+            <div class="choiceBoxRed" > B. <br>Lateral Tool Transfer<br><br> </div>
+            <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button buttonred">
+
+             <br> 
+            <div class="choiceBoxRed" >D.  <br>Command and Scripting Interpreter: Windows Command Shell</div>
+            <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button buttonred">
+
+          </td>
+    </tr>
+    
+</table>
+<table align="center" id="firstViewnotConf" width="100%" height="50" class="invisibleDiv"> 
+    <tr>
+        <td colspan="3"  >
+            <div  ><img src="{% static 'images/red2/execution.png' %}" class="pic"  ></div>
+        </td>
+        
+        <td> 
+            <div  class="button buttonHint"> Your Score :{{score}} </div>
+            <form action="{% url 'taskChoiceRed' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
+         
+                
+            </td>
+    
+        
+    </tr>
+    <tr>
+         <td>
+            <div class="choiceBoxRed" > A. <br>Disk Wipe<br><br> </div>
+            <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button buttonred">
+
+            <br> 
+            <div class="choiceBoxRed" >C. <br>Windows Management Instrumentation  </div>
+            <input type="button" value="Choose" onclick="feedbackTruenotConf()" class=" button buttonred">
+           
+         </td>
+         <td>
+            <div class="choiceBoxRed" > B. <br>Lateral Tool Transfer<br><br> </div>
+             <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button buttonred">
+
+             <br>
+            <div class="choiceBoxRed" >D.  <br>Command and Scripting Interpreter: Windows Command Shell</div>
+             <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button buttonred">
+
+          </td>
+    </tr>
+    <tr>
+         <td colspan="2">
+          <div></div>
+         </td>
+    </tr>
+    <tr>
+        <td colspan="2" > 
+            <div class="hintBox">
+            <form  id="getHelp" method="post" target="_blank">{%csrf_token%}
+            <input type="submit" name="help" value="                        Hint.                           " onclick="deduct()" class=" button buttonHint">
+            </form>
+         </div>
+        </td>
+    </tr>
+    
+</table>
+
+<table id="trueConf" class="invisibleDiv" width="100%" align="center">
+    <tr width="100%">
+          <td><div class="choiceBoxRed">That is correct. Adversaries may abuse Windows Management Instrumentation (WMI)
+            to execute malicious commands and payloads.<br>
+           Read more about other techniques for this tactic. </div>
+         <form action="https://attack.mitre.org/tactics/TA0002/" target="_blank"> 
+            <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+          <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
+          <td>
+              <form action="{% url 'taskRed23' %}" method="post" >{%csrf_token%}
+                <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                <input class="invisibleDiv"  value="2"  name="scoreAdd" >
+                <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                <input class="invisibleDiv"  value="1"  name="counterAdd" >
+
+                <input type="submit" value="Continue" class=" button buttonred" >  
+                </form>
+            </td>
+      
+  </table>
+  <table id="true2Conf" class="invisibleDiv" width="100%" align="center">
+    <tr width="100%">
+          <td><div class="choiceBoxRed">That is correct, excellent!! Adversaries may abuse the Windows command shell for execution,  The Windows command prompt can be used to control almost any aspect of a system. 
+            Read more about other techniques that can be applied to this tactis.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0002/"> 
+                <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+          <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
+          <td>
+              <form action="{% url 'taskRed23' %}" method="post" >{%csrf_token%}
+                <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                <input class="invisibleDiv"  value="2"  name="scoreAdd" >
+                <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                <input class="invisibleDiv" value="{{truecounter}}"  name="trueCount" >
+                <input class="invisibleDiv"  value="1"  name="counterAdd" >
+
+                <input type="submit" value="Continue" class=" button buttonred" >  
+                </form>
+            </td>
+      
+  </table>
+  
+  <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
+      <tr width="50%">
+            <td><div class="choiceBoxRed" >Unfortunately this is not correct. This technique aims to affect the availability of the target in undesired way by wiping the disk.
+                 During Execution, attackers aim to enable an adversary-controlled code to run on a local or remote system.<br></div> 
+                <form target="_blank" action="https://attack.mitre.org/tactics/TA0002/"> 
+                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+
+             
+              </td>
+            <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+            <td>
+                <form action="{% url 'taskRed23' %}" method="post" >{%csrf_token%}
+                    <input class="invisibleDiv"  value="{{score}}" name="score">
+                    <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                    <input class="invisibleDiv"  value="2"  name="helpdeduct" >
+                    <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                    <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                     
+                    <input type="submit" value="Continue" class=" button buttonred" >
+                </form>
+            </td>
+        </tr>
+    </table>
+    <table id="false2Conf" class="invisibleDiv" width="100%" align="center">
+        <tr width="50%">
+              <td><div class="choiceBoxRed" >Unfortunately this is not correct. This technique aims to allow attackers to laterally move within the target network through the inherent file sharing protocols such as file sharing over SMB/Windows Admin Shares.
+                 During Execution, attackers aim to enable an adversary-controlled code to run on a local or remote system.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0002/"> 
+                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+              <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+              <td>
+                  <form action="{% url 'taskRed23' %}" method="post" >{%csrf_token%}
+                      <input class="invisibleDiv"  value="{{score}}" name="score">
+                      <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                      <input class="invisibleDiv"  value="2"  name="helpdeduct" >
+                      <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                      <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                      
+                      <input type="submit" value="Continue" class=" button buttonred" >
+                  </form>
+              </td>
+          </tr>
+      </table>
+      <table id="truenotConf" class="invisibleDiv" width="100%" align="center">
+        <tr width="100%">
+            <td><div class="choiceBoxRed">That is correct. Adversaries may abuse Windows Management Instrumentation (WMI)
+                 to execute malicious commands and payloads.<br>
+                Read more about this technique. </div>
+             <form action="https://attack.mitre.org/techniques/T1047/" target="_blank"> 
+                <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+                <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
+              <td>
+                  <form action="{% url 'taskRed23' %}" method="post" >{%csrf_token%}
+                    <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                    <input class="invisibleDiv"  value="1"  name="scoreAdd" >
+                    <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                    <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                    <input class="invisibleDiv"  value="1"  name="counterAdd" >
+    
+                    <input type="submit" value="Continue" class=" button buttonred" >  
+                    </form>
+                </td>
+          
+      </table>
+      <table id="true2notConf" class="invisibleDiv" width="100%" align="center">
+        <tr width="100%">
+              <td><div class="choiceBoxRed">That is correct, excellent!! Adversaries may abuse the Windows command shell for execution,  The Windows command prompt can be used to control almost any aspect of a system. 
+                Read more about this technique.
+              </div><br></div> <form target="_blank" action="https://attack.mitre.org/techniques/T1059/003/"> 
+                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+              <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
+              <td>
+                  <form action="{% url 'taskRed23' %}" method="post" >{%csrf_token%}
+                    <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                    <input class="invisibleDiv"  value="1"  name="scoreAdd" >
+                    <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                    <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                    <input class="invisibleDiv"  value="1"  name="counterAdd" >
+    
+                    <input type="submit" value="Continue" class=" button buttonred" >  
+                    </form>
+                </td>
+          
+      </table>
+      
+      <table id="false1notConf" class="invisibleDiv" width="100%" align="center">
+          <tr width="50%">
+                <td><div class="choiceBoxRed" >Unfortunately this is not correct. This technique aims to affect the availability of the target in undesired way by wiping the disk. 
+                    During Execution, attackers aim to enable an adversary-controlled code to run on a local or remote system.<br></div> 
+                    <form target="_blank" action="https://attack.mitre.org/tactics/TA0002/"> 
+                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+                <td>
+                    <form action="{% url 'taskRed23' %}" method="post" >{%csrf_token%}
+                        <input class="invisibleDiv"  value="{{score}}" name="score">
+                        <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                        <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                        <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                        <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                        
+                        <input type="submit" value="Continue" class=" button buttonred" >
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <table id="false2notConf" class="invisibleDiv" width="100%" align="center">
+            <tr width="50%">
+                  <td><div class="choiceBoxRed" >Unfortunately this is not correct. This technique aims to allow attackers to laterally move within the target network through the inherent file sharing protocols such as file sharing over SMB/Windows Admin Shares.
+                     During Execution, attackers aim to enable an adversary-controlled code to run on a local or remote system.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0002/"> 
+                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                  <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+                  <td>
+                      <form action="{% url 'taskRed23' %}" method="post" >{%csrf_token%}
+                          <input class="invisibleDiv"  value="{{score}}" name="score">
+                          <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                          <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                          <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                          <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                          
+                          <input type="submit" value="Continue" class=" button buttonred" >
+                      </form>
+                  </td>
+              </tr>
+            </table>
+
+<script type="text/javascript">
+
+ function confident(){
+    document.getElementById("firstView").innerHTML = document.getElementById("firstViewConf").innerHTML ;
+ }
+
+ function notConfident(){
+    document.getElementById("firstView").innerHTML = document.getElementById("firstViewnotConf").innerHTML ;
+ }
+
+ function feedbackTrueConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("trueConf").innerHTML ;
+
+
+}
+function feedbackTrue2Conf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("true2Conf").innerHTML ;
+
+
+}
+function feedbackFalse1Conf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false1Conf").innerHTML ;
+
+
+}
+function feedbackFalse2Conf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false2Conf").innerHTML ;
+
+
+ }
+ 
+
+ function feedbackTruenotConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("truenotConf").innerHTML ;
+
+
+ }
+ function feedbackTrue2notConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("true2notConf").innerHTML ;
+
+
+ }
+ function feedbackFalse1notConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false1notConf").innerHTML ;
+
+
+ }
+ function feedbackFalse2notConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false2notConf").innerHTML ;
+
+
+ }
+ function deduct(){
+    window.open("https://attack.mitre.org/tactics/TA0002/");
+
+ }
+
+
+
+
+</script>

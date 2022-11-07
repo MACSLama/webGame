@@ -1,0 +1,378 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+<body class="tdStylebackred">
+    
+
+<table align="center" id="firstView" > 
+    <tr>
+        <td colspan="3"  >
+            <div ><img src="{% static 'images/red2/discovery.png' %}" class="pic"  ></div>
+        </td>
+        
+         <td> 
+            <div  class="button buttonHint"> Your Score :{{score}} <br>
+            </div> 
+            <form action="{% url 'taskChoiceRed' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
+          
+        </td>
+        
+        
+    </tr>
+    <tr>
+         <td>
+            <div class="choiceBoxRed" > A. <br>Process Discovery<br><br></div>
+
+         <br><br><br>  
+            <div class="choiceBoxRed" > C.<br>System Network Connections Discovery</div>
+           
+         </td>
+         <td>
+            <div class="choiceBoxRed" >B. <br>Compromise Infrastructure: Botnet<br><br></div>
+
+          <br><br><br>  
+            <div class="choiceBoxRed" >D. <br>Loss of View<br><br> </div>
+
+          </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <div class="hintBox"> How Confident are you with the answer? <br>
+                <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button buttonred"><br>
+                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button buttonred">
+            </div>
+        </td>
+    </tr>
+  
+
+    
+</table>
+</body>
+
+<table align="center" id="firstViewConf"   class="invisibleDiv"> 
+    <tr>
+        <td colspan="3"  >
+            <div  ><img src="{% static 'images/red2/discovery.png' %}" class="pic"  ></div>
+        </td>
+        
+         <td> 
+            <div  class="button buttonHint"> Your Score :{{score}} </div> 
+            <form action="{% url 'taskChoiceRed' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
+         </td>
+        
+    </tr>
+    <tr>
+         <td>
+            <div class="choiceBoxRed" > A. <br>Process Discovery<br><br> </div>
+            <input type="button" value="Choose" onclick="feedbackTrue1Conf()" class=" button buttonred">
+
+            <br>
+            <div class="choiceBoxRed" > C.<br>System Network Connections Discovery  </div>
+            <input type="button" value="Choose" onclick="feedbackTrue2Conf()" class=" button buttonred">
+           
+         </td>
+         <td>
+            <div class="choiceBoxRed" >B. <br>Compromise Infrastructure: Botnet<br><br> </div>
+            <input type="button" value="Choose" onclick="feedbackFalse2Conf()" class=" button buttonred">
+
+             <br> 
+            <div class="choiceBoxRed" >D. <br>Loss of View<br><br> </div>
+            <input type="button" value="Choose" onclick="feedbackFalse1Conf()" class=" button buttonred">
+
+          </td>
+    </tr>
+    
+</table>
+<table align="center" id="firstViewnotConf"   class="invisibleDiv"> 
+    <tr>
+        <td colspan="3"  >
+            <div  ><img src="{% static 'images/red2/discovery.png' %}" class="pic"  ></div>
+        </td>
+        
+        <td> 
+            <div  class="button buttonHint"> Your Score :{{score}} </div> 
+         
+            <form action="{% url 'taskChoiceRed' %}">
+
+                <input class="button buttonHint" type="submit" value="Back">
+            </form>
+            </td>
+    
+        
+    </tr>
+    <tr>
+         <td>
+            <div class="choiceBoxRed" > A. <br>Process Discovery<br><br> </div>
+            <input type="button" value="Choose" onclick="feedbackTrue1notConf()" class=" button buttonred">
+
+            <br> 
+            <div class="choiceBoxRed" > C.<br>System Network Connections Discovery  </div>
+            <input type="button" value="Choose" onclick="feedbackTrue2notConf()" class=" button buttonred">
+           
+         </td>
+         <td>
+            <div class="choiceBoxRed" >B. <br>Compromise Infrastructure: Botnet<br><br> </div>
+             <input type="button" value="Choose" onclick="feedbackFalse2notConf()" class=" button buttonred">
+
+             <br> 
+            <div class="choiceBoxRed" >D. <br>Loss of View<br><br> </div>
+             <input type="button" value="Choose" onclick="feedbackFalse1notConf()" class=" button buttonred">
+
+          </td>
+    </tr>
+    <tr> <td colspan="2">
+        <div></div>
+    </td></tr>
+    <tr>
+        <td colspan="2" > 
+            <div class="hintBox">
+            <form  id="getHelp" method="post" target="_blank">{%csrf_token%}
+            <input type="submit" name="help" value="                        Hint.                           " onclick="deduct()" class=" button buttonHint">
+            </form>
+         </div>
+        </td>
+    </tr>
+    
+</table>
+
+<table id="true1Conf" class="invisibleDiv" width="100%" align="center">
+    <tr width="100%">
+          <td><div class="choiceBoxRed">Amazing, adversaries may attempt to get information about running processes on a system.
+            <br> Learn more about other techniquesfor the discovery tactic. </div>
+         <form action="https://attack.mitre.org/tactics/TA0007/" target="_blank"> 
+            <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+          <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
+          <td>
+              <form action="{% url 'taskRed24' %}" method="post" >{%csrf_token%}
+                <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                <input class="invisibleDiv"  value="2"  name="scoreAdd" >
+                <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                <input class="invisibleDiv"  value="1"  name="counterAdd" >
+
+                <input type="submit" value="Continue" class=" button buttonred" >  
+                </form>
+            </td>
+      
+  </table>
+  <table id="true2Conf" class="invisibleDiv" width="100%" align="center">
+    <tr width="100%">
+          <td><div class="choiceBoxRed"> Amazing. Adversaries may attempt to get a listing of network connections to or from 
+            the compromised system they are currently accessing or from remote systems by querying for information 
+            over the network.<br>
+            Read about more techniques here.
+        </div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0007/">
+                <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+          <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
+          <td>
+              <form action="{% url 'taskRed24' %}" method="post" >{%csrf_token%}
+                <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                <input class="invisibleDiv"  value="2"  name="scoreAdd" >
+                <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                <input class="invisibleDiv" value="{{truecounter}}"  name="trueCount" >
+                <input class="invisibleDiv"  value="1"  name="counterAdd" >
+
+                <input type="submit" value="Continue" class=" button buttonred" >  
+                </form>
+            </td>
+      
+  </table>
+  
+  <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
+      <tr width="50%">
+            <td><div class="choiceBoxRed" >We did not choose the correct one. This technique is from the ICS matrix, 
+                it is utilized by attackers to cause an undesired impact in the target system through causing sustained or 
+                permanent loss of view where the ICS equipment will require local, hands-on operator intervention.
+                Please, read more about Discovery tactic. <br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0007/"> 
+                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+
+             
+              </td>
+            <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+            <td>
+                <form action="{% url 'taskRed24' %}" method="post" >{%csrf_token%}
+                    <input class="invisibleDiv"  value="{{score}}" name="score">
+                    <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                    <input class="invisibleDiv"  value="2"  name="helpdeduct" >
+                    <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                    <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                     
+                    <input type="submit" value="Continue" class=" button buttonred" >
+                </form>
+            </td>
+        </tr>
+    </table>
+    <table id="false2Conf" class="invisibleDiv" width="100%" align="center">
+        <tr width="50%">
+              <td><div class="choiceBoxRed" > Oh No!! This technique is utilized by attackers during attack resource development stage not during discovery. During Discovery, attackers aim to
+                 learn about the target system processes, files, connections and other artifacts to stage further attack techniques.  <br>
+                You can learn more about the Discovery tactic.</div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0007/"> 
+                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+              <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+              <td>
+                  <form action="{% url 'taskRed24' %}" method="post" >{%csrf_token%}
+                      <input class="invisibleDiv"  value="{{score}}" name="score">
+                      <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                      <input class="invisibleDiv"  value="2"  name="helpdeduct" >
+                      <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                      <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                      
+                      <input type="submit" value="Continue" class=" button buttonred" >
+                  </form>
+              </td>
+          </tr>
+      </table>
+      <table id="true1notConf" class="invisibleDiv" width="100%" align="center">
+        <tr width="100%">
+            <td><div class="choiceBoxRed">Amazing, adversaries may attempt to get information about running processes on a system.
+                <br> Learn more about this technique.
+              </div>
+             <form action="https://attack.mitre.org/techniques/T1057/" target="_blank"> 
+                <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+                <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
+              <td>
+                  <form action="{% url 'taskRed24' %}" method="post" >{%csrf_token%}
+                    <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                    <input class="invisibleDiv"  value="1"  name="scoreAdd" >
+                    <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                    <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                    <input class="invisibleDiv"  value="1"  name="counterAdd" >
+    
+                    <input type="submit" value="Continue" class=" button buttonred" >  
+                    </form>
+                </td>
+          
+      </table>
+      <table id="true2notConf" class="invisibleDiv" width="100%" align="center">
+        <tr width="100%">
+              <td><div class="choiceBoxRed"> Amazing. Adversaries may attempt to get a listing of network connections to or from 
+                the compromised system they are currently accessing or from remote systems by querying for information 
+                over the network.<br>
+                Read more about this technique here.<br></div> <form target="_blank" action="https://attack.mitre.org/techniques/T1049/"> 
+                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+              <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
+              <td>
+                  <form action="{% url 'taskRed24' %}" method="post" >{%csrf_token%}
+                    <input class="invisibleDiv" id="score" value="{{score}}"  name="score" >
+                    <input class="invisibleDiv"  value="1"  name="scoreAdd" >
+                    <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                    <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                    <input class="invisibleDiv"  value="1"  name="counterAdd" >
+    
+                    <input type="submit" value="Continue" class=" button buttonred" >  
+                    </form>
+                </td>
+          
+      </table>
+      
+      <table id="false1notConf" class="invisibleDiv" width="100%" align="center">
+          <tr width="50%">
+                <td><div class="choiceBoxRed" >We did not choose the correct one. This technique is from the ICS matrix, 
+                    it is utilized by attackers to cause an undesired impact in the target system through causing sustained or 
+                    permanent loss of view where the ICS equipment will require local, hands-on operator intervention.
+                    Please, read more about Discovery tactic.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0007/"> 
+                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+                <td>
+                    <form action="{% url 'taskRed24' %}" method="post" >{%csrf_token%}
+                        <input class="invisibleDiv"  value="{{score}}" name="score">
+                        <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                        <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                        <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                        <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                        
+                        <input type="submit" value="Continue" class=" button buttonred" >
+                    </form>
+                </td>
+            </tr>
+        </table>
+        <table id="false2notConf" class="invisibleDiv" width="100%" align="center">
+            <tr width="50%">
+                  <td><div class="choiceBoxRed" >Oh No!! This technique is utilized by attackers during attack resource development stage not during discovery. During Discovery, attackers aim to
+                    learn about the target system processes, files, connections and other artifacts to stage further attack techniques.  <br>
+                   You can learn more about the discovery tactic. <br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0007/"> 
+                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                  <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
+                  <td>
+                      <form action="{% url 'taskRed24' %}" method="post" >{%csrf_token%}
+                          <input class="invisibleDiv"  value="{{score}}" name="score">
+                          <input class="invisibleDiv"  value="0"  name="scoreAdd" >
+                          <input class="invisibleDiv"  value="0"  name="helpdeduct" >
+                          <input class="invisibleDiv"  value="{{truecounter}}"  name="trueCount" >
+                          <input class="invisibleDiv"  value="0"  name="counterAdd" >
+                          
+                          <input type="submit" value="Continue" class=" button buttonred" >
+                      </form>
+                  </td>
+              </tr>
+            </table>
+
+<script type="text/javascript">
+
+ function confident(){
+    document.getElementById("firstView").innerHTML = document.getElementById("firstViewConf").innerHTML ;
+ }
+
+ function notConfident(){
+    document.getElementById("firstView").innerHTML = document.getElementById("firstViewnotConf").innerHTML ;
+ }
+
+ function feedbackTrue1Conf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("true1Conf").innerHTML ;
+
+
+}
+function feedbackTrue2Conf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("true2Conf").innerHTML ;
+
+
+}
+function feedbackFalse1Conf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false1Conf").innerHTML ;
+
+
+}
+function feedbackFalse2Conf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false2Conf").innerHTML ;
+
+
+ }
+ 
+
+ function feedbackTrue1notConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("true1notConf").innerHTML ;
+
+
+ }
+ function feedbackTrue2notConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("true2notConf").innerHTML ;
+
+
+ }
+ function feedbackFalse1notConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false1notConf").innerHTML ;
+
+
+ }
+ function feedbackFalse2notConf(){
+    document.getElementById("firstView").innerHTML = document.getElementById("false2notConf").innerHTML ;
+
+
+ }
+ function deduct(){
+    window.open("https://attack.mitre.org/tactics/TA0007/");
+
+ }
+
+
+
+
+</script>
