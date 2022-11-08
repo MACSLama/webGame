@@ -148,8 +148,8 @@
     <tr  >
           <td>
               <div class="choiceBoxRed"> You are correct, Good job.<br>Adversaries can gain access to a system through a user visiting a website
-                while browsing. This technique makes the user's browser targeted for exploitation.<br></div>
-                  <form action="https://attack.mitre.org/techniques/T1456/" target="_blank"> 
+                while browsing. This technique makes the user's browser targeted for exploitation. Read more about other techniques. <br></div>
+                  <form action="https://attack.mitre.org/tactics/TA0027/" target="_blank"> 
                    
                    <input type="submit" value="Find more!" class=" button buttonred"></form>
                   
@@ -177,10 +177,11 @@
     <tr  >
           <td>
               <div class="choiceBoxRed"> You are correct, Good job.<br> We should consider gaining access physically,
-                adversaries may gain access to devices by exploiting or copying malware to devices connected via USB.<br></div>
-                  <form action="https://attack.mitre.org/techniques/T1458/" target="_blank"> 
-                   
-                   <input type="submit" value="Find more!" class=" button buttonred"></form>
+                adversaries may gain access to devices by exploiting or copying malware to devices connected via USB.<br>Read more about other techniques. <br></div>
+                <form action="https://attack.mitre.org/tactics/TA0027/" target="_blank"> 
+                 
+                 <input type="submit" value="Find more!" class=" button buttonred"></form>
+
                   
           </td>
       
@@ -210,7 +211,7 @@
                 
                     </div>
                    
-                  <br><form action="https://attack.mitre.org/matrices/mobile/" target="_blank"> 
+                  <br><form action="https://attack.mitre.org/tactics/TA0027/" target="_blank"> 
                        
               
               <input type="submit" value="Find more!" class=" button buttonred"></form>
@@ -234,7 +235,13 @@
       <tr  >
             <td>
                 <div class="choiceBoxRed"> You are correct, Good job.<br>Adversaries can gain access to a system through a user visiting a website
-                    while browsing. This technique makes the user's browser targeted for exploitation.</td>
+                    while browsing. This technique makes the user's browser targeted for exploitation. <br>
+                Read more about this technique. </div>
+                    <br><form action="https://attack.mitre.org/techniques/T1456/" target="_blank"> 
+                       
+              
+                        <input type="submit" value="Find more!" class=" button buttonred"></form
+                </td>
         
             <td> 
               <div class="about">
@@ -258,7 +265,12 @@
         <tr  >
               <td>
                   <div class="choiceBoxRed"> You are correct, Good job.<br> We should consider gaining access physically,
-                    adversaries may gain access to devices by exploiting or copying malware to devices connected via USB.</td>
+                    adversaries may gain access to devices by exploiting or copying malware to devices connected via USB. <br>
+                     Read more about this technique</div>
+                    <form action="https://attack.mitre.org/techniques/T1458/" target="_blank"> 
+                   
+                        <input type="submit" value="Find more!" class=" button buttonred"></form>
+                </td>
           
               <td> 
                 <div class="about">
@@ -283,9 +295,13 @@
         <tr  >
               <td>
                   <div class="choiceBoxRed" >Oops, This is a (Post-Adversary Device Access) technique employed for privilege escalation or defense evasion.
-                    The attacker needs to gain access to the target first.<br>
+                    The attacker needs to gain access to the target first. Check out what ATT&CK has for this tactic. <br>
                    
                 </div>
+                <br><form action="https://attack.mitre.org/tactics/TA0027/" target="_blank"> 
+                       
+              
+                    <input type="submit" value="Find more!" class=" button buttonred"></form
               </td>
               <td>
                    <img src="{% static 'images/falseRed.png' %}" class="pic">
@@ -358,6 +374,6 @@ function feedbackFalsenotConf(){
 
 }
 function deduct(){
-    window.open("https://attack.mitre.org/matrices/mobile/");
+    window.open("https://attack.mitre.org/tactics/TA0027/");
     }
 </script>
