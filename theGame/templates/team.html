@@ -7,16 +7,49 @@
 
 
 
-<br> <br><br><br><br><br><br><br><br><br>
-<form action="{% url 'blue1' %}">
-    <input class="button button2" type="submit" value="Blue Team" >
-</form>
 
 
-<form action="{% url 'introRed' %}">
-    <input type="submit" value="Red Team" class="button buttonred">
-</form>
 
-<form action="{% url 'main' %}">
-    <input type="submit" value="Back" class="button buttongrey">
-</form>
+
+<table>
+    <tr>
+        <br><br><br>
+        <td colspan="2" class="hintBox">
+             Choose you team 
+        </td>
+        
+    </tr>
+    <tr>
+        <br><br><br>
+        <td>
+            <img src="{% static 'images/altiintro.png' %}" class="pic" id="1">
+        </td>
+        <td>    
+            <form action="{% url 'blue1' %}">
+                <input class="button button2" type="submit" value="Alti in Blue Team" >
+            </form>
+        </td>
+       
+    </tr>
+    <tr>
+        <td>
+            <img src="{% static 'images/almaintro.png' %}" class="pic" id="1">
+
+        </td>
+        <td>
+            <form action="{% url 'introRed' %}">
+                <input type="submit" value="Alma in Red Team" class="button buttonred">
+            </form>
+
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <form action="{% url 'main' %}">
+                <input type="submit" value="Back" class="button buttongrey">
+            </form>
+        </td>
+    </tr>
+
+
+</table>
