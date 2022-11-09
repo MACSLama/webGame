@@ -38,8 +38,25 @@
     <input type="submit" value="Back" class=" button button2" onclick="back1()">
 
 </div>
+
 <div class="invisibleDiv" id="scoring3">
-    <img src="{% static 'images/scoring3.png' %}" class="pic"><br><br>
+    <img src="{% static 'images/scoring3.png' %}" class="pic">
+    <br>
+    <br>
+    
+    <input type="submit" value="Next" class=" button button2" onclick="next3()"><br>
+    <input type="submit" value="Back" class=" button button2" onclick="back2()">
+</div>
+<div class="invisibleDiv" id="scoring3Backup">
+    <img src="{% static 'images/scoring3.png' %}" class="pic">
+    <br>
+    <br>
+    
+    <input type="submit" value="Next" class=" button button2" onclick="next3()"><br>
+    <input type="submit" value="Back" class=" button button2" onclick="back2()">
+</div>
+<div class="invisibleDiv" id="scoring4">
+    <img src="{% static 'images/confident.png' %}" class="pic"><br><br>
     
     <form action="{% url 'team' %}" method="post" >{%csrf_token%}
         <input type="submit" value="Play" class=" button button2" >   </form>
@@ -47,6 +64,7 @@
     <input type="submit" value="Back" class=" button button2" onclick="back2()">
 
 </div>
+
 
 
 
@@ -73,6 +91,18 @@ document.getElementById("scoring1").innerHTML = document.getElementById("scoring
 function back2(){
 
 document.getElementById("scoring1").innerHTML = document.getElementById("scoring2Backup").innerHTML ;
+
+
+}
+function next3(){
+
+document.getElementById("scoring1").innerHTML = document.getElementById("scoring4").innerHTML ;
+
+
+}
+function back3(){
+
+document.getElementById("scoring1").innerHTML = document.getElementById("scoring3Backup").innerHTML ;
 
 
 }
