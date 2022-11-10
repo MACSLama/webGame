@@ -40,7 +40,7 @@
         <td colspan="2">
          <div class="hintBox""> How Confident are you with the answer? <br>
             <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button buttonred"> <br>
-            <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button buttonred">
+            <input type="button" value="Not sure, I need a hint " onclick="notConfident()" class=" button buttonred">
           </div>
        </td>
     </tr>
@@ -142,7 +142,7 @@
           <td><div class="choiceBoxRed">That is correct. Adversaries may interrupt availability of system and network resources by inhibiting access to accounts utilized by legitimate users.
             You can read about other techniques used in the Impact tactic. </div>
          <form action="https://attack.mitre.org/tactics/TA0034/" target="_blank"> 
-            <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+            <input type="submit" value="Find out more!" class=" button buttonred"> </form></td>
           <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
           <td>
               <form action="{% url 'resultRed1' %}" method="post" >{%csrf_token%}
@@ -161,7 +161,7 @@
     <tr width="100%">
           <td><div class="choiceBoxRed"> Amazing. This technique is done to degrade or block the availability of targeted resources to users,
             by exhausting the network bandwidth that services rely on, or by jamming the signal going to or coming from devices.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0034/">
-                <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
           <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
           <td>
               <form action="{% url 'resultRed1' %}" method="post" >{%csrf_token%}
@@ -180,7 +180,7 @@
   <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
       <tr width="50%">
             <td><div class="choiceBoxRed" >That was not correct. Scheduled Task/Job aims to execute scripts or malware or achieve persistent in the target. During the Impact  stage, attackers aim to affect the target in undesired way.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0034/"> 
-                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                    <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
 
              
               </td>
@@ -202,7 +202,7 @@
         <tr width="50%">
               <td><div class="choiceBoxRed" >Unfortunately this is not true. Process descovery aims to discover the target for running processes, it doesn’t cause an impact against the target. 
                 During the Impact  stage, attackers aim to affect the target in undesired way. <br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0034/"> 
-                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                    <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
               <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
               <td>
                   <form action="{% url 'resultRed1' %}" method="post" >{%csrf_token%}
@@ -223,7 +223,7 @@
                 
             </div>
              <form action="https://attack.mitre.org/techniques/T1640/" target="_blank"> 
-                <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+                <input type="submit" value="Find out more!" class=" button buttonred"> </form></td>
                 <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
               <td>
                   <form action="{% url 'resultRed1' %}" method="post" >{%csrf_token%}
@@ -243,7 +243,7 @@
               <td><div class="choiceBoxRed">Amazing. This technique is done to degrade or block the availability of targeted resources to users,
                  by exhausting the network bandwidth that services rely on, or by jamming the signal going to or coming from devices.
                   Read more about this technique.</div> <form target="_blank" action="https://attack.mitre.org/techniques/T1464/"> 
-                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                    <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
               <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
               <td>
                   <form action="{% url 'resultRed1' %}" method="post" >{%csrf_token%}
@@ -262,7 +262,7 @@
       <table id="false1notConf" class="invisibleDiv" width="100%" align="center">
           <tr width="50%">
                 <td><div class="choiceBoxRed" >That was not correct. Scheduled Task/Job aims to execute scripts or malware or achieve persistent in the target. During the Impact  stage, attackers aim to affect the target in undesired way. <br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0034/"> 
-                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                        <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
                 <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
                 <td>
                     <form action="{% url 'resultRed1' %}" method="post" >{%csrf_token%}
@@ -281,7 +281,7 @@
             <tr width="50%">
                   <td><div class="choiceBoxRed" >Unfortunately this is not true. Process descovery aims to discover the target for running processes, it doesn’t cause an impact against the target. 
                     During the Impact  stage, attackers aim to affect the target in undesired way. <br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0034/"> 
-                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                        <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
                   <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
                   <td>
                       <form action="{% url 'resultRed1' %}" method="post" >{%csrf_token%}

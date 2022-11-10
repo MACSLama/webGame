@@ -40,7 +40,7 @@
         <td colspan="2">
             <div class="hintBox"> How Confident are you with the answer? <br>
                 <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2"><br>
-                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
+                <input type="button" value="Not sure, I need a hint " onclick="notConfident()" class=" button button2">
             </div>
         </td>
     </tr>
@@ -136,7 +136,7 @@
     <tr   >
           <td><div class="feedbackox">This is very important for users, especially for those with privileged accounts.<br> As well as accounts management for the administrator 
             to prevent exposing them to potential adversaries on unprivileged systems. </div> <br> <form action="https://attack.mitre.org/techniques/T1098/" target="_blank"> 
-            <input type="submit" value="Find more!" class=" button button2"> </form> </td>
+            <input type="submit" value="Find out more!" class=" button button2"> </form> </td>
           <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
               <form action="{% url 'task51' %}" method="post" name="trueForm1">{%csrf_token%}
@@ -156,7 +156,7 @@
           <td><div class="feedbackox"> This is a smart move.<br> Domain administrator accounts should not be allowed to be used for day-to-day operations. This may expose them to potential adversaries on unprivileged systems.
             Also Multi-factor Authentication . is very important for users, especially for those with privileged accounts. </div>
             <br> <form action="https://attack.mitre.org/techniques/T1098/" target="_blank"> 
-                <input type="submit" value="Find more!" class=" button button2"> </form> </td>
+                <input type="submit" value="Find out more!" class=" button button2"> </form> </td>
           <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
               <form action="{% url 'task51' %}" method="post" name="trueForm2">{%csrf_token%}
@@ -176,7 +176,7 @@
       <tr width="50%">
             <td><div class="feedbackox" >Data loss prevention stops adversaries from stealing information from the system, it has nothing to do with securing accounts. </div> 
                 <br><form action="https://attack.mitre.org/techniques/T1098/" target="_blank"> 
-                    <input type="submit" value="Find more!" class=" button button2"> </form>
+                    <input type="submit" value="Find out more!" class=" button button2"> </form>
 
              
               </td>
@@ -199,7 +199,7 @@
               <td><div class="feedbackox" >We should have thought this through. <br> Account manipulation may happen on a valid booted system. Boot integrity will not secure a system from account manipulation.<br>
                 The link below can give you more information.  </div>
                 <br><form action="https://attack.mitre.org/techniques/T1098/" target="_blank"> 
-                    <input type="submit" value="Find more!" class=" button button2"> </form>
+                    <input type="submit" value="Find out more!" class=" button button2"> </form>
                
                 </td>
               <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>

@@ -44,7 +44,7 @@
         <td colspan="2">
             <div class="hintBox"> How Confident are you with the answer? <br>
                 <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2"> <br>
-                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
+                <input type="button" value="Not sure, I need a hint " onclick="notConfident()" class=" button button2">
             </div>
 
         </td>
@@ -147,7 +147,7 @@
             But of course we have to take other measurements, like Restrict Web-Based Content. <br></div>
               
                  <form action="https://attack.mitre.org/techniques/T1204/001/" target="_blank"> 
-            <input type="submit" value="Find more!" class=" button button2"> </form> </td>
+            <input type="submit" value="Find out more!" class=" button button2"> </form> </td>
           <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
               <form action="{% url 'resultblue1' %}" method="post" name="trueForm1">{%csrf_token%}
@@ -168,7 +168,7 @@
             Some download scanning devices can open and analyze compressed and encrypted formats, 
             such as zip and rar that may be used to conceal malicious files. We can also train the user to be more aware of these attempts.</div>
             <br> <form action="https://attack.mitre.org/techniques/T1204/001/" target="_blank"> 
-                <input type="submit" value="Find more!" class=" button button2"> </form> </td>
+                <input type="submit" value="Find out more!" class=" button button2"> </form> </td>
           <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
               <form action="{% url 'resultblue1' %}" method="post" name="trueForm2">{%csrf_token%}
@@ -189,7 +189,7 @@
             <td><div class="feedbackox" >Am afraid this is not correct. Because the attack occurs after the system is booted and doesn’t require a corrupt boot record.
                  <br>The link below can give you more information.   </div> 
                 <br><form action="https://attack.mitre.org/techniques/T1204/001/" target="_blank"> 
-                    <input type="submit" value="Find more!" class=" button button2"> </form>
+                    <input type="submit" value="Find out more!" class=" button button2"> </form>
 
              
               </div></td>
@@ -212,7 +212,7 @@
               <td><div class="feedbackox" >Updating the software can't help us here. Because the attack occurs through a link and not vulnerable software. 
                 The link below can give you more information.  </div>
                 <br><form action="https://attack.mitre.org/techniques/T1204/001/" target="_blank"> 
-                    <input type="submit" value="Find more!" class=" button button2"> </form>
+                    <input type="submit" value="Find out more!" class=" button button2"> </form>
                
                 </div></td>
               <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>

@@ -40,7 +40,7 @@
         <td colspan="2">
          <div class="hintBox""> How Confident are you with the answer? <br>
             <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button buttonred"> <br>
-            <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button buttonred">
+            <input type="button" value="Not sure, I need a hint " onclick="notConfident()" class=" button buttonred">
           </div>
        </td>
     </tr>
@@ -142,7 +142,7 @@
           <td><div class="choiceBoxRed">That is correct. Adversaries may communicate with compromised devices using out of band data streams, to  evade network traffic monitoring, as a backup method of command and control,
             or for data exfiltration if the device is not connected to any Internet-providing networks. Read more about other techniques. </div>
          <form action="https://attack.mitre.org/tactics/TA0037/" target="_blank"> 
-            <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+            <input type="submit" value="Find out more!" class=" button buttonred"> </form></td>
           <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
           <td>
               <form action="{% url 'taskRed15' %}" method="post" >{%csrf_token%}
@@ -161,7 +161,7 @@
     <tr width="100%">
           <td><div class="choiceBoxRed"> Amazing. Adversaries may explicitly employ a known encryption algorithm to conceal 
             command and control traffic rather than relying on any inherent protections provided by a communication protocol. Read about more techniques that can be used.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0037/">
-                <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
           <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
           <td>
               <form action="{% url 'taskRed15' %}" method="post" >{%csrf_token%}
@@ -180,7 +180,7 @@
   <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
       <tr width="50%">
             <td><div class="choiceBoxRed" >Oh No!. This technique aims to achieve initial access to targets through bypassing the lock screen. During C&C, attackers aim to connect and control victims.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0037/"> 
-                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                    <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
 
              
               </td>
@@ -201,7 +201,7 @@
     <table id="false2Conf" class="invisibleDiv" width="100%" align="center">
         <tr width="50%">
               <td><div class="choiceBoxRed" > Oh No!!. This technique aims to collect credentials from targets though password stores. During C&C, attackers aim to connect and control victims. <br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0037/"> 
-                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                    <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
               <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
               <td>
                   <form action="{% url 'taskRed15' %}" method="post" >{%csrf_token%}
@@ -222,7 +222,7 @@
                  or for data exfiltration if the device is not connected to any Internet-providing networks. <br>
                 Read more about this technique. </div>
              <form action="https://attack.mitre.org/techniques/T1644/" target="_blank"> 
-                <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+                <input type="submit" value="Find out more!" class=" button buttonred"> </form></td>
                 <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
               <td>
                   <form action="{% url 'taskRed15' %}" method="post" >{%csrf_token%}
@@ -242,7 +242,7 @@
               <td><div class="choiceBoxRed">Amazing. Adversaries may explicitly employ a known encryption algorithm to conceal 
                 command and control traffic rather than relying on any inherent protections provided by a communication protocol. Read more about this technique.<br></div>
                  <form target="_blank" action="https://attack.mitre.org/techniques/T1521/"> 
-                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                    <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
               <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
               <td>
                   <form action="{% url 'taskRed15' %}" method="post" >{%csrf_token%}
@@ -261,7 +261,7 @@
       <table id="false1notConf" class="invisibleDiv" width="100%" align="center">
           <tr width="50%">
                 <td><div class="choiceBoxRed" > Oh No!. This technique aims to achieve initial access to targets through bypassing the lock screen. During C&C, attackers aim to connect and control victims. <br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0037/"> 
-                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                        <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
                 <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
                 <td>
                     <form action="{% url 'taskRed15' %}" method="post" >{%csrf_token%}
@@ -279,7 +279,7 @@
         <table id="false2notConf" class="invisibleDiv" width="100%" align="center">
             <tr width="50%">
                   <td><div class="choiceBoxRed" >Oh No!!. This technique aims to collect credentials from targets though password stores. During C&C, attackers aim to connect and control victims.. <br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0037/"> 
-                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                        <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
                   <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
                   <td>
                       <form action="{% url 'taskRed15' %}" method="post" >{%csrf_token%}

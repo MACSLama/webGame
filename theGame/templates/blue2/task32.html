@@ -41,7 +41,7 @@
         <td colspan="3">
             <div class="hintBox"> How Confident are you with the answer? <br>
                 <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2"><br>
-                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
+                <input type="button" value="Not sure, I need a hint " onclick="notConfident()" class=" button button2">
             </div>
         </td>
     </tr>
@@ -139,7 +139,7 @@
           <td><div class="choiceboxshow">Bravo, this limits access to remote services through centrally managed concentrators such 
             as VPNs and other managed remote access systems.<br> </div>
          <form action="https://attack.mitre.org/techniques/T1133/" target="_blank"> 
-            <input type="submit" value="Find more!" class=" button button2"> </form></td>
+            <input type="submit" value="Find out more!" class=" button button2"> </form></td>
           <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
               <form action="{% url 'task42' %}" method="post" >{%csrf_token%}
@@ -157,7 +157,7 @@
   <table id="true2Conf" class="invisibleDiv"  align="center">
     <tr >
           <td><div class="choiceboxshow"> Great decision. This can help us disable or block remotely available services that may be unnecessary.</div> <form target="_blank" action="https://attack.mitre.org/techniques/T1133/"> 
-                <input type="submit" value="Find more!" class=" button button2"> </form> </td>
+                <input type="submit" value="Find out more!" class=" button button2"> </form> </td>
           <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
               <form action="{% url 'task42' %}" method="post" >{%csrf_token%}
@@ -177,7 +177,7 @@
       <tr >
             <td><div class="choiceboxshow" >User training won't help in this case. The technique does not require any action from the user, so even well-trained users can be affected by this.  </div>
                 <br><form action="https://attack.mitre.org/techniques/T1133/" target="_blank"> 
-                    <input type="submit" value="Find more!" class=" button button2"> </form>
+                    <input type="submit" value="Find out more!" class=" button button2"> </form>
 
              
               </td>
@@ -199,7 +199,7 @@
         <tr >
               <td><div class="choiceboxshow" >Watchdog Timers are used when the system becomes unresponsive, and that does not happen in this case. </div> 
                 <br><form action="https://attack.mitre.org/techniques/T1133/" target="_blank"> 
-                    <input type="submit" value="Find more!" class=" button button2"> </form>
+                    <input type="submit" value="Find out more!" class=" button button2"> </form>
                
                 </td>
               <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>

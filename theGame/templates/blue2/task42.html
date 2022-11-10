@@ -42,7 +42,7 @@
         <td colspan="3">
             <div class="hintBox"> How Confident are you with the answer? <br>
                 <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button button2"><br>
-                <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button button2">
+                <input type="button" value="Not sure, I need a hint " onclick="notConfident()" class=" button button2">
             </div>
         </td>
     </tr>
@@ -140,7 +140,7 @@
     <tr  >
           <td><div class="choiceboxshow">Smart choice. Enforcing binary and application integrity with digital signature verification prevent untrusted code from executing.<br> </div>
          <form action="https://attack.mitre.org/techniques/T0849/" target="_blank"> 
-            <input type="submit" value="Find more!" class=" button button2"> </form></td>
+            <input type="submit" value="Find out more!" class=" button button2"> </form></td>
           <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
               <form action="{% url 'task52' %}" method="post" >{%csrf_token%}
@@ -158,7 +158,7 @@
   <table id="true2Conf" class="invisibleDiv"   align="center">
     <tr  >
           <td><div class="choiceboxshow"> Amazing,  by setting directory and file permissions that are not specific to users or privileged accounts, we restrict access.</div> <form target="_blank" action="https://attack.mitre.org/techniques/T0849/"> 
-                <input type="submit" value="Find more!" class=" button button2"> </form> </td>
+                <input type="submit" value="Find out more!" class=" button button2"> </form> </td>
           <td> <img src="{% static 'images/True.png' %}" class="pic"></td>
           <td>
               <form action="{% url 'task52' %}" method="post" >{%csrf_token%}
@@ -178,7 +178,7 @@
       <tr >
             <td><div class="choiceboxshow" >Unfortunately we did not think this through. The technique isn’t relevant to wireless signal.  </div>
                 <br><form action="https://attack.mitre.org/techniques/T0849/" target="_blank"> 
-                    <input type="submit" value="Find more!" class=" button button2"> </form>
+                    <input type="submit" value="Find out more!" class=" button button2"> </form>
 
              
               </td>
@@ -200,7 +200,7 @@
         <tr >
               <td><div class="choiceboxshow" >Masquerading on itself doesn’t cause any safety-related consequence, so an MPL is out of scope. </div> 
                 <br><form action="https://attack.mitre.org/techniques/T0849/" target="_blank"> 
-                    <input type="submit" value="Find more!" class=" button button2"> </form>
+                    <input type="submit" value="Find out more!" class=" button button2"> </form>
                
                 </td>
               <td> <img src="{% static 'images/fault.png' %}" class="pic"></td>

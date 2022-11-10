@@ -40,7 +40,7 @@
         <td colspan="2">
          <div class="hintBox""> How Confident are you with the answer? <br>
             <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button buttonred"> <br>
-            <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button buttonred">
+            <input type="button" value="Not sure, I need a hint " onclick="notConfident()" class=" button buttonred">
           </div>
        </td>
     </tr>
@@ -143,7 +143,7 @@
              technique, good job. Using this technique, adversaries may log user keystrokes to intercept credentials as 
              the user types them<br> Read more about other techniques used for collection.</div>
          <form action="https://attack.mitre.org/tactics/TA0009/" target="_blank"> 
-            <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+            <input type="submit" value="Find out more!" class=" button buttonred"> </form></td>
           <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
           <td>
               <form action="{% url 'taskRed25' %}" method="post" >{%csrf_token%}
@@ -162,7 +162,7 @@
     <tr width="100%">
           <td><div class="choiceBoxRed"> Amazing. Adversaries may use utilities to compress and/or encrypt collected data prior to exfiltration.
              <br> Read about more techniques that can be used.<br></div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0009/">
-                <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
           <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
           <td>
               <form action="{% url 'taskRed25' %}" method="post" >{%csrf_token%}
@@ -183,7 +183,7 @@
             <td><div class="choiceBoxRed" >Oh No! This technique aims to achieve initial access to targets through
                 drawing the victim into visiting malicious websites. During collection, attackers aim to collect 
                 information from the target such as audio, video, files, credentials, etc. <br> Read more about this tactic.</div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0009/"> 
-                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                    <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
 
              
               </td>
@@ -209,7 +209,7 @@
                    such as audio, video, files, credentials, etc.<br>
                 Read more about this tactic.
                 </div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0009/"> 
-                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                    <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
               <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
               <td>
                   <form action="{% url 'taskRed25' %}" method="post" >{%csrf_token%}
@@ -230,7 +230,7 @@
                 technique, good job. Using this technique, adversaries may log user keystrokes to intercept credentials as 
                 the user types them<br> Read more about this technique. </div>
              <form action="https://attack.mitre.org/techniques/T1056/001/" target="_blank"> 
-                <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+                <input type="submit" value="Find out more!" class=" button buttonred"> </form></td>
                 <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
               <td>
                   <form action="{% url 'taskRed25' %}" method="post" >{%csrf_token%}
@@ -248,7 +248,7 @@
       <table id="true2notConf" class="invisibleDiv" width="100%" align="center">
         <tr width="100%">
               <td><div class="choiceBoxRed">Amazing. Adversaries may use utilities to compress and/or encrypt collected data prior to exfiltration. <br> Read more about this technique.<br></div> <form target="_blank" action="https://attack.mitre.org/techniques/T1560/001/"> 
-                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                    <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
               <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
               <td>
                   <form action="{% url 'taskRed25' %}" method="post" >{%csrf_token%}
@@ -269,7 +269,7 @@
                 <td><div class="choiceBoxRed" > Oh No! This technique aims to achieve initial access to targets through
                      drawing the victim into visiting malicious websites. During collection, attackers aim to collect 
                      information from the target such as audio, video, files, credentials, etc. <br> Read more about this tactic.</div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0009/"> 
-                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                        <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
                 <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
                 <td>
                     <form action="{% url 'taskRed25' %}" method="post" >{%csrf_token%}
@@ -291,7 +291,7 @@
                      malfunction. During collection, attackers aim to collect information from the target
                       such as audio, video, files, credentials, etc.<br>
                    Read more about this tactic.</div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0009/"> 
-                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                        <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
                   <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
                   <td>
                       <form action="{% url 'taskRed25' %}" method="post" >{%csrf_token%}

@@ -40,7 +40,7 @@
         <td colspan="2">
          <div class="hintBox""> How Confident are you with the answer? <br>
             <input type="button" value="Very confident, no help needed" onclick="confident()" class=" button buttonred"> <br>
-            <input type="button" value="Not sure, i  need a hint " onclick="notConfident()" class=" button buttonred">
+            <input type="button" value="Not sure, I need a hint " onclick="notConfident()" class=" button buttonred">
           </div>
        </td>
     </tr>
@@ -142,7 +142,7 @@
           <td><div class="choiceBoxRed">That is correct. Adversaries may transfer tools or other files from an external 
             system into a compromised environment. <br> You can read about other techniques used. </div>
          <form action="https://attack.mitre.org/tactics/TA0011/" target="_blank"> 
-            <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+            <input type="submit" value="Find out more!" class=" button buttonred"> </form></td>
           <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
           <td>
               <form action="{% url 'resultRed2' %}" method="post" >{%csrf_token%}
@@ -165,7 +165,7 @@
 
         
         </div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0011/">
-                <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
           <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
           <td>
               <form action="{% url 'resultRed2' %}" method="post" >{%csrf_token%}
@@ -184,7 +184,7 @@
   <table id="false1Conf" class="invisibleDiv" width="100%" align="center">
       <tr width="50%">
             <td><div class="choiceBoxRed" >That was not correct. This technique aims to execute scripts or malware or achieve persistent in the target. During C&C, attackers aim to connect and control victims. <br> Read more about this tactic.</div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0011/"> 
-                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                    <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
 
              
               </td>
@@ -206,7 +206,7 @@
         <tr width="50%">
               <td><div class="choiceBoxRed" >Unfortunately this is not true.This technique aims to discover the target for running
                 processes, it doesn’t aid the C&C functions. During C&C, attackers aim to connect and control victims.<br> Read more about this tactic.</div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0011/"> 
-                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                    <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
               <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
               <td>
                   <form action="{% url 'resultRed2' %}" method="post" >{%csrf_token%}
@@ -228,7 +228,7 @@
                 
             </div>
              <form action="https://attack.mitre.org/techniques/T1105/" target="_blank"> 
-                <input type="submit" value="Find more!" class=" button buttonred"> </form></td>
+                <input type="submit" value="Find out more!" class=" button buttonred"> </form></td>
                 <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
               <td>
                   <form action="{% url 'resultRed2' %}" method="post" >{%csrf_token%}
@@ -250,7 +250,7 @@
                  relying on any inherent protections provided by a communication protocol.<br>
                 Read more about this technique.
                 </div> <form target="_blank" action="https://attack.mitre.org/techniques/T1573/"> 
-                    <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                    <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
               <td> <img src="{% static 'images/trueRed.png' %}" class="pic"></td>
               <td>
                   <form action="{% url 'resultRed2' %}" method="post" >{%csrf_token%}
@@ -269,7 +269,7 @@
       <table id="false1notConf" class="invisibleDiv" width="100%" align="center">
           <tr width="50%">
                 <td><div class="choiceBoxRed" >That was not correct. This technique aims to execute scripts or malware or achieve persistent in the target. During C&C, attackers aim to connect and control victims. <br> Read more about this tactic.</div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0011/"> 
-                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                        <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
                 <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
                 <td>
                     <form action="{% url 'resultRed2' %}" method="post" >{%csrf_token%}
@@ -289,7 +289,7 @@
                   <td><div class="choiceBoxRed" >Unfortunately this is not true.This technique aims to discover the target for running
                      processes, it doesn’t aid the C&C functions. During C&C, attackers aim to connect and control victims.<br> Read more about this tactic.
                     </div> <form target="_blank" action="https://attack.mitre.org/tactics/TA0011/"> 
-                        <input type="submit" value="Find more!" class=" button buttonred"> </form> </td>
+                        <input type="submit" value="Find out more!" class=" button buttonred"> </form> </td>
                   <td> <img src="{% static 'images/falseRed.png' %}" class="pic"></td>
                   <td>
                       <form action="{% url 'resultRed2' %}" method="post" >{%csrf_token%}
