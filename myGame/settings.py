@@ -29,7 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '0.0.0.0',
     'macsgame.herokuapp.com',
-    '127.0.0.1'
+    '127.0.0.1',
+    'macsgamestudents.herokuapp.com'
 ]
 
 
