@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from theGame.views import main , team, tutorial,end, taskChoiceBlue,taskChoiceRed,blue1, task11, task21,task31,task41,task51,task61, task71,resultblue1, about , scoring
 from theGame.views import task12, task22, task32,task42,task52,task62,task72,task82,resultblue2
-from theGame.views import introRed,taskRed11,taskRed12,taskRed13,taskRed14,taskRed15,resultRed1, navigator
+from theGame.views import introRed,taskRed11,taskRed12,taskRed13,taskRed14,taskRed15,resultRed1,navigator
 from theGame.views import taskRed21,taskRed22,taskRed23,taskRed24,taskRed25,resultRed2
 from django.conf.urls.static import static
 
@@ -66,7 +66,7 @@ urlpatterns = [
     path('resultRed2/', resultRed2, name="resultRed2"),
 
     path('end/', end, name="end"),
-     path('navigator/', navigator, name="navigator"),
+    path('navigator/', navigator, name="navigator"),
 ]
     
     
