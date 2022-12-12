@@ -364,3 +364,7 @@ def resultRed2 (request):
     score = int(theScore) + int(theScorAdd) - int(deduction)
     truecounter = int(counter)+ int(counteradd)
     return render(request, 'red2/resultRed2.html',{'score': score, 'truecounter':truecounter})
+
+
+def navigator (request):
+    return render(request,' apt3Navigator.html')
