@@ -367,4 +367,4 @@ def resultRed2 (request):
 
 
 def navigator (request):
-    return render(request,' apt3Navigator.html')
+    return render(request,'apt3Navigator.html')
